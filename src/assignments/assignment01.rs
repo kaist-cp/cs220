@@ -1,4 +1,4 @@
-//! Assignment 1: Preparing for Rust Development Environment.
+//! Assignment 1: Preparing Rust Development Environment.
 //!
 //! The primary goal of this assignment is bringing up SSH, VSCode, and all the other necessary tools to develop Rust programs.
 //! Please make sure you're comfortable with developing Rust programs before moving on to the next assignments.
