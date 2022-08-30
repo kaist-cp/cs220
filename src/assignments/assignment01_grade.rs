@@ -18,7 +18,7 @@ mod test {
     }
 
     #[test]
-    fn sub_underflow() {
+    fn sub_overflow() {
         assert_eq!(sub(usize::MIN, 1), usize::MAX);
     }
 }
