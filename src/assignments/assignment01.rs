@@ -13,7 +13,7 @@ pub(crate) fn add(lhs: usize, rhs: usize) -> usize {
     todo!()
 }
 
-/// Adds two unsigned words. If underflow happens, just wrap around.
+/// Subs two unsigned words. If overflow happens, just wrap around.
 pub(crate) fn sub(lhs: usize, rhs: usize) -> usize {
     todo!()
 }
