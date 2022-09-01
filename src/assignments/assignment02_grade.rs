@@ -18,6 +18,7 @@ mod test {
 
     #[test]
     fn test_up3() {
+        assert_eq!(up3(1), 1);
         assert_eq!(up3(6), 9);
         assert_eq!(up3(9), 9);
         assert_eq!(up3(10), 27);
@@ -31,6 +32,8 @@ mod test {
 
     #[test]
     fn test_chooses() {
+        assert_eq!(chooses(0), vec![1]);
+        assert_eq!(chooses(1), vec![1, 1]);
         assert_eq!(chooses(5), vec![1, 5, 10, 10, 5, 1]);
         assert_eq!(chooses(6), vec![1, 6, 15, 20, 15, 6, 1]);
     }
