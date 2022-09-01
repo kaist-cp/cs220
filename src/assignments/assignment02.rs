@@ -21,7 +21,7 @@ pub(crate) fn capitalize(input: String) -> String {
     todo!()
 }
 
-/// Returns the sume of the given array. (We assume the absence of integer overflow.)
+/// Returns the sum of the given array. (We assume the absence of integer overflow.)
 pub(crate) fn sum_array(input: &[u64]) -> u64 {
     todo!()
 }
