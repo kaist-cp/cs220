@@ -3,9 +3,9 @@ mod test {
     use super::super::assignment02::*;
 
     #[test]
-    fn test_farenheit() {
-        assert_eq!(farhenheit_to_celcius(32.0), 0.0);
-        assert_eq!(farhenheit_to_celcius(212.0), 100.0);
+    fn test_fahrenheit() {
+        assert_eq!(fahrenheit_to_celsius(32.0), 0.0);
+        assert_eq!(fahrenheit_to_celsius(212.0), 100.0);
     }
 
     #[test]

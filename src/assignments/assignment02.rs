@@ -8,11 +8,11 @@
 
 use std::ops::Mul;
 
-const FARHENHEIT_OFFSET: f64 = 32.0;
-const FARHENHEIT_SCALE: f64 = 5.0 / 9.0;
+const FAHRENHEIT_OFFSET: f64 = 32.0;
+const FAHRENHEIT_SCALE: f64 = 5.0 / 9.0;
 
-/// Converts Farenheit to Celcius temperature degree.
-pub(crate) fn farhenheit_to_celcius(degree: f64) -> f64 {
+/// Converts Fahrenheit to Celsius temperature degree.
+pub(crate) fn fahrenheit_to_celsius(degree: f64) -> f64 {
     todo!()
 }
 
