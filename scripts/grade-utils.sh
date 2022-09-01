@@ -71,7 +71,7 @@ _run_tests_with() {
 # example: run_tests
 # Uses global variable RUNNER and TESTS
 run_tests() {
-    # "cargo --relase" should be split into "cargo" and "--release"
+    # "cargo --release" should be split into "cargo" and "--release"
     local IFS=' '
     echo $(_run_tests_with $RUNNER)
 }
