@@ -26,7 +26,19 @@ mod test {
     }
 
     #[test]
+    fn test_gcd() {
+        assert_eq!(gcd(5, 1), 1);
+        assert_eq!(gcd(3, 3), 3);
+        assert_eq!(gcd(2, 6), 2);
+        assert_eq!(gcd(24, 18), 6);
+        assert_eq!(gcd(20, 63), 1);
+        assert_eq!(gcd(0, 33), 33);
+    }
+
+    #[test]
     fn test_sum_array() {
+        assert_eq!(sum_array(&[]), 0);
+        assert_eq!(sum_array(&[1]), 1);
         assert_eq!(sum_array(&[1, 2, 3, 4, 5, 100]), 115);
     }
 
