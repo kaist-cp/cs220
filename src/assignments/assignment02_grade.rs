@@ -14,15 +14,19 @@ mod test {
             capitalize(String::from("aAbbBcccCddddD❤한글과✓")),
             String::from("AABBBCCCCDDDDD❤한글과✓"),
         );
+        assert_eq!(capitalize(String::from("Tschüß")), String::from("TSCHüß"));
     }
 
     #[test]
     fn test_up3() {
+        assert_eq!(up3(0), 1);
         assert_eq!(up3(1), 1);
         assert_eq!(up3(6), 9);
         assert_eq!(up3(9), 9);
         assert_eq!(up3(10), 27);
         assert_eq!(up3(1_000_000), 1_594_323);
+        assert_eq!(up3(3u64.pow(39).wrapping_add(1)), 3u64.pow(40));
+        assert_eq!(up3(3u64.pow(40)), 3u64.pow(40));
     }
 
     #[test]
