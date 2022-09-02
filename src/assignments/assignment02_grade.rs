@@ -75,7 +75,6 @@ mod test {
         assert_eq!(fibonacci(7), 21);
         assert_eq!(fibonacci(50), 20365011074);
         assert_eq!(fibonacci(92), 12200160415121876738);
-
     }
 
     #[test]
