@@ -1,0 +1,23 @@
+(* Binary search
+
+   A classical example. Searches a sorted array for a given value v.
+   Consult <https://gitlab.inria.fr/why3/why3/-/blob/master/examples/binary_search.mlw>.
+ *)
+
+module BinarySearch
+
+  use import int.Int
+  use import int.ComputerDivision
+  use import ref.Ref
+  use import array.Array
+
+  let binary_search (a : array int) (v : int)
+    requires { forall i1 i2 : int. 0 <= i1 < i2 < length a -> a[i1] <= a[i2] }
+    ensures  { 0 <= result <= length a }
+    ensures  { forall i: int. 0 <= i < result -> a[i] < v }
+    ensures  { result < length a -> a[result] >= v }
+  =
+    let l = ref (-1) in
+    let u = ref (length a) in
+    !u - !l (* TODO *)
+end

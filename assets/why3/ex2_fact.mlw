@@ -1,0 +1,55 @@
+(* Two programs to compute the factorial
+
+   Note: function "fact" from module int.Fact (already imported)
+   can be used in specifications.
+
+   Questions:
+
+   1. In module FactRecursive:
+
+      a. Prove soundness of function fact_rec.
+
+      b. Prove its termination.
+
+   2. In module FactLoop:
+
+      a. Prove soundness of function fact_loop.
+
+      b. Prove its termination.
+
+      c. Change the code to use a for loop instead of a while loop.
+*)
+
+module FactRecursive
+
+  use int.Int
+  use int.Fact
+
+  let rec fact_rec (n: int) : int
+    requires { n >= 0 }
+    ensures  { result = fact n }
+    variant { n }
+  =
+    if n = 0 then 1 else n * fact_rec (n - 1)
+
+end
+
+module FactLoop
+
+  use int.Int
+  use int.Fact
+
+  let fact_loop (n: int) : int
+    requires { 0 < n }
+    ensures  { result = fact n }
+  = let ref m = 0 in
+    let ref r = 1 in
+    while m < n do
+      invariant { 0 <= m <= n /\ r = fact m }
+      variant { n - m }
+      m <- m + 1;
+      r <- r * m
+    done;
+    r
+
+end
