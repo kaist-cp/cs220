@@ -16,7 +16,7 @@ pub(crate) fn fahrenheit_to_celsius(degree: f64) -> f64 {
     todo!()
 }
 
-/// Captializes English alphabets (leaving the other characters intact).
+/// Capitalizes English alphabets (leaving the other characters intact).
 pub(crate) fn capitalize(input: String) -> String {
     todo!()
 }
