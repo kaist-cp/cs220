@@ -39,6 +39,8 @@ pub(crate) fn gcd(lhs: u64, rhs: u64) -> u64 {
 }
 
 /// Returns the array of nC0, nC1, nC2, ..., nCn, where nCk = n! / (k! * (n-k)!). (We assume the absence of integer overflow.)
+///
+/// Consult <https://en.wikipedia.org/wiki/Pascal%27s_triangle> for computation of binomial coefficients without integer overflow.
 pub(crate) fn chooses(n: u64) -> Vec<u64> {
     todo!()
 }
