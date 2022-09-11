@@ -30,4 +30,4 @@
 #![deny(unused_lifetimes)]
 #![deny(unstable_features)]
 
-mod assignments;
+pub mod assignments;

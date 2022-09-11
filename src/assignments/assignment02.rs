@@ -12,36 +12,36 @@ const FAHRENHEIT_OFFSET: f64 = 32.0;
 const FAHRENHEIT_SCALE: f64 = 5.0 / 9.0;
 
 /// Converts Fahrenheit to Celsius temperature degree.
-pub(crate) fn fahrenheit_to_celsius(degree: f64) -> f64 {
+pub fn fahrenheit_to_celsius(degree: f64) -> f64 {
     todo!()
 }
 
 /// Capitalizes English alphabets (leaving the other characters intact).
-pub(crate) fn capitalize(input: String) -> String {
+pub fn capitalize(input: String) -> String {
     todo!()
 }
 
 /// Returns the sum of the given array. (We assume the absence of integer overflow.)
-pub(crate) fn sum_array(input: &[u64]) -> u64 {
+pub fn sum_array(input: &[u64]) -> u64 {
     todo!()
 }
 
 /// Given a non-negative integer, say `n`, return the smallest integer of the form `3^m` that's greater than or equal to `n`.
 ///
 /// For instance, up3(6) = 9, up3(9) = 9, up3(10) = 27. (We assume the absence of integer overflow.)
-pub(crate) fn up3(n: u64) -> u64 {
+pub fn up3(n: u64) -> u64 {
     todo!()
 }
 
 /// Returns the greatest common divisor (GCD) of two non-negative integers. (We assume the absence of integer overflow.)
-pub(crate) fn gcd(lhs: u64, rhs: u64) -> u64 {
+pub fn gcd(lhs: u64, rhs: u64) -> u64 {
     todo!()
 }
 
 /// Returns the array of nC0, nC1, nC2, ..., nCn, where nCk = n! / (k! * (n-k)!). (We assume the absence of integer overflow.)
 ///
 /// Consult <https://en.wikipedia.org/wiki/Pascal%27s_triangle> for computation of binomial coefficients without integer overflow.
-pub(crate) fn chooses(n: u64) -> Vec<u64> {
+pub fn chooses(n: u64) -> Vec<u64> {
     todo!()
 }
 
@@ -49,7 +49,7 @@ pub(crate) fn chooses(n: u64) -> Vec<u64> {
 ///
 /// For instance, `zip(vec![1, 2, 3], vec![4, 5])` equals to `vec![(1, 4), (2, 5)]`.
 /// Here, `3` is ignored because it doesn't have a partner.
-pub(crate) fn zip(lhs: Vec<u64>, rhs: Vec<u64>) -> Vec<(u64, u64)> {
+pub fn zip(lhs: Vec<u64>, rhs: Vec<u64>) -> Vec<(u64, u64)> {
     todo!()
 }
 
@@ -131,13 +131,13 @@ const FIBONACCI_VEC: Vec2 = Vec2 { a: 1, b: 0 };
 /// Calculates the Fibonacci number. (We assume the absence of integer overflow.)
 ///
 /// Consult <https://web.media.mit.edu/~holbrow/post/calculating-fibonacci-numbers-with-matrices-and-linear-algebra/> for matrix computation of Fibonacci numbers.
-pub(crate) fn fibonacci(n: u64) -> u64 {
+pub fn fibonacci(n: u64) -> u64 {
     (FIBONACCI_MAT.power(n) * FIBONACCI_VEC).get_upper()
 }
 
 /// Writes down the lyrics of "twelve days of christmas".
 ///
 /// Hint: Google the song title for lyrics and look at the test code for the expected result.
-pub(crate) fn twelve_days_of_christmas_lyrics() -> String {
+pub fn twelve_days_of_christmas_lyrics() -> String {
     todo!()
 }
