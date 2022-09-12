@@ -12,7 +12,7 @@
   + We assume you read each announcement within 24 hours.
   + We strongly recommend you to watch the repository.
 - TA: [Minseong Jang](https://cp.kaist.ac.kr/minseong.jang), [Jaemin Choi](https://cp.kaist.ac.kr/jaemin.choi), [Seungmin Jeon](https://cp.kaist.ac.kr/seungmin.jeon), [Jaehwang Jung](https://cp.kaist.ac.kr/jaehwang.jung)
-  + Office Hour: Fri 9:00am-10:00am, [Zoom room](https://zoom.us/j/71923059728) (passcode: same as the class, announced at KLMS.). It is not required, but if you want to come, do so by 9:15am. See below for office hour policy. See [below](https://github.com/kaist-cp/cs220#rules) for office hour policy.
+  + Office Hour: Fri 9:00am-10:00am, [Zoom room](https://zoom.us/j/71923059728) (passcode: same as the class, announced at KLMS.). It is not required, but if you want to come, do so by 9:15am.  See [below](https://github.com/kaist-cp/cs220#rules) for office hour policy.
     <!-- Fri 9:00am-12:00pm, [Zoom room](https://zoom.us/j/4842624821)(The passcode is same as the class). It is not required, but if you want to come, do so by 9:30am. See [below](#communication) for office hour policy. -->
 
 
