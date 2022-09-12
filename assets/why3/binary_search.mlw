@@ -17,7 +17,6 @@ module BinarySearch
     ensures  { forall i: int. 0 <= i < result -> a[i] < v }
     ensures  { result < length a -> a[result] >= v }
   =
-    let l = ref (-1) in
-    let u = ref (length a) in
-    !u - !l (* TODO *)
+    (* IMPORTANT: DON'T MODIFY THE ABOVE LINES *)
+    0 (* TODO *)
 end
