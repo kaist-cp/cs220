@@ -90,8 +90,8 @@ Make sure you're capable of using the following development tools:
 - [Rust](https://www.rust-lang.org/): as the language of homework implementation. We chose Rust
   because its ownership type system greatly simplifies the development of large-scale system
   software.
-
-  We recommend you to read [this page](https://cp.kaist.ac.kr/helpdesk#technical-expertise) that describes how to study Rust.
+    - We recommend you to read [this page](https://cp.kaist.ac.kr/helpdesk#technical-expertise) that describes how to study Rust.
+    - `cargo doc --open` on your local will show you the documentation for each homework.
 
 - [Visual Studio Code](https://code.visualstudio.com/) (optional): for developing your homework. If you prefer other editors, you're good to go.
 
