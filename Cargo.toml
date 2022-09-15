@@ -7,5 +7,9 @@ edition = "2021"
 
 [dependencies]
 anyhow = "1.0.64"
+clap = { version = "3.2.20", features = ["derive"] }
+etrace = "1.1.1"
+itertools = "0.10.3"
+lazy_static = "1.4.0"
 pest = "2.3.0"
 pest_derive = "2.3.0"
