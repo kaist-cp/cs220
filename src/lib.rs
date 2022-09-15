@@ -3,7 +3,7 @@
 // # Tries to deny all lints (`rustc -W help`).
 #![deny(absolute_paths_not_starting_with_crate)]
 #![deny(anonymous_parameters)]
-#![deny(box_pointers)]
+// #![deny(box_pointers)]
 #![deny(deprecated_in_future)]
 #![deny(explicit_outlives_requirements)]
 #![deny(keyword_idents)]

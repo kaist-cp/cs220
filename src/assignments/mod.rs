@@ -9,3 +9,5 @@ pub mod assignment02;
 mod assignment02_grade;
 pub mod assignment03;
 mod assignment03_grade;
+pub mod assignment04;
+mod assignment04_grade;

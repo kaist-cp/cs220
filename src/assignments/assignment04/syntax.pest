@@ -1,0 +1,17 @@
+num = @{ int ~ ("." ~ ASCII_DIGIT*)? ~ (^"e" ~ int)? }
+int = { ("+" | "-")? ~ ASCII_DIGIT+ }
+var = { ("$" | ASCII_ALPHA) ~ (ASCII_ALPHA | ASCII_DIGIT)* }
+
+operation = _{ add | subtract | multiply | divide | power }
+    add      = { "+" }
+    subtract = { "-" }
+    multiply = { "*" }
+    divide   = { "/" }
+    power    = { "^" }
+
+expr = { term ~ (operation ~ term)* }
+term = _{ num | var | "(" ~ expr ~ ")" }
+
+command = _{ SOI ~ (var ~ "=")? ~ expr ~ EOI }
+
+WHITESPACE = _{ " " | "\t" }
