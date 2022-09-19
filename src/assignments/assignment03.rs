@@ -43,12 +43,43 @@ pub enum MyOption<T> {
     MyNone,
 }
 
-/// Maps the inner value if the given value is `MySome`; returns `MyNone` otherwise.
+/// Maps an `MyOption<T>` to `MyOption<U>` by applying a function to a contained value.
+///
+/// # Examples
+///
+/// Converts an `MyOption<String>` into an `MyOption<usize>`, consuming the original:
+///
+/// ```
+/// fn len(s: String) -> usize {
+///     s.len()
+/// }
+///
+/// assert_eq!(my_map(MyOption::MySome(String::from("Hello, World!")), len), MyOption::MySome(13));
+/// assert_eq!(my_map(MyOption::MyNone, len), MyOption::MyNone);
+/// ```
 pub fn my_map<T, U, F: FnOnce(T) -> U>(v: MyOption<T>, f: F) -> MyOption<U> {
     todo!()
 }
 
-/// Maps the inner value if the given value is `MySome`, but with a different type of function; returns `MyNone` otherwise.
+/// Returns `MyNone` if the option is `MyNone`, otherwise calls `f` with the wrapped value and returns the result.
+///
+/// Some languages call this operation flatmap.
+///
+/// # Examples
+///
+/// ```
+/// fn pos_then_to_string(x: isize) -> MyOption<String> {
+///     if x > 0 {
+///         MyOption::MySome(x.to_string())
+///     } else {
+///         MyOption::MyNone
+///     }
+/// }
+///
+/// assert_eq!(my_and_then(MyOption::MySome(2), pos_then_to_string), MyOption::MySome(2.to_string()));
+/// assert_eq!(my_and_then(MyOption::MySome(-3), pos_then_to_string), MyOption::MyNone);
+/// assert_eq!(my_and_then(MyOption::MyNone, pos_then_to_string), MyOption::MyNone);
+/// ```
 pub fn my_and_then<T, U, F: FnOnce(T) -> MyOption<U>>(v: MyOption<T>, f: F) -> MyOption<U> {
     todo!()
 }
