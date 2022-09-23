@@ -88,6 +88,18 @@ impl Semiring for f64 {
 }
 
 /// Polynomials with coefficient in `C`.
+///
+/// For example, polynomial `x^2 + 5x + 6` is represented in `Polynomial<u64>` as follows:
+///
+/// ```
+/// Polynomial {
+///     coefficients: {
+///         2: 1,
+///         1: 5,
+///         0: 6,
+///     },
+/// }
+/// ```
 #[derive(Debug, Clone, PartialEq, Eq)]
 pub struct Polynomial<C: Semiring> {
     coefficients: HashMap<u64, C>,
@@ -118,7 +130,7 @@ impl<C: Semiring> From<C> for Polynomial<C> {
 }
 
 impl<C: Semiring> Polynomial<C> {
-    /// The variable X.
+    /// Constructs polynomial `x`.
     pub fn x() -> Self {
         todo!()
     }
