@@ -1,0 +1,153 @@
+//! Assignment 6: Mastering advanced types.
+//!
+//! The primary goal of this assignment is to understand generics, traits, and lifetimes.
+//!
+//! You should fill out the `todo!()` placeholders in such a way that `/scripts/grade-06.sh` works fine.
+//! See `assignment06_grade.rs` and `/scripts/grade-06.sh` for the test script.
+
+use std::{collections::HashMap, fmt::Debug};
+
+/// Semiring.
+///
+/// Consult <https://en.wikipedia.org/wiki/Semiring>.
+pub trait Semiring: Debug + Clone + PartialEq {
+    /// Additive identity.
+    fn zero() -> Self;
+    /// Multiplicative identity.
+    fn one() -> Self;
+    /// Addition operation.
+    fn add(&self, rhs: &Self) -> Self;
+    /// Multiplication operation.
+    fn mul(&self, rhs: &Self) -> Self;
+}
+
+/// Converts integer to semiring value.
+pub fn from_usize<T: Semiring>(value: usize) -> T {
+    let mut result = T::zero();
+    let one = T::one();
+
+    for _ in 0..value {
+        result = T::add(&result, &one);
+    }
+
+    result
+}
+
+impl Semiring for u64 {
+    fn zero() -> Self {
+        todo!()
+    }
+
+    fn one() -> Self {
+        todo!()
+    }
+
+    fn add(&self, rhs: &Self) -> Self {
+        todo!()
+    }
+
+    fn mul(&self, rhs: &Self) -> Self {
+        todo!()
+    }
+}
+
+impl Semiring for i64 {
+    fn zero() -> Self {
+        todo!()
+    }
+
+    fn one() -> Self {
+        todo!()
+    }
+
+    fn add(&self, rhs: &Self) -> Self {
+        todo!()
+    }
+
+    fn mul(&self, rhs: &Self) -> Self {
+        todo!()
+    }
+}
+
+impl Semiring for f64 {
+    fn zero() -> Self {
+        todo!()
+    }
+
+    fn one() -> Self {
+        todo!()
+    }
+
+    fn add(&self, rhs: &Self) -> Self {
+        todo!()
+    }
+
+    fn mul(&self, rhs: &Self) -> Self {
+        todo!()
+    }
+}
+
+/// Polynomials with coefficient in `C`.
+#[derive(Debug, Clone, PartialEq, Eq)]
+pub struct Polynomial<C: Semiring> {
+    coefficients: HashMap<u64, C>,
+}
+
+impl<C: Semiring> Semiring for Polynomial<C> {
+    fn zero() -> Self {
+        todo!()
+    }
+
+    fn one() -> Self {
+        todo!()
+    }
+
+    fn add(&self, rhs: &Self) -> Self {
+        todo!()
+    }
+
+    fn mul(&self, rhs: &Self) -> Self {
+        todo!()
+    }
+}
+
+impl<C: Semiring> From<C> for Polynomial<C> {
+    fn from(value: C) -> Self {
+        todo!()
+    }
+}
+
+impl<C: Semiring> Polynomial<C> {
+    /// The variable X.
+    pub fn x() -> Self {
+        todo!()
+    }
+
+    /// Evaluates the polynomial with the given value.
+    pub fn eval(&self, value: C) -> C {
+        todo!()
+    }
+}
+
+struct FindIter<'s, T: Eq> {
+    query: &'s [T],
+    base: &'s [T],
+    curr: usize,
+}
+
+impl<T: Eq> Iterator for FindIter<'_, T> {
+    type Item = usize;
+
+    fn next(&mut self) -> Option<Self::Item> {
+        todo!()
+    }
+}
+
+/// Returns an iterator over substring query indexes in the base.
+pub fn find<'s, T: Eq>(query: &'s [T], base: &'s [T]) -> impl 's + Iterator<Item = usize> {
+    FindIter {
+        query,
+        base,
+        curr: 0,
+    }
+}
