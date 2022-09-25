@@ -18,8 +18,7 @@ RUNNERS=(
 )
 
 # Lints.
-cargo fmt --check
-cargo clippy
+run_linters || exit 1
 
 # Executes test for each runner.
 for RUNNER in "${RUNNERS[@]}"; do
