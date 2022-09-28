@@ -11,7 +11,7 @@ module BinarySearch
   use import ref.Ref
   use import array.Array
 
-  let binary_search (a : array int) (v : int)
+  let binary_search (a : array int) (v : int) : int
     requires { forall i1 i2 : int. 0 <= i1 < i2 < length a -> a[i1] <= a[i2] }
     ensures  { 0 <= result <= length a }
     ensures  { forall i: int. 0 <= i < result -> a[i] < v }
