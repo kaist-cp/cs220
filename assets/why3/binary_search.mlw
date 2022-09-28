@@ -15,7 +15,7 @@ module BinarySearch
     requires { forall i1 i2 : int. 0 <= i1 < i2 < length a -> a[i1] <= a[i2] }
     ensures  { 0 <= result <= length a }
     ensures  { forall i: int. 0 <= i < result -> a[i] < v }
-    ensures  { result < length a -> a[result] >= v }
+    ensures  { forall i: int. result <= i < length a -> v <= a[i] }
   =
     (* IMPORTANT: DON'T MODIFY THE ABOVE LINES *)
     0 (* TODO *)
