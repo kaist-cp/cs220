@@ -6,10 +6,10 @@
 
 module BinarySearch
 
-  use import int.Int
-  use import int.ComputerDivision
-  use import ref.Ref
-  use import array.Array
+  use int.Int
+  use int.ComputerDivision
+  use ref.Ref
+  use array.Array
 
   let binary_search (a : array int) (v : int) : int
     requires { forall i1 i2 : int. 0 <= i1 < i2 < length a -> a[i1] <= a[i2] }
