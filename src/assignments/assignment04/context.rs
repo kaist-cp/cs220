@@ -24,12 +24,12 @@ impl Context {
         self.anonymous_counter
     }
 
-    /// Calculates the given expression.
+    /// Calculates the given expression. (We assume the absence of overflow.)
     pub fn calc_expression(&self, expression: &Expression) -> Result<f64> {
         todo!("fill here")
     }
 
-    /// Calculates the given command.
+    /// Calculates the given command. (We assume the absence of overflow.)
     ///
     /// If there is no variable lhs in the command (i.e. `command.variable = None`), its value should be stored at `$0`, `$1`, `$2`, ... respectively.
     ///
