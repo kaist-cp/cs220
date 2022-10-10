@@ -1,4 +1,4 @@
-//! Assignment 6: Mastering advanced types.
+//! Assignment 6: Mastering advanced types (1/2).
 //!
 //! The primary goal of this assignment is to understand generics, traits, and lifetimes.
 //!
@@ -138,28 +138,5 @@ impl<C: Semiring> Polynomial<C> {
     /// Evaluates the polynomial with the given value.
     pub fn eval(&self, value: C) -> C {
         todo!()
-    }
-}
-
-struct FindIter<'s, T: Eq> {
-    query: &'s [T],
-    base: &'s [T],
-    curr: usize,
-}
-
-impl<T: Eq> Iterator for FindIter<'_, T> {
-    type Item = usize;
-
-    fn next(&mut self) -> Option<Self::Item> {
-        todo!()
-    }
-}
-
-/// Returns an iterator over substring query indexes in the base.
-pub fn find<'s, T: Eq>(query: &'s [T], base: &'s [T]) -> impl 's + Iterator<Item = usize> {
-    FindIter {
-        query,
-        base,
-        curr: 0,
     }
 }
