@@ -24,4 +24,21 @@ mod test {
             vec![]
         );
     }
+
+    #[test]
+    fn test_find_usize() {
+        assert_eq!(
+            find(&[1, 2, 3], &[1, 2, 3, 4, 1, 2, 3, 4]).collect::<Vec<usize>>(),
+            vec![0, 4]
+        );
+
+        assert_eq!(
+            find(
+                &[5, 5, 7, 5],
+                &[5, 5, 7, 5, 5, 8, 5, 5, 9, 5, 5, 7, 5, 5, 7, 5]
+            )
+            .collect::<Vec<usize>>(),
+            vec![0, 9, 12]
+        );
+    }
 }
