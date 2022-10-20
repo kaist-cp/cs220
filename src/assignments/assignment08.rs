@@ -8,8 +8,9 @@
 /// Returns an anonymous function that applies the given function `f` for `n` times.
 ///
 /// For instance, `repeat(3, f)(x)` roughly translates to `f(f(f(x)))`.
-pub fn repeat<T, F: FnMut(T) -> T>(n: usize, mut f: F) -> impl FnMut(T) -> T {
-    todo!()
+pub fn repeat<T, F: FnMut(T) -> T>(n: usize, f: F) -> impl FnMut(T) -> T {
+    todo!();
+    f // This line has been added to prevent compile error. You can erase this line.
 }
 
 /// Applies the given function `f` for `i` times for the `i`-th element of the given vector.

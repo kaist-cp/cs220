@@ -1,6 +1,7 @@
 //! KAIST CS220 Assignments.
 
 #![allow(dead_code)]
+#![allow(unreachable_code)]
 #![allow(unused_variables)]
 
 pub mod assignment01;
