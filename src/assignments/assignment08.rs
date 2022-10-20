@@ -28,7 +28,7 @@ pub enum Either2<T1, T2> {
         /// The inner value.
         inner: T1,
     },
-    /// Case 1.
+    /// Case 2.
     Case2 {
         /// The inner value.
         inner: T2,
