@@ -2,8 +2,9 @@
 
 #![allow(dead_code)]
 #![allow(unused_mut)]
-#![allow(unreachable_code)]
+#![allow(unused_imports)]
 #![allow(unused_variables)]
+#![allow(unreachable_code)]
 
 pub mod assignment01;
 mod assignment01_grade;

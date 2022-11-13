@@ -7,6 +7,8 @@
 
 use std::collections::HashMap;
 
+use itertools::*;
+
 /// Returns whether the given sequence is a fibonacci sequence starts from the given sequence's first two terms.
 ///
 /// Returns `true` if the length of sequence is less or equal than 2.
@@ -34,6 +36,8 @@ pub fn sigma<T, F: Fn(T) -> i64>(inner: impl Iterator<Item = T>, f: F) -> i64 {
 }
 
 /// Alternate elements from three iterators until they have run out.
+///
+/// You can assume that the number of elements of three iterators are same.
 ///
 /// # Example
 ///
