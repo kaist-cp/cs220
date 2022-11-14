@@ -1,4 +1,4 @@
-//! Assignment 9: Iterators.
+//! Assignment 9: Iterators (1/2).
 //!
 //! The primary goal of this assignment is to get used to iterators.
 //!
