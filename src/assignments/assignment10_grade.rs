@@ -77,6 +77,41 @@ mod test {
             "root".to_string(),
             vec![
                 File::Directory(
+                    "b".to_string(),
+                    vec![
+                        File::Data("b1".to_string(), 3),
+                        File::Data("b2".to_string(), 15),
+                    ],
+                ),
+                File::Data("c".to_string(), 8),
+                File::Directory(
+                    "a".to_string(),
+                    vec![
+                        File::Data("a1".to_string(), 1),
+                        File::Data("a2".to_string(), 3),
+                    ],
+                ),
+            ],
+        );
+
+        assert_eq!(
+            du_sort(&rootfile),
+            vec![
+                ("a1", 1),
+                ("a2", 3),
+                ("b1", 3),
+                ("a", 4),
+                ("c", 8),
+                ("b2", 15),
+                ("b", 18),
+                ("root", 1 + 3 + 3 + 15 + 8)
+            ]
+        );
+
+        let rootfile = File::Directory(
+            "root".to_string(),
+            vec![
+                File::Directory(
                     "a".to_string(),
                     vec![
                         File::Data("a1".to_string(), 1),
