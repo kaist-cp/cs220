@@ -121,7 +121,7 @@ pub fn sum_is_n(inner: Vec<Vec<i64>>, n: i64) -> usize {
     todo!()
 }
 
-/// Returns a new vector that contains the item that appears `n` times in the input vector.
+/// Returns a new vector that contains the item that appears `n` times in the input vector in increasing order.
 ///
 /// # Example
 ///
