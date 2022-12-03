@@ -1,3 +1,5 @@
+#![allow(deprecated)]
+
 //! Parser.
 
 use super::syntax::*;
