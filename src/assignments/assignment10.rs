@@ -47,7 +47,7 @@ pub enum Node<T> {
 ///
 /// For example, the result of preorder traversal for the following tree
 ///
-/// ```
+/// ```ignore
 ///     1
 ///    /|\
 ///   2 3 4
@@ -57,7 +57,7 @@ pub enum Node<T> {
 ///
 /// which can be represented as
 ///
-/// ```
+/// ```ignore
 /// Node::NonLeaf((
 ///     1,
 ///     vec![

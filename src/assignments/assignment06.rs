@@ -91,7 +91,7 @@ impl Semiring for f64 {
 ///
 /// For example, polynomial `x^2 + 5x + 6` is represented in `Polynomial<u64>` as follows:
 ///
-/// ```
+/// ```ignore
 /// Polynomial {
 ///     coefficients: {
 ///         2: 1,

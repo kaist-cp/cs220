@@ -50,6 +50,8 @@ pub enum MyOption<T> {
 /// Converts an `MyOption<String>` into an `MyOption<usize>`, consuming the original:
 ///
 /// ```
+/// use cs220::assignments::assignment03::{my_map, MyOption};
+///
 /// fn len(s: String) -> usize {
 ///     s.len()
 /// }
@@ -68,6 +70,8 @@ pub fn my_map<T, U, F: FnOnce(T) -> U>(v: MyOption<T>, f: F) -> MyOption<U> {
 /// # Examples
 ///
 /// ```
+/// use cs220::assignments::assignment03::{MyOption, my_and_then};
+///
 /// fn pos_then_to_string(x: isize) -> MyOption<String> {
 ///     if x > 0 {
 ///         MyOption::MySome(x.to_string())
@@ -93,13 +97,13 @@ pub fn my_and_then<T, U, F: FnOnce(T) -> MyOption<U>>(v: MyOption<T>, f: F) -> M
 ///
 /// For example, the following list of seven numbers,
 ///
-/// ```
+/// ```ignore
 /// vec![1, 3, 3, 6, 7, 8, 9]
 /// ```
 ///
 /// has the median of 6, which is the fourth value. And for this data set of eight numbers,
 ///
-/// ```
+/// ```ignore
 /// vec![1, 2, 3, 4, 5, 6, 8, 9]
 /// ```
 ///
@@ -142,13 +146,13 @@ pub fn piglatin(input: String) -> String {
 ///
 /// If the commands are as follows:
 ///
-/// ```
+/// ```ignore
 /// vec!["Add Amir to Engineering", "Add Sally to Sales", "Remove Jeehoon from Sales", "Move Amir from Engineering to Sales"]
 /// ```
 ///
 /// The return value should be:
 ///
-/// ```
+/// ```ignore
 /// ["Sales" -> ["Amir", "Sally"]]
 /// ```
 ///
