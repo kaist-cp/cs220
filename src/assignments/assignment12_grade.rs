@@ -41,4 +41,45 @@ mod test {
             });
         }
     }
+
+    #[test]
+    fn test_scoped_thread_concurrent() {
+        use std::sync::Mutex;
+        use std::thread;
+        use std::time::Duration;
+        let m = Mutex::new(0);
+
+        let (r1, r2) = thread::scope(|s| {
+            use_scoped_thread(
+                s,
+                || {
+                    let mut f = false;
+                    for _ in 0..100 {
+                        let a = m.lock().unwrap();
+                        let b = *a;
+                        drop(a);
+                        thread::sleep(Duration::from_millis(10));
+                        let mut a = m.lock().unwrap();
+                        f = f || *a != b;
+                        *a += 1;
+                    }
+                    f
+                },
+                || {
+                    let mut f = false;
+                    for _ in 0..100 {
+                        let a = m.lock().unwrap();
+                        let b = *a;
+                        drop(a);
+                        thread::sleep(Duration::from_millis(10));
+                        let mut a = m.lock().unwrap();
+                        f = f || *a != b;
+                        *a += 1;
+                    }
+                    f
+                },
+            )
+        });
+        assert!(r1 || r2);
+    }
 }
