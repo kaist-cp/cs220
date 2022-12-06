@@ -1,5 +1,6 @@
 #[cfg(test)]
 mod test {
+    use ntest::timeout;
     use super::super::assignment12::*;
 
     use std::sync::mpsc::channel;
@@ -40,5 +41,44 @@ mod test {
                 assert_eq!(r2, v.windows(2).map(|x| x[0] * x[1]).sum());
             });
         }
+    }
+
+    #[test]
+    #[timeout(5000)]
+    fn test_scoped_thread_concurrent() {
+        use std::sync::Mutex;
+
+        let m = Mutex::new(0);
+        let (r1, r2) = thread::scope(|s| {
+            use_scoped_thread(
+                s,
+                || {
+                    for i in 0..100 {
+                        loop {
+                            let mut a = m.lock().unwrap();
+                            if *a == 2 * i {
+                                *a += 1;
+                                break;
+                            }
+                        }
+                    }
+                    thread::current().id()
+                },
+                || {
+                    for i in 0..100 {
+                        loop {
+                            let mut a = m.lock().unwrap();
+                            if *a == 2 * i + 1 {
+                                *a += 1;
+                                break;
+                            }
+                        }
+                    }
+                    thread::current().id()
+                },
+            )
+        });
+
+        assert!(r1 != r2);
     }
 }

@@ -17,7 +17,7 @@ pub fn pong(rx1: &mut Receiver<u32>, tx2: &mut Sender<u32>) -> bool {
     todo!()
 }
 
-/// Executes the given functions (f1, f2) and returns the results.
+/// Executes the given functions (f1, f2) in concurrent and returns the results.
 pub fn use_scoped_thread<'scope, 'env, T1, T2, F1, F2>(
     s: &'scope thread::Scope<'scope, 'env>,
     f1: F1,
