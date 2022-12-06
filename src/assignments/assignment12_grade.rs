@@ -1,7 +1,7 @@
 #[cfg(test)]
 mod test {
-    use ntest::timeout;
     use super::super::assignment12::*;
+    use ntest::timeout;
 
     use std::sync::mpsc::channel;
     use std::thread;
