@@ -196,6 +196,7 @@ mod test {
         assert_eq!(position_median(vec![3, 3, 3]), Some(0));
         assert_eq!(position_median(vec![1, 3, 3, 3]), Some(1));
         assert_eq!(position_median(vec![3, 1, 3, 3]), Some(0));
+        assert_eq!(position_median(vec![3, 1, 5, 3]), Some(0));
         assert_eq!(position_median(vec![1, 3, 3, 6, 7, 8, 9]), Some(3));
         assert_eq!(position_median(vec![1, 2, 3, 4, 5, 6, 8, 9]), Some(4));
     }
