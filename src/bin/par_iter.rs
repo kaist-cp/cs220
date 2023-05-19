@@ -6,7 +6,6 @@ const SIZE: usize = 100_000_000;
 
 fn sequential() {
     let _v = (0..SIZE)
-        .into_iter()
         .filter_map(|x| if x % 2 == 0 { Some(x * 3) } else { None })
         .collect::<Vec<_>>();
 }

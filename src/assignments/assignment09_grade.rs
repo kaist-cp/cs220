@@ -4,19 +4,19 @@ mod test {
 
     #[test]
     fn test_is_fibonacci() {
-        assert_eq!(is_fibonacci([1, 1, 2, 3, 5, 8, 13].into_iter()), true);
-        assert_eq!(is_fibonacci([1, 1, 2, 3, 5, 8, 14].into_iter()), false);
-        assert_eq!(is_fibonacci([2, 4, 6, 10, 16, 26].into_iter()), true);
-        assert_eq!(is_fibonacci([4, 9, 13, 22, 35].into_iter()), true);
-        assert_eq!(is_fibonacci([0, 0, 0, 0, 0].into_iter()), true);
-        assert_eq!(is_fibonacci([1, 1].into_iter()), true);
-        assert_eq!(is_fibonacci([1].into_iter()), true);
-        assert_eq!(is_fibonacci([].into_iter()), true);
+        assert!(is_fibonacci([1, 1, 2, 3, 5, 8, 13].into_iter()));
+        assert!(!is_fibonacci([1, 1, 2, 3, 5, 8, 14].into_iter()));
+        assert!(is_fibonacci([2, 4, 6, 10, 16, 26].into_iter()));
+        assert!(is_fibonacci([4, 9, 13, 22, 35].into_iter()));
+        assert!(is_fibonacci([0, 0, 0, 0, 0].into_iter()));
+        assert!(is_fibonacci([1, 1].into_iter()));
+        assert!(is_fibonacci([1].into_iter()));
+        assert!(is_fibonacci([].into_iter()));
 
-        assert_eq!(is_fibonacci([1, 1, 2, 2, 3, 3].into_iter()), false);
-        assert_eq!(is_fibonacci([0, 0, 0, 0, 1].into_iter()), false);
-        assert_eq!(is_fibonacci([1, 1, 1, 1].into_iter()), false);
-        assert_eq!(is_fibonacci([4, 3, 2, 1].into_iter()), false);
+        assert!(!is_fibonacci([1, 1, 2, 2, 3, 3].into_iter()));
+        assert!(!is_fibonacci([0, 0, 0, 0, 1].into_iter()));
+        assert!(!is_fibonacci([1, 1, 1, 1].into_iter()));
+        assert!(!is_fibonacci([4, 3, 2, 1].into_iter()));
     }
 
     #[test]
@@ -98,7 +98,7 @@ mod test {
                 vec![6, 9, 1, 14, 0, 4, 8, 7, 11, 2, 10, 3, 13, 12, 5].into_iter(),
                 5
             ),
-            ((0 + 1 + 2 + 3 + 4) as f64 / 5.0)
+            ((1 + 2 + 3 + 4) as f64 / 5.0)
         );
     }
 
