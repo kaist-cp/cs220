@@ -148,6 +148,8 @@ Make sure you're capable of using the following development tools:
 
 For details, see <https://gg.kaist.ac.kr/course/12>.
 
+Read the documentation: <https://public.fearless.systems/jeehoon.kang/class/cs220/cs220/>.
+
 
 ### Midterm and final exams (60%)
 
