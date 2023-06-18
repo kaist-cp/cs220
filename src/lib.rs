@@ -21,7 +21,7 @@
 #![deny(variant_size_differences)]
 #![deny(warnings)]
 #![deny(rustdoc::invalid_html_tags)]
-#![deny(rustdoc::missing_doc_code_examples)]
+// #![deny(rustdoc::missing_doc_code_examples)]
 #![deny(missing_docs)]
 #![deny(rustdoc::all)]
 #![deny(unreachable_pub)]

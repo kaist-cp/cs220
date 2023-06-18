@@ -47,7 +47,7 @@ pub enum Node<T> {
 ///
 /// For example, the result of preorder traversal for the following tree
 ///
-/// ```ignore
+/// ```text
 ///     1
 ///    /|\
 ///   2 3 4

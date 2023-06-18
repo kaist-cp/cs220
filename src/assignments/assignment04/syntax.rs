@@ -1,6 +1,6 @@
 //! Syntax.
 
-/// Command of the form "<expression>" or "<var> = <expression>".
+/// Command of the form "{expression}" or "{var} = {expression}".
 #[derive(Debug, Clone, PartialEq)]
 pub struct Command {
     /// Variable (lhs).

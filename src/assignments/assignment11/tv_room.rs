@@ -9,7 +9,7 @@
 //! - Manager can leave the TV room earlier than guests.
 //! - The TV room closes when the last person left the TV room.
 //!
-//! Both `Manager` and `Guest` have 'Rc<Watcher>' as a field, and its reference count indicates the number of people in
+//! Both `Manager` and `Guest` have `Rc<Watcher>` as a field, and its reference count indicates the number of people in
 //! the TV room. When the 'Manager' and 'Guest' object is dropped, it means that the person leaves the TV room.
 //!
 //! Consult the following documentations:

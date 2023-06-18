@@ -158,7 +158,7 @@ pub fn piglatin(input: String) -> String {
 ///
 /// - The result is a map from department to the list of its employees.
 /// - An empty department should not appear in the result.
-/// - There are three commands: "Add <person> to <department>", "Remove <person> from <department>", and "Move <person> from <department> to <department>".
+/// - There are three commands: "Add {person} to {department}", "Remove {person} from {department}", and "Move {person} from {department} to {department}".
 /// - If a command is not executable, then it's ignored.
 /// - There is no space in the name of the person and department.
 ///
