@@ -13,11 +13,14 @@ env:
 jobs:
   rustdoc:
     if: github.repository == 'kaist-cp/cs220'
-    runs-on: self-hosted
+    runs-on: [self-hosted, ubuntu-22.04]
 
     steps:
     - name: Checkout repository
       uses: actions/checkout@v3
+
+    - name: Install Rustup
+      run: if ! command -v rustup &>/dev/null; then (curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y); fi
 
     - name: Install Rust toolchain
       run: rustup update --no-self-update stable
