@@ -13,7 +13,7 @@ env:
 jobs:
   rustdoc:
     if: github.repository == 'kaist-cp/cs220'
-    runs-on: [self-hosted, ubuntu-22.04]
+    runs-on: self-hosted
 
     steps:
     - name: Checkout repository
