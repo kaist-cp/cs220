@@ -1,22 +1,12 @@
 (* Two Way Sort
 
    The following program sorts an array of Boolean values, with False<True.
+   
+   E.g.
+     two_way_sorted [True; False; False; True; False]
+     = [False; False; False; True; True]
 
-   Questions:
-
-   1. Prove safety i.e. the absence of array access out of bounds.
-
-   2. Prove termination.
-
-   3. Prove that array a is sorted after execution of function two_way_sort
-      (using the predicate sorted that is provided).
-
-   4. Show that after execution the array contents is a permutation of its
-      initial contents. Use the library predicate "permut_all" to do so
-      (the corresponding module ArrayPermut is already imported).
-
-      You can refer to the contents of array a at the beginning of the
-      function with notation "a at Init".
+   - Strengthen the invariant to prove correctness.
 *)
 
 module TwoWaySort
@@ -34,15 +24,16 @@ module TwoWaySort
     forall i1 i2: int. 0 <= i1 <= i2 < a.length -> a[i1] << a[i2]
 
   let two_way_sort (a: array bool) : unit
-    ensures { true }
+    ensures { sorted a }
+    ensures { permut_all (old a) a }
   =
-    label Init in
     let ref i = 0 in
     let ref j = length a - 1 in
     while i < j do
+      invariant { 0 <= i /\ j < length a }
       invariant { forall i1: int. 0 <= i1 < i -> a[i1] = False }
       invariant { forall i2: int. j < i2 < length a -> a[i2] = True }
-      invariant { 0 <= i /\ j < length a }
+      invariant { permut_all (old a) a }
       variant { j - i }
       if not a[i] then
         incr i
