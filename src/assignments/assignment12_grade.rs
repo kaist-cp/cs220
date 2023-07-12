@@ -81,4 +81,53 @@ mod test {
 
         assert!(r1 != r2);
     }
+
+    #[test]
+    #[timeout(5000)]
+    fn test_funnel_concurrent() {
+        let (txs, rxs): (Vec<_>, Vec<_>) = (0..10).map(|_| channel::<u32>()).unzip();
+        let (tx, rx) = channel::<u32>();
+        let filter = |x: &u32| x % 2 == 0;
+
+        let thread_txs_rx = thread::spawn(move || {
+            for i in 0..100 {
+                let idx = (i * 7) % 13 * 17 % 10;
+                txs[idx].send(i as u32).unwrap();
+                if i % 2 == 0 {
+                    let x = rx.recv().unwrap();
+                    assert_eq!(x, i as u32);
+                }
+            }
+        });
+        let thread_funnel = spawn_funnel(rxs, tx, filter);
+
+        thread_txs_rx.join().unwrap();
+        thread_funnel.join().unwrap();
+    }
+
+    #[test]
+    #[timeout(5000)]
+    fn test_demux() {
+        let (tx, rx1, rx2) = demux::<u32, _>(|x| x % 2 == 0);
+
+        let thread_tx = thread::spawn(move || {
+            for i in 0..100 {
+                tx.send(i).unwrap();
+            }
+        });
+
+        let thread_rx1 = thread::spawn(move || {
+            let sum: u32 = rx1.iter().sum();
+            assert_eq!(sum, (0..100).filter(|x| x % 2 == 0).sum());
+        });
+
+        let thread_rx2 = thread::spawn(move || {
+            let sum: u32 = rx2.iter().sum();
+            assert_eq!(sum, (0..100).filter(|x| x % 2 != 0).sum());
+        });
+
+        thread_tx.join().unwrap();
+        thread_rx1.join().unwrap();
+        thread_rx2.join().unwrap();
+    }
 }

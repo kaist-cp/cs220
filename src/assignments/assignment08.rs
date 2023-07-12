@@ -47,3 +47,10 @@ impl<T1, T2> Either2<T1, T2> {
         todo!()
     }
 }
+
+/// Returns a moore-machine simulator with given state transition logic `f`.
+///
+/// Consult <https://en.wikipedia.org/wiki/Moore_machine>.
+pub fn fsm<S, I, Is: IntoIterator<Item = I>, F: Fn(&mut S, I)>(f: F) -> impl Fn(S, Is) -> S {
+    |_s: S, _ts: Is| todo!()
+}
