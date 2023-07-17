@@ -165,4 +165,95 @@ mod test {
             .into()
         );
     }
+
+    #[test]
+    fn test_shell() {
+        assert_eq!(
+            parse_shell_command("cat file"),
+            vec!["cat".to_string(), "file".to_string()]
+        );
+        assert_eq!(
+            parse_shell_command("ls 'VirtualBox VMs'"),
+            vec!["ls".to_string(), "VirtualBox VMs".to_string()]
+        );
+        assert_eq!(
+            parse_shell_command("ls VirtualBox' 'VMs"),
+            vec!["ls".to_string(), "VirtualBox VMs".to_string()]
+        );
+        assert_eq!(
+            parse_shell_command("echo once upon a midnight dreary"),
+            vec![
+                "echo".to_string(),
+                "once".to_string(),
+                "upon".to_string(),
+                "a".to_string(),
+                "midnight".to_string(),
+                "dreary".to_string(),
+            ]
+        );
+        assert_eq!(
+            parse_shell_command("echo 'once upon a midnight dreary'"),
+            vec![
+                "echo".to_string(),
+                "once upon a midnight dreary".to_string(),
+            ]
+        );
+    }
+
+    #[test]
+    fn test_json() {
+        use std::collections::HashMap;
+        let json_str = r#"{
+            "name": "John Doe",
+            "age": 30,
+            "city": "New York",
+            "active": true,
+            "address": {
+                "street": "123 Main St",
+                "zipCode": "10001"
+            },
+            "skills": ["Rust", "Python", "JavaScript"],
+            "organization": null
+        }"#;
+        println!("{}", parse_json(json_str).unwrap());
+        assert_eq!(
+            parse_json(json_str),
+            Ok(JsonValue::Object(HashMap::from([
+                (
+                    "name".to_string(),
+                    JsonValue::String("John Doe".to_string())
+                ),
+                ("age".to_string(), JsonValue::Number(30)),
+                (
+                    "city".to_string(),
+                    JsonValue::String("New York".to_string())
+                ),
+                ("active".to_string(), JsonValue::Boolean(true)),
+                (
+                    "address".to_string(),
+                    JsonValue::Object(HashMap::from([
+                        (
+                            "street".to_string(),
+                            JsonValue::String("123 Main St".to_string())
+                        ),
+                        (
+                            "zipCode".to_string(),
+                            JsonValue::String("10001".to_string())
+                        )
+                    ]))
+                ),
+                (
+                    "skills".to_string(),
+                    JsonValue::Array(vec![
+                        JsonValue::String("Rust".to_string()),
+                        JsonValue::String("Python".to_string()),
+                        JsonValue::String("JavaScript".to_string())
+                    ])
+                ),
+                ("organization".to_string(), JsonValue::Null),
+            ])))
+        );
+
+        // TODO: add more tests
+    }
 }

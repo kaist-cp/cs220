@@ -7,6 +7,7 @@
 //! See `assignment03_grade.rs` and `/scripts/grade-03.sh` for the test script.
 
 use std::collections::{HashMap, HashSet};
+use std::fmt;
 
 /// Day of week.
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
@@ -164,5 +165,82 @@ pub fn piglatin(input: String) -> String {
 ///
 /// See the test function for more details.
 pub fn organize(commands: Vec<String>) -> HashMap<String, HashSet<String>> {
+    todo!()
+}
+
+/// Parse the string as a shell command.
+///
+/// Usually, a shell command is whitespace-separated array of strings.
+/// ```text
+/// cat file  -->  ["cat", "file"]
+/// ```
+/// But sometimes, you may want to include whitespaces in each argument.
+/// In that case, you can use quotes.
+/// ```text
+/// ls 'VirtualBox VMs'  -->  ["ls", 'VirtualBox VMs']
+/// ls VirtualBox' 'VMs  -->  ["ls", 'VirtualBox VMs']
+/// ```
+///
+/// For simplicity, you may assume that the string only contains alphanumeric characters, spaces
+/// (" "), and single quotes ("'").
+pub fn parse_shell_command(command: &str) -> Vec<String> {
+    todo!()
+}
+
+/// Represents a JSON value. See https://en.wikipedia.org/wiki/JSON.
+///
+/// For simplicity, you may assume that numbers are of type `i64`, and strings do not contain
+/// special characters that need to be escaped (e.g. '"', '\n', ...).
+#[derive(Debug, PartialEq, Eq)]
+pub enum JsonValue {
+    /// null
+    Null,
+    /// true, false
+    Boolean(bool),
+    /// integers
+    Number(i64),
+    /// strings
+    String(String),
+    /// array of JSON values
+    Array(Vec<JsonValue>),
+    /// objects
+    Object(HashMap<String, JsonValue>),
+}
+
+impl fmt::Display for JsonValue {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+        match self {
+            JsonValue::Null => write!(f, "null"),
+            JsonValue::Boolean(b) => write!(f, "{}", b),
+            JsonValue::Number(n) => write!(f, "{}", n),
+            JsonValue::String(s) => write!(f, "\"{}\"", s),
+            JsonValue::Array(arr) => {
+                write!(f, "[")?;
+                let mut iter = arr.iter();
+                if let Some(item) = iter.next() {
+                    write!(f, "{}", item)?;
+                    for item in iter {
+                        write!(f, ", {}", item)?;
+                    }
+                }
+                write!(f, "]")
+            }
+            JsonValue::Object(obj) => {
+                write!(f, "{{")?;
+                let mut iter = obj.iter();
+                if let Some((key, value)) = iter.next() {
+                    write!(f, "\"{}\": {}", key, value)?;
+                    for (key, value) in iter {
+                        write!(f, ", \"{}\": {}", key, value)?;
+                    }
+                }
+                write!(f, "}}")
+            }
+        }
+    }
+}
+
+/// Parse a string into a JSON value. Returns `Err(())` if it contains syntax errors.
+pub fn parse_json(json_string: &str) -> Result<JsonValue, ()> {
     todo!()
 }

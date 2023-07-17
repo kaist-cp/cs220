@@ -7,6 +7,29 @@
 
 use itertools::*;
 
+struct Pythagorean;
+
+impl Pythagorean {
+    fn new() -> Self {
+        todo!()
+    }
+}
+
+impl Iterator for Pythagorean {
+    type Item = (u64, u64, u64);
+
+    fn next(&mut self) -> Option<Self::Item> {
+        todo!()
+    }
+}
+
+/// Generates sequence of unique [primitive Pythagorean
+/// triples](https://en.wikipedia.org/wiki/Pythagorean_triple), i.e. (a,b,c) such that a² + b² =
+/// c², a and b are coprimes, and a < b. Generate in the increasing order of c.
+pub fn pythagorean() -> impl Iterator<Item = (u64, u64, u64)> {
+    Pythagorean::new()
+}
+
 /// Returns the pairs of `(i, j)` where `i < j` and `inner[i] > inner[j]` in increasing order.
 ///
 /// For example, the inversions of `[3, 5, 1, 2, 4]` is `[(0, 2), (0, 3), (1, 2), (1, 3), (1, 4)]` because as follows:
