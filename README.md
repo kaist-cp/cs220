@@ -14,7 +14,8 @@
 - TA: [Haechan An](https://cp.kaist.ac.kr/haechan.an), [Jungin Rhee](https://cp.kaist.ac.kr/jungin.rhee), [Woojin Lee](https://cp.kaist.ac.kr/woojin.lee)
   + Office Hour: Fri 9:15am-10:15am, Rm. 4432, Bldg. E3-1. If you want to come, do so by 9:30am.  See [below](https://github.com/kaist-cp/cs220#rules) for office hour policy.
     <!-- Fri 9:00am-12:00pm, [Zoom room](https://zoom.us/j/4842624821)(The passcode is same as the class). It is not required, but if you want to come, do so by 9:30am. See [below](#communication) for office hour policy. -->
-
+- **IMPORTANT**: you should not expose your work to others. In particular, you should not fork
+  the [upstream](https://github.com/kaist-cp/cs220) and push there.
 
 
 ## Course description
@@ -97,9 +98,7 @@ Make sure you're capable of using the following development tools:
 
 - [ChatGPT](https://chat.openai.com/) or other LLMs (optional): for your homework.
 
-- Development server
-
-    + <https://cloud.fearless.systems/>
+- [Development server](https://cloud.fearless.systems/)
 
     + **IMPORTANT: Don't try to hack. Don't try to freeze the server. Please be nice.**
 
@@ -152,7 +151,7 @@ Make sure you're capable of using the following development tools:
 
 ### Attendance (?%)
 
-- You should solve a quiz at the [Course Management](https://gg.kaist.ac.kr/course/17) website for each session. **You should answer to the quiz by the end of the day.**
+- You should solve a quiz at the [Course Management](https://gg.kaist.ac.kr/course/17) website for each session. **You should answer the quiz by the end of the day.**
 
 - If you miss a significant number of sessions, you'll automatically get an F.
 
@@ -163,13 +162,13 @@ Make sure you're capable of using the following development tools:
 
 - Make sure you can log in the [lab submission website](https://gg.kaist.ac.kr).
 
-    + Reset your password here: https://gg.kaist.ac.kr/accounts/password_reset/
-      The email address is your `@kaist.ac.kr` address.
+    + Log in with your `kaist-cp-class` account.
 
-    + The id is your student id (e.g., 20071163).
+    + Your id is your `@kaist.ac.kr` email address.
 
-    + Log in with your student id and the new password.
-      If you cannot, please contact the head TA in the chat.
+    + Reset your password here: https://auth.fearless.systems/if/flow/default-recovery-flow/
+
+    + If you cannot log in, please contact the instructor.
 
 ### Rules
 
@@ -177,27 +176,26 @@ Make sure you're capable of using the following development tools:
   [website](https://github.com/kaist-cp/cs220) as well as on the [GitHub issue
   tracker](https://github.com/kaist-cp/cs220/issues).  You are expected to read all
   announcements within 24 hours of their being posted.  It is highly recommended to watch the
-  repository so that new announcements will automatically be delivered to you email address.
+  repository so that new announcements will automatically be delivered to your email address.
 
 - Ask questions on course materials and assignments in [this repository's issue tracker](https://github.com/kaist-cp/cs220/issues).
     + Don't send emails to the instructor or TAs for course materials and assignments.
-    + Before asking a question, search it in Google and Stack Overflow.
-    + Describe your question as detailed as possible. It should include following things:
+    + Before asking a question, search for it in Google and Stack Overflow.
+    + Describe your question in as much detail as possible. It should include the following things:
       * Environment (OS, gcc, g++ version, and any other related program information).
       * Command(s) that you used and the result. Any logs should be formatted in code. Refer to [this](https://guides.github.com/features/mastering-markdown/).
-      * Any directory or file changes you've made. If it is solution file, just describe which part of the code is modified.
+      * Any directory or file changes you've made. If it is the solution file, just describe which part of the code is modified.
       * Googling result. Search before asking, and share the keyword used for searching and what you've learned from it.
     + Give a proper title to your issue.
     + Read [this](https://github.com/kaist-cp/cs220#communication) for more instructions.
 
     + I'm requiring you to ask questions online first for two reasons. First, clearly writing a
-      question is the first step to reach an answer. Second, you can benefit from questions and
-      answers of other students.
+      question is the first step to reaching an answer. Second, you can benefit from the questions and answers of other students.
 
 - Ask your questions via email **only if** they are either confidential or personal. Any questions
    failing to do so (e.g. email questions on course materials) will not be answered.
 
-- We are NOT going to discuss *new* questions during the office hour. Before coming to the office
+- We are NOT going to discuss *new* questions during office hours. Before coming to the office
   hour, please check if there is a similar question on the issue tracker. If there isn't, file a new
   issue and start discussion there. The agenda of the office hour will be the issues that are not
   resolved yet.
@@ -207,8 +205,12 @@ Make sure you're capable of using the following development tools:
   and student number. Any emails failing to do so (e.g. emails without student number) will not be
   answered.
 
-- If you join the session remotely from Zoom (https://kaist.zoom.us/my/jeehoon.kang), 
+- If you join the session remotely from Zoom (https://kaist.zoom.us/my/jeehoon.kang),
   your Zoom name should be `<your student number> <your name>` (e.g., `20071163 강지훈`).
   Change your name by referring to [this](https://support.zoom.us/hc/en-us/articles/201363203-Customizing-your-profile).
 
 - This course is conducted in English. But you may ask questions in Korean. Then I will translate it to English.
+
+## Ignore
+
+1830eaed90e5986c75320daaf131bd3730b8575e866c4e92935a690e7c2a0716
