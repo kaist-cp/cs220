@@ -147,6 +147,9 @@ Make sure you're capable of using the following development tools:
 
 - Your physical apperance is required. If online participation is **absolutely necessary**, we'll use Zoom.
 
+- You'll bring your own laptop. (You can also borrow one from School of Computing Admin Team.)
+  We will use surveillance tools such as [Safe Exam Browser](https://safeexambrowser.org/) to monitor your laptop.
+
 ### Attendance (?%)
 
 - You should solve a quiz at the [Course Management](https://gg.kaist.ac.kr/course/17) website for each session. **You should answer to the quiz by the end of the day.**
