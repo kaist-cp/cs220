@@ -140,7 +140,7 @@ Make sure you're capable of using the following development tools:
 
 ### Midterm and final exams (60%)
 
-- Date & Time: TBA (midterm) and TBA (final), 13:00pm-15:45pm (or shorter, TBA)
+- Date & Time: Oct 18 (midterm) and Dec 13 (final), 13:00pm-15:45pm (or shorter, TBA)
 
 - Place: Rm. 304, Bldg. E11, KAIST
 
