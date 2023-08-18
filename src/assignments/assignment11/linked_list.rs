@@ -1,6 +1,8 @@
 //! Singly linked list.
 //!
-//! Consult <https://doc.rust-lang.org/book/ch15-01-box.html>.
+//! Hint: Consult <https://doc.rust-lang.org/book/ch15-01-box.html>.
+//!
+//! Refer `linked_list_grade.rs` for test cases.
 
 use std::fmt::Debug;
 
