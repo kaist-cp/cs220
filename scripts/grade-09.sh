@@ -9,12 +9,12 @@ BASEDIR=$(dirname "$0")
 source $BASEDIR/grade-utils.sh
 
 RUNNERS=(
-    "cargo"
-    "cargo --release"
-    "cargo_asan"
-    "cargo_asan --release"
-    "cargo_tsan"
-    "cargo_tsan --release"
+	"cargo"
+	"cargo --release"
+	"cargo_asan"
+	"cargo_asan --release"
+	"cargo_tsan"
+	"cargo_tsan --release"
 )
 
 # Lints.
@@ -22,12 +22,12 @@ run_linters || exit 1
 
 # Executes test for each runner.
 for RUNNER in "${RUNNERS[@]}"; do
-    echo "Running with $RUNNER..."
+	echo "Running with $RUNNER..."
 
-    TESTS=("--lib assignment09_grade")
-    if [ $(run_tests) -ne 0 ]; then
-        exit 1
-    fi
+	TESTS=("--lib assignment09")
+	if [ $(run_tests) -ne 0 ]; then
+		exit 1
+	fi
 done
 
 exit 0
