@@ -1,0 +1,29 @@
+(* Max
+
+  Given an array `a` of natural numbers with length `n`, 
+  return the maximum element of the array.
+  
+  You should stengthen the loop invariant.
+  
+*)
+
+module Max
+
+  use int.Int
+  use ref.Ref
+  use array.Array
+
+  let max (a: array int) (n: int) : (max: int)
+    requires { n = length a }
+    requires { forall i. 0 <= i < n -> a[i] >= 0 }
+    ensures  { forall i. 0 <= i < n -> a[i] <= max }
+    ensures { exists i. 0 <= i < n -> a[i] = max }
+  = let ref max = 0 in
+    for i = 0 to n - 1 do
+      (* IMPORTANT: MODIFY ONLY THIS INVARIANT, OR YOU'LL GET ZERO POINTS *)
+      invariant { true (*TODO*) }
+      if max < a[i] then max <- a[i];
+    done;
+    max
+
+end
