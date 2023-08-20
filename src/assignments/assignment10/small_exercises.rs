@@ -1,10 +1,4 @@
-//! Assignment 10: Iterators (2/2).
-//!
-//! The primary goal of this assignment is to get used to iterators.
-//!
-//! You should fill out the `todo!()` placeholders in such a way that `/scripts/grade-10.sh` works fine.
-//! See `assignment10_grade.rs` and `/scripts/grade-10.sh` for the test script.
-
+//! Small exercises.
 use itertools::*;
 
 /// Returns the pairs of `(i, j)` where `i < j` and `inner[i] > inner[j]` in increasing order.
@@ -116,4 +110,84 @@ pub enum File {
 /// Output: `[("a1", 1), ("a2", 3), ("b1", 3), ("a", 4), ("c", 8), ("b2", 15), ("b", 18), ("root", 30)]`
 pub fn du_sort(root: &File) -> Vec<(&str, usize)> {
     todo!()
+}
+
+/// Remove all even numbers inside a vector using the given mutable reference.
+/// That is, you must modify the vector using the given mutable reference instead
+/// of returning a new vector.
+///
+/// # Example
+/// ```
+/// let mut vec = vec![1, 2, 3, 4, 5];
+/// remove_even(&mut vec);
+/// assert_eq!(*vec, vec![1, 3, 5]);
+/// ```
+#[allow(clippy::ptr_arg)]
+pub fn remove_even(inner: &mut Vec<i64>) {
+    todo!()
+}
+
+/// Remove all duplicate occurences of a number inside the array.
+/// That is, if an integer appears more than once, remove some occurences
+/// of it so that it only appears once. Note that you must modify the vector
+/// using the given mutable reference instead of returning a new vector.
+/// Also, note that the order does not matter.
+///
+/// # Example
+/// ```
+/// let mut vec = vec![1, 2, 1, 1, 3, 7, 5, 7];
+/// remove_duplicate(&mut vec);
+/// assert_eq!(*vec, vec![1, 2, 3, 7, 5]);
+/// ```
+#[allow(clippy::ptr_arg)]
+pub fn remove_duplicate(inner: &mut Vec<i64>) {
+    todo!()
+}
+
+/// Returns the natural join of two tables using the first column as the join argument.
+/// That is, for each pair of a row(`Vec<String>`) from table1 and a row(`Vec<String>`) from table2,
+/// if the first element of them are equal, then add all elements of the row from table2
+/// except its first element to the row from table1 and add it to the results.
+/// Note that the order of results does not matter.
+///
+/// # Example
+///
+///        table1                     table2
+/// ----------------------     ----------------------
+///  20230001 |    Jack         20230001 |    CS
+///  20231234 |    Mike         20230001 |    EE
+///                             20231234 |    ME
+///
+///
+///               result
+/// -----------------------------------
+///  20230001 |    Jack   |     CS
+///  20230001 |    Jack   |     EE
+///  20231234 |    Mike   |     ME
+///
+pub fn natural_join(table1: Vec<Vec<String>>, table2: Vec<Vec<String>>) -> Vec<Vec<String>> {
+    todo!()
+}
+
+struct Pythagorean;
+
+impl Pythagorean {
+    fn new() -> Self {
+        todo!()
+    }
+}
+
+impl Iterator for Pythagorean {
+    type Item = (u64, u64, u64);
+
+    fn next(&mut self) -> Option<Self::Item> {
+        todo!()
+    }
+}
+
+/// Generates sequence of unique [primitive Pythagorean
+/// triples](https://en.wikipedia.org/wiki/Pythagorean_triple), i.e. (a,b,c) such that a² + b² =
+/// c², a and b are coprimes, and a < b. Generate in the increasing order of c.
+pub fn pythagorean() -> impl Iterator<Item = (u64, u64, u64)> {
+    Pythagorean::new()
 }

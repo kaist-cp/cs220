@@ -1,6 +1,14 @@
 #[cfg(test)]
 mod test {
-    use super::super::assignment06::*;
+    use super::super::semiring::*;
+    use ntest::assert_about_eq;
+
+    fn test_from_str(s: &str, f: impl Fn(i64) -> i64) {
+        let poly = s.parse::<Polynomial<i64>>().unwrap();
+        for i in 0..10 {
+            assert_eq!(poly.eval(i), f(i));
+        }
+    }
 
     fn test_polynomial<T: Semiring>() {
         // x^2 + 5x + 6
@@ -19,6 +27,43 @@ mod test {
         let value = poly.eval(from_usize(13));
 
         assert_eq!(value, from_usize(13 * 13 + 5 * 13 + 6));
+    }
+
+    #[test]
+    fn test_123() {
+        test_from_str("123", |x| 123);
+    }
+
+    #[test]
+    fn test_x() {
+        test_from_str("x", |x| x);
+    }
+
+    #[test]
+    fn test_24x() {
+        test_from_str("24x", |x| 24 * x);
+    }
+
+    #[test]
+    fn test_2x_3() {
+        test_from_str("2x + 3", |x| 2 * x + 3);
+    }
+
+    #[test]
+    fn test_x3() {
+        test_from_str("x^3", |x| x * x * x);
+    }
+
+    #[test]
+    fn test_2x3_3x2_5x_12() {
+        test_from_str("2x^3 + 3x^2 + 5x + 12", |x| {
+            2 * x * x * x + 3 * x * x + 5 * x + 12
+        });
+    }
+
+    #[test]
+    fn test_x5_1() {
+        test_from_str("x^5 + 1", |x| x * x * x * x * x + 1);
     }
 
     #[test]

@@ -227,6 +227,7 @@ dependencies = [
  "num-traits",
  "pest",
  "pest_derive",
+ "rand",
  "rayon",
  "thiserror",
 ]

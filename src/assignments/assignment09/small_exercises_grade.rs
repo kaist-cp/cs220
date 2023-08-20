@@ -1,6 +1,9 @@
 #[cfg(test)]
 mod test {
-    use super::super::assignment09::*;
+
+    use ntest::{assert_false, assert_true};
+
+    use super::super::small_exercises::*;
 
     #[test]
     fn test_is_fibonacci() {
@@ -69,6 +72,35 @@ mod test {
                 ["g", "h", "i"].into_iter()
             )
             .into_iter()
+            .collect::<String>(),
+            "adgbehcfi"
+        );
+    }
+
+    #[test]
+    fn test_interleave_n() {
+        assert_eq!(
+            interleave_n([[1, 2].into_iter(), [3, 4].into_iter(), [5, 6].into_iter()])
+                .collect::<Vec<_>>(),
+            vec![1, 3, 5, 2, 4, 6]
+        );
+
+        assert_eq!(
+            interleave_n([
+                [1, 2, 3].into_iter(),
+                [4, 5, 6].into_iter(),
+                [7, 8, 9].into_iter()
+            ])
+            .collect::<Vec<_>>(),
+            vec![1, 4, 7, 2, 5, 8, 3, 6, 9]
+        );
+
+        assert_eq!(
+            interleave_n([
+                ["a", "b", "c"].into_iter(),
+                ["d", "e", "f"].into_iter(),
+                ["g", "h", "i"].into_iter()
+            ])
             .collect::<String>(),
             "adgbehcfi"
         );
@@ -199,5 +231,38 @@ mod test {
         assert_eq!(position_median(vec![3, 1, 5, 3]), Some(0));
         assert_eq!(position_median(vec![1, 3, 3, 6, 7, 8, 9]), Some(3));
         assert_eq!(position_median(vec![1, 2, 3, 4, 5, 6, 8, 9]), Some(4));
+    }
+
+    #[test]
+    fn test_two_dimensional_sum() {
+        assert_eq!(
+            two_dimensional_sum([[1, 2, 3].into_iter(), [4, 5, 6].into_iter()].into_iter()),
+            21
+        );
+        assert_eq!(
+            two_dimensional_sum(
+                [
+                    [1, 2, 3, 4, 5].into_iter(),
+                    [10, 20, 30, 40, 50].into_iter()
+                ]
+                .into_iter()
+            ),
+            165
+        );
+    }
+
+    #[test]
+    fn test_is_palindrome() {
+        assert_true!(is_palindrome("kayak".to_string()));
+        assert_true!(is_palindrome("dammitimmad".to_string()));
+        assert_true!(is_palindrome("deified".to_string()));
+        assert_true!(is_palindrome("rotator".to_string()));
+        assert_true!(is_palindrome("noon".to_string()));
+        assert_true!(is_palindrome("".to_string()));
+        assert_true!(is_palindrome("a".to_string()));
+
+        assert_false!(is_palindrome("moon".to_string()));
+        assert_false!(is_palindrome("hello".to_string()));
+        assert_false!(is_palindrome("apple".to_string()));
     }
 }
