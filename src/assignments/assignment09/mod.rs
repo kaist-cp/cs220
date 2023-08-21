@@ -6,7 +6,9 @@
 //! See `assignment09_grade.rs` and `/scripts/grade-09.sh` for the test script.
 
 pub mod bigint;
+pub mod matmul;
 pub mod small_exercises;
 
 mod bigint_grade;
+mod matmul_grade;
 mod small_exercises_grade;
