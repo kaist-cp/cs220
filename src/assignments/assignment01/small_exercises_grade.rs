@@ -1,6 +1,6 @@
 #[cfg(test)]
 mod test {
-    use crate::assignments::assignment01::small_problems::*;
+    use crate::assignments::assignment01::small_exercises::*;
 
     #[test]
     fn test_add_7_3() {

@@ -6,8 +6,8 @@
 //! You should fill out the `todo!()` placeholders in such a way that `/scripts/grade-02.sh` works fine.
 //! See `*_grade.rs` and `/scripts/grade-02.sh` for the test script.
 
-pub mod small_problems;
-mod small_problems_grade;
+pub mod small_exercises;
+mod small_exercises_grade;
 
 pub mod vec_and_mat;
 mod vec_and_mat_grade;

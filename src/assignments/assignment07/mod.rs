@@ -6,13 +6,11 @@
 //! See `assignment07_grade.rs` and `/scripts/grade-07.sh` for the test script.
 
 pub mod generator;
-pub mod hubo;
 pub mod my_itertools;
 pub mod small_exercises;
 pub mod transform;
 
 mod generator_grade;
-mod hubo_grade;
 mod my_itertools_grade;
 mod small_exercises_grade;
 mod transform_grade;

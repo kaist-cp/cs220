@@ -8,9 +8,7 @@
 use std::{collections::HashMap, fmt::Debug};
 
 pub mod semiring;
-pub mod square_matrix;
 pub mod symbolic_differentiation;
 
 mod semiring_grade;
-mod square_matrix_grade;
 mod symbolic_differentiation_grade;

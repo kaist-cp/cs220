@@ -8,5 +8,5 @@
 //!
 //! Hint: <https://doc.rust-lang.org/std/primitive.usize.html>
 
-pub mod small_problems;
-mod small_problems_grade;
+pub mod small_exercises;
+mod small_exercises_grade;

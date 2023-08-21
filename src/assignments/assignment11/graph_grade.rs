@@ -23,9 +23,9 @@ mod test_graph {
         }
 
         let mut graph1 = SubGraph::new();
-        for n in 0..6 {
+        (0..6).for_each(|n| {
             assert!(graph1.add_node(nodes[n].clone()));
-        }
+        });
         assert!(graph1.detect_cycle());
         assert!(!graph1.add_node(nodes[0].clone()));
 
