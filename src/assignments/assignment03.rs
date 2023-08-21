@@ -1,12 +1,10 @@
-//! Assignment 3: Mastering common programming concepts (2/2).
-//!
-//! The primary goal of this assignment is to re-learn the common programming concepts in Rust, especially those in the Rust Book chapters 6, 7, 8, and 9.
-//! Please make sure you're comfortable with the concepts to proceed on to the next assignments.
+//! Assignment 3: Mastering common programming concepts (2/2)
 //!
 //! You should fill out the `todo!()` placeholders in such a way that `/scripts/grade-03.sh` works fine.
 //! See `assignment03_grade.rs` and `/scripts/grade-03.sh` for the test script.
 
 use std::collections::{HashMap, HashSet};
+use std::fmt;
 
 /// Day of week.
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
@@ -165,4 +163,126 @@ pub fn piglatin(input: String) -> String {
 /// See the test function for more details.
 pub fn organize(commands: Vec<String>) -> HashMap<String, HashSet<String>> {
     todo!()
+}
+
+/// Custom operator: `option_op_or(v1, v2, f)`
+/// If neither `v1` nor `v2` is `Some`, returns `None`.
+/// If exactly one is `Some`, returns the same `Some` value.
+/// If both are `Some`, apply the values inside `Some` to `f` and wrap the resulting value inside `Some`.
+///
+/// # Examples
+///
+/// ```
+/// fn product(a: i32, b: i32) -> i32 {
+///     a * b
+/// }
+///
+/// assert_eq!(option_op_or(None, None, product), None);
+/// assert_eq!(option_op_or(Some(3), None, product), Some(3));
+/// assert_eq!(option_op_or(Some(3), Some(5), product), Some(15));
+/// ```
+pub fn option_op_or<T, F: FnOnce(T, T) -> T>(v1: Option<T>, v2: Option<T>, f: F) -> Option<T> {
+    todo!()
+}
+
+/// Events in a text editor.
+#[derive(Debug)]
+pub enum TypeEvent {
+    /// A character is typed.
+    Type(char),
+    /// The last character is removed.
+    Backspace,
+    /// The whole string is copied to the clipboard.
+    Copy,
+    /// The string in the clipboard is appended.
+    Paste,
+}
+
+/// Starting from an empty string and an empty clipboard,
+/// processes the given `events` in order and returns the resulting string.
+///
+/// See the test function `test_editor` for examples.
+pub fn use_editor(events: Vec<TypeEvent>) -> String {
+    todo!()
+}
+
+/// Parse the string as a shell command.
+///
+/// Usually, a shell command is whitespace-separated array of strings.
+/// ```text
+/// cat file  -->  ["cat", "file"]
+/// ```
+/// But sometimes, you may want to include whitespaces in each argument.
+/// In that case, you can use quotes.
+/// ```text
+/// ls 'VirtualBox VMs'  -->  ["ls", 'VirtualBox VMs']
+/// ls VirtualBox' 'VMs  -->  ["ls", 'VirtualBox VMs']
+/// ```
+///
+/// For simplicity, you may assume that the string only contains alphanumeric characters, spaces
+/// (" "), and single quotes ("'").
+///
+/// See `test_shell` for more examples.
+pub fn parse_shell_command(command: &str) -> Vec<String> {
+    todo!()
+}
+
+/// Represents a JSON value. See https://en.wikipedia.org/wiki/JSON.
+///
+/// For simplicity, you may assume that numbers are of type `i64`, and strings do not contain
+/// special characters that need to be escaped (e.g. '"', '\n', ...).
+#[derive(Debug, PartialEq, Eq)]
+pub enum JsonValue {
+    /// null
+    Null,
+    /// true, false
+    Boolean(bool),
+    /// integers
+    Number(i64),
+    /// strings
+    String(String),
+    /// array of JSON values
+    Array(Vec<JsonValue>),
+    /// objects
+    Object(HashMap<String, JsonValue>),
+}
+
+/// Parse a string into a JSON value. Returns `Err(())` if it contains syntax errors.
+///
+/// See `test_json` for examples.
+pub fn parse_json(json_string: &str) -> Result<JsonValue, String> {
+    todo!()
+}
+
+impl fmt::Display for JsonValue {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+        match self {
+            JsonValue::Null => write!(f, "null"),
+            JsonValue::Boolean(b) => write!(f, "{}", b),
+            JsonValue::Number(n) => write!(f, "{}", n),
+            JsonValue::String(s) => write!(f, "\"{}\"", s),
+            JsonValue::Array(arr) => {
+                write!(f, "[")?;
+                let mut iter = arr.iter();
+                if let Some(item) = iter.next() {
+                    write!(f, "{}", item)?;
+                    for item in iter {
+                        write!(f, ", {}", item)?;
+                    }
+                }
+                write!(f, "]")
+            }
+            JsonValue::Object(obj) => {
+                write!(f, "{{")?;
+                let mut iter = obj.iter();
+                if let Some((key, value)) = iter.next() {
+                    write!(f, "\"{}\": {}", key, value)?;
+                    for (key, value) in iter {
+                        write!(f, ", \"{}\": {}", key, value)?;
+                    }
+                }
+                write!(f, "}}")
+            }
+        }
+    }
 }

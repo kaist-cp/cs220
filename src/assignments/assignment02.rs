@@ -135,6 +135,39 @@ pub fn fibonacci(n: u64) -> u64 {
     (FIBONACCI_MAT.power(n) * FIBONACCI_VEC).get_upper()
 }
 
+/// 2x2 floating-point matrix of the following configuration:
+///
+/// a, b
+/// c, d
+#[derive(Debug, Clone, Copy)]
+pub struct FMat2 {
+    /// row 1, column 1
+    pub a: f64,
+    /// row 1, column 2
+    pub b: f64,
+    /// row 2, column 1
+    pub c: f64,
+    /// row 2, column 2
+    pub d: f64,
+}
+
+impl FMat2 {
+    /// Returns the inverse of the given matrix. (We assume the given matrix is always invertible.)
+    /// Hint: https://www.cuemath.com/algebra/inverse-of-2x2-matrix/
+    ///
+    /// # Example
+    ///
+    /// ```
+    /// assert_eq!(
+    ///     Mat2 { a: 1.0, b: 1.0, c: 2.0, d: 3.0 }.inverse(),
+    ///     Mat2 { a: 3.0, b: -1.0, c: -2.0, d: 1.0}
+    /// );
+    /// ```
+    pub fn inverse(self) -> Self {
+        todo!()
+    }
+}
+
 /// Writes down the lyrics of "twelve days of christmas".
 ///
 /// Hint: Google the song title for lyrics and look at the test code for the expected result.
