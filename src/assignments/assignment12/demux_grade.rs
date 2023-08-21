@@ -2,7 +2,7 @@
 
 #[cfg(test)]
 mod test_demux {
-    use super::super::demux::*;
+    use crate::assignments::assignment12::demux::*;
     use ntest::timeout;
 
     use std::sync::mpsc::channel;

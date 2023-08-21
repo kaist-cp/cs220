@@ -1,6 +1,6 @@
 #[cfg(test)]
 mod test {
-    use super::super::symbolic_differentiation::*;
+    use crate::assignments::assignment06::symbolic_differentiation::*;
     use ntest::assert_about_eq;
 
     // Constant rationals to use

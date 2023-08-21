@@ -1,10 +1,7 @@
 //! Assignment 13: Parallelism.
 //!
-//! The primary goal of this assignment is to get used to data parallelism.
-//!
-//! Refer to your solution for assignment 09. You will implement the parallelized version of assignment 09.
-//! You should fill out the `todo!()` placeholders in such a way that `/scripts/grade-13.sh` works fine.
-//! See `assignment13_grade.rs` and `/scripts/grade-13.sh` for the test script.
+//! If you did well on assignment 09, you will do well on this assignment.
+//! Take it easy!
 
 use rayon::prelude::*;
 
@@ -65,6 +62,9 @@ pub fn vec_add_par(lhs: &[f64], rhs: &[f64]) -> Vec<f64> {
 
 /// Parallel dot product of two arrays
 ///
+/// You don't know how to calculate dot product?
+/// See <https://mathinsight.org/dot_product_examples>
+///
 /// # Exmaple
 ///
 /// ```
@@ -81,6 +81,9 @@ pub fn dot_product_par(lhs: &[f64], rhs: &[f64]) -> f64 {
 }
 
 /// Parallel Matrix multiplication
+///
+/// You don't know how to multiply matrix?
+/// Quite simple! See <https://www.mathsisfun.com/algebra/matrix-multiplying.html>
 ///
 /// Assume rhs is transposed
 /// - lhs: (m, n)

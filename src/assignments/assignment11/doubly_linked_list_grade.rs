@@ -2,7 +2,7 @@
 
 #[cfg(test)]
 mod test_doubly_linked_list {
-    use super::super::doubly_linked_list::*;
+    use crate::assignments::assignment11::doubly_linked_list::*;
 
     #[test]
     fn test_works() {

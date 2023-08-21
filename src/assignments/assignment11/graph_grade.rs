@@ -2,7 +2,7 @@
 
 #[cfg(test)]
 mod test_graph {
-    use super::super::graph::*;
+    use crate::assignments::assignment11::graph::*;
 
     #[test]
     fn test_graph() {

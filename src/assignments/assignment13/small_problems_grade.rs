@@ -1,7 +1,7 @@
 #[cfg(test)]
 mod test {
-    use super::super::assignment09::matmul::*;
-    use super::super::assignment13::*;
+    use crate::assignments::assignment09::matmul::*;
+    use crate::assignments::assignment13::small_problems::*;
     use approx::*;
     use itertools::Itertools;
     use ndarray::prelude::*;

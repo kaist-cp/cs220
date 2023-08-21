@@ -1,6 +1,6 @@
 #[cfg(test)]
 mod test {
-    use super::super::assignment08::*;
+    use crate::assignments::assignment08::small_problems::*;
 
     #[test]
     fn test_repeat() {

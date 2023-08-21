@@ -3,7 +3,7 @@ mod test {
     use rand::seq::SliceRandom;
     use rand::thread_rng;
 
-    use super::super::labyrinth::*;
+    use crate::assignments::assignment10::labyrinth::*;
 
     type Wife = usize;
     type Rooms = Vec<Wife>;

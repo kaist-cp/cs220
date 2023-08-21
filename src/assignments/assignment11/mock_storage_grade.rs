@@ -2,7 +2,7 @@
 
 #[cfg(test)]
 mod test_mock_storage {
-    use super::super::mock_storage::*;
+    use crate::assignments::assignment11::mock_storage::*;
 
     #[test]
     fn test_mock_storage() {

@@ -2,7 +2,7 @@
 
 #[cfg(test)]
 mod test_tv_room {
-    use super::super::tv_room::*;
+    use crate::assignments::assignment11::tv_room::*;
 
     #[test]
     fn test_tv_room() {
