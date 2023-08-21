@@ -1,10 +1,14 @@
+(* Pascal
+
+  Prove that the Pascal's triangle indeed computes combinations.
+  HINT: https://en.wikipedia.org/wiki/Pascal%27s_triangle
+*)
+
 module Pascal
   use int.Int
   use ref.Ref
   use array.Array
 
-  (* HINT: https://en.wikipedia.org/wiki/Pascal%27s_triangle *)
-  (* You should understand the Pascal's triangle first to find good invariants *) 
   let rec function comb (n k: int) : int
     requires { 0 <= k <= n }
     variant  { n }
@@ -12,6 +16,7 @@ module Pascal
   = if k = 0 || k = n then 1 else comb (n-1) k + comb (n-1) (k-1)
 
   (* Insert appropriate invariants so that Why3 can verify this function. *)
+  (* You SHOULD understand the Pascal's triangle first to find good invariants. *) 
   let chooses (n : int) : array int
     requires { n > 0 }
     ensures  { forall i: int.
@@ -20,10 +25,12 @@ module Pascal
     let ref row = Array.make 1 1 in
     for r = 1 to n do
       invariant { length row = r }
-      invariant { true (*TODO*) }
+      invariant { forall c: int. 0 <= c < r -> row[c] = comb (r-1) c } 
       let new_row = Array.make (r+1) 1 in
       for c = 1 to r-1 do
-        invariant { true (*TODO*) }
+        (* IMPORTANT: DON'T MODIFY THE ABOVE LINES *)
+        invariant { true (* TODO: Replace `true` with your solution *) }
+        (* IMPORTANT: DON'T MODIFY THE BELOW LINES *)
         new_row[c] <- row[c-1] + row[c]
       done;
       row <- new_row

@@ -31,13 +31,11 @@ module TwoWaySort
     let ref j = length a - 1 in
     while i < j do
       invariant { 0 <= i /\ j < length a }
-      (* IMPORTANT: DON'T MODIFY THE ABOVE LINES *)
       invariant { forall i1: int. 0 <= i1 < i 
-        -> true (* TODO *) }
+        -> true (* TODO: Replace `true` with your solution *) }
       invariant { forall i2: int. j < i2 < length a 
-        -> true (* TODO *) }
-      invariant { true (* TODO *) }
-      (* IMPORTANT: DON'T MODIFY THE BELOW LINES *)
+        -> true (* TODO: Replace `true` with your solution *) }
+      invariant { true (* TODO: Replace `true` with your solution *) }
       variant { j - i }
       if not a[i] then
         incr i
