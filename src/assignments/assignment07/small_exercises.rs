@@ -23,7 +23,7 @@ pub fn find<'s, T: Eq>(query: &'s [T], base: &'s [T]) -> impl 's + Iterator<Item
     }
 }
 
-/// Implement fibonacci iterator
+/// Implement generic fibonacci iterator
 struct FibIter<T> {
     // TODO: remove `_marker` and add necessary fields as you want
     _marker: std::marker::PhantomData<T>,

@@ -79,6 +79,7 @@ pub trait Differentiable: Clone {
     fn diff(&self) -> Self;
 }
 
+/// HINT: Consult <https://en.wikipedia.org/wiki/Differentiation_rules#Constant_term_rule>
 impl Differentiable for Rational {
     fn diff(&self) -> Self {
         todo!()
@@ -115,6 +116,7 @@ impl SingletonPolynomial {
 }
 
 impl Differentiable for SingletonPolynomial {
+    /// HINT: Consult <https://en.wikipedia.org/wiki/Power_rule>
     fn diff(&self) -> Self {
         todo!()
     }
@@ -138,6 +140,7 @@ impl Default for Exp {
 }
 
 impl Differentiable for Exp {
+    /// HINT: Consult <https://en.wikipedia.org/wiki/Differentiation_rules#Derivatives_of_exponential_and_logarithmic_functions>
     fn diff(&self) -> Self {
         todo!()
     }
@@ -173,6 +176,7 @@ impl Trignometric {
 }
 
 impl Differentiable for Trignometric {
+    /// HINT: Consult <https://en.wikipedia.org/wiki/Differentiation_rules#Derivatives_of_trigonometric_functions>
     fn diff(&self) -> Self {
         todo!()
     }
@@ -221,6 +225,7 @@ impl<F: Differentiable> Differentiable for Box<F> {
 }
 
 impl<F: Differentiable> Differentiable for ComplexFuncs<F> {
+    /// HINT: Consult <https://en.wikipedia.org/wiki/Differentiation_rules#Elementary_rules_of_differentiation>
     fn diff(&self) -> Self {
         todo!()
     }

@@ -6,5 +6,5 @@
 //! You should fill out the `todo!()` placeholders in such a way that `/scripts/grade-13.sh` works fine.
 //! See `assignment13_grade.rs` and `/scripts/grade-13.sh` for the test script.
 
-pub mod small_problems;
-mod small_problems_grade;
+pub mod small_exercises;
+mod small_exercises_grade;
