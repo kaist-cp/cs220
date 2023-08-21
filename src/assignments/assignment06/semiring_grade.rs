@@ -1,6 +1,6 @@
 #[cfg(test)]
 mod test {
-    use super::super::semiring::*;
+    use crate::assignments::assignment06::semiring::*;
     use ntest::assert_about_eq;
 
     fn test_from_str(s: &str, f: impl Fn(i64) -> i64) {

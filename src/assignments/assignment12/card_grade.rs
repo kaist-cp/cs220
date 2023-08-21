@@ -2,7 +2,8 @@
 
 #[cfg(test)]
 mod test_card {
-    use super::super::card::*;
+    use crate::assignments::assignment12::card::*;
+
     use std::sync::atomic::{AtomicBool, Ordering};
     use std::sync::{Arc, Barrier, Mutex};
     use std::thread;

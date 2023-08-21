@@ -3,7 +3,7 @@ mod test {
     use itertools::Itertools;
     use ntest::assert_about_eq;
 
-    use super::super::transform::*;
+    use crate::assignments::assignment07::transform::*;
 
     #[test]
     fn test_transform_identity() {

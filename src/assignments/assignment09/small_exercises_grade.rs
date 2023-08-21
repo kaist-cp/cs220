@@ -3,7 +3,7 @@ mod test {
 
     use ntest::{assert_false, assert_true};
 
-    use super::super::small_exercises::*;
+    use crate::assignments::assignment09::small_exercises::*;
 
     #[test]
     fn test_is_fibonacci() {

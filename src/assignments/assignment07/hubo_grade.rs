@@ -3,7 +3,7 @@ mod test {
     use itertools::Itertools;
     use ntest::assert_about_eq;
 
-    use super::super::hubo::*;
+    use crate::assignments::assignment07::hubo::*;
 
     #[test]
     fn test_hubo_dir4_movement() {

@@ -3,7 +3,7 @@ mod test {
     use itertools::Itertools;
     use ntest::assert_about_eq;
 
-    use super::super::my_itertools::*;
+    use crate::assignments::assignment07::my_itertools::*;
 
     #[test]
     fn test_itertools() {

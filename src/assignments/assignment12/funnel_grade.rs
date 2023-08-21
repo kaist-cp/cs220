@@ -2,7 +2,7 @@
 
 #[cfg(test)]
 mod test_funnel {
-    use super::super::funnel::*;
+    use crate::assignments::assignment12::funnel::*;
     use ntest::timeout;
 
     use std::sync::mpsc::channel;

@@ -3,7 +3,7 @@ mod test {
 
     use ntest::{assert_false, assert_true};
 
-    use super::super::bigint::*;
+    use crate::assignments::assignment09::bigint::*;
 
     #[test]
     fn test_inf_prec_simple() {

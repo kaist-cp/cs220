@@ -1,6 +1,6 @@
 #[cfg(test)]
 mod test {
-    use super::super::square_matrix::*;
+    use crate::assignments::assignment06::square_matrix::*;
     use ntest::assert_about_eq;
 
     #[test]

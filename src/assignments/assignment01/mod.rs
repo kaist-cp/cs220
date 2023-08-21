@@ -4,16 +4,9 @@
 //! Please make sure you're comfortable with developing Rust programs before moving on to the next assignments.
 //!
 //! You should fill out `add()` and `sub()` function bodies in such a way that `/scripts/grade-01.sh` works fine.
-//! See `assignment01_grade.rs` and `/scripts/grade-01.sh` for the test script.
+//! See `small_problems_grade.rs` and `/scripts/grade-01.sh` for the test script.
 //!
 //! Hint: <https://doc.rust-lang.org/std/primitive.usize.html>
 
-/// Adds two unsigned words. If overflow happens, just wrap around.
-pub fn add(lhs: usize, rhs: usize) -> usize {
-    todo!()
-}
-
-/// Subtracts two unsigned words. If overflow happens, just wrap around.
-pub fn sub(lhs: usize, rhs: usize) -> usize {
-    todo!()
-}
+pub mod small_problems;
+mod small_problems_grade;

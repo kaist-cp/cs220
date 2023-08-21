@@ -2,7 +2,7 @@
 mod test {
     use std::collections::HashSet;
 
-    use super::super::small_exercises::*;
+    use crate::assignments::assignment10::small_exercises::*;
 
     #[test]
     fn test_inversion() {

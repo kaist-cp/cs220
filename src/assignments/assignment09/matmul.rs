@@ -20,6 +20,9 @@ pub fn vec_add(lhs: &[f64], rhs: &[f64]) -> Vec<f64> {
 
 /// dot product of two arrays
 ///
+/// You don't know how to calculate dot product?
+/// See <https://mathinsight.org/dot_product_examples>
+///
 /// # Exmaple
 ///
 /// ```
@@ -36,6 +39,9 @@ pub fn dot_product(lhs: &[f64], rhs: &[f64]) -> f64 {
 }
 
 /// Matrix multiplication
+///
+/// You don't know how to multiply matrix?
+/// Quite simple! See <https://www.mathsisfun.com/algebra/matrix-multiplying.html>
 ///
 /// Assume rhs is transposed
 /// - lhs: (m, n)
