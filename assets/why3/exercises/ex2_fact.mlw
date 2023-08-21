@@ -39,10 +39,8 @@ module FactLoop
   = let ref m = 0 in
     let ref r = 1 in
     while m < n do
-      (* IMPORTANT: DON'T MODIFY THE ABOVE LINES *) 
-      invariant { true (* TODO *) }
-      variant { n (* TODO *) }
-      (* IMPORTANT: DON'T MODIFY THE BELOW LINES *) 
+      invariant { true (* TODO: Replace `true` with your solution  *) }
+      variant { n (* TODO: Replace `n` with your solution  *) }
       m <- m + 1;
       r <- r * m
     done;

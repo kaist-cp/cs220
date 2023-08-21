@@ -1,6 +1,6 @@
 #[cfg(test)]
 mod test {
-    use super::super::assignment03::*;
+    use crate::assignments::assignment03::small_problems::*;
 
     #[test]
     fn test_next_weekday() {
@@ -11,52 +11,6 @@ mod test {
         assert_eq!(next_weekday(DayOfWeek::Thu), DayOfWeek::Fri);
         assert_eq!(next_weekday(DayOfWeek::Fri), DayOfWeek::Mon);
         assert_eq!(next_weekday(DayOfWeek::Sat), DayOfWeek::Mon);
-    }
-
-    #[test]
-    fn test_my_map() {
-        use MyOption::*;
-
-        fn len(s: &str) -> usize {
-            s.len()
-        }
-
-        fn plus_one(x: isize) -> isize {
-            x + 1
-        }
-
-        fn is_positive(x: f64) -> bool {
-            x > 0.0f64
-        }
-
-        assert_eq!(my_map(MySome("Hello, World!"), len), MySome(13));
-        assert_eq!(my_map(MyNone, len), MyNone);
-
-        assert_eq!(my_map(MySome(1), plus_one), MySome(2));
-        assert_eq!(my_map(MyNone, plus_one), MyNone);
-
-        assert_eq!(my_map(MySome(5.0f64), is_positive), MySome(true));
-        assert_eq!(my_map(MySome(-3.0f64), is_positive), MySome(false));
-        assert_eq!(my_map(MyNone::<f64>, is_positive), MyNone);
-    }
-
-    #[test]
-    fn test_my_and_then() {
-        use MyOption::*;
-
-        fn plus_one(x: isize) -> MyOption<isize> {
-            MySome(x + 1)
-        }
-
-        fn none(_: isize) -> MyOption<isize> {
-            MyNone
-        }
-
-        assert_eq!(my_and_then(MySome(1), plus_one), MySome(2));
-        assert_eq!(my_and_then(MySome(1), none), MyNone);
-
-        assert_eq!(my_and_then(MyNone, plus_one), MyNone);
-        assert_eq!(my_and_then(MyNone, none), MyNone);
     }
 
     #[test]
@@ -166,18 +120,6 @@ mod test {
         );
     }
 
-    fn product(a: i32, b: i32) -> i32 {
-        a * b
-    }
-
-    #[test]
-    fn test_option_op_or() {
-        assert_eq!(option_op_or(None, None, product), None);
-        assert_eq!(option_op_or(Some(3), None, product), Some(3));
-        assert_eq!(option_op_or(None, Some(5), product), Some(5));
-        assert_eq!(option_op_or(Some(3), Some(5), product), Some(15));
-    }
-
     #[test]
     fn test_editor() {
         assert_eq!(
@@ -232,95 +174,6 @@ mod test {
                 TypeEvent::Backspace
             ]),
             ""
-        );
-    }
-
-    #[test]
-    fn test_shell() {
-        assert_eq!(
-            parse_shell_command("cat file"),
-            vec!["cat".to_string(), "file".to_string()]
-        );
-        assert_eq!(
-            parse_shell_command("ls 'VirtualBox VMs'"),
-            vec!["ls".to_string(), "VirtualBox VMs".to_string()]
-        );
-        assert_eq!(
-            parse_shell_command("ls VirtualBox' 'VMs"),
-            vec!["ls".to_string(), "VirtualBox VMs".to_string()]
-        );
-        assert_eq!(
-            parse_shell_command("echo once upon a midnight dreary"),
-            vec![
-                "echo".to_string(),
-                "once".to_string(),
-                "upon".to_string(),
-                "a".to_string(),
-                "midnight".to_string(),
-                "dreary".to_string(),
-            ]
-        );
-        assert_eq!(
-            parse_shell_command("echo 'once upon a midnight dreary'"),
-            vec![
-                "echo".to_string(),
-                "once upon a midnight dreary".to_string(),
-            ]
-        );
-    }
-
-    #[test]
-    fn test_json() {
-        use std::collections::HashMap;
-        let json_str = r#"{
-            "name": "John Doe",
-            "age": 30,
-            "city": "New York",
-            "active": true,
-            "address": {
-                "street": "123 Main St",
-                "zipCode": "10001"
-            },
-            "skills": ["Rust", "Python", "JavaScript"],
-            "organization": null
-        }"#;
-        println!("{}", parse_json(json_str).unwrap());
-        assert_eq!(
-            parse_json(json_str),
-            Ok(JsonValue::Object(HashMap::from([
-                (
-                    "name".to_string(),
-                    JsonValue::String("John Doe".to_string())
-                ),
-                ("age".to_string(), JsonValue::Number(30)),
-                (
-                    "city".to_string(),
-                    JsonValue::String("New York".to_string())
-                ),
-                ("active".to_string(), JsonValue::Boolean(true)),
-                (
-                    "address".to_string(),
-                    JsonValue::Object(HashMap::from([
-                        (
-                            "street".to_string(),
-                            JsonValue::String("123 Main St".to_string())
-                        ),
-                        (
-                            "zipCode".to_string(),
-                            JsonValue::String("10001".to_string())
-                        )
-                    ]))
-                ),
-                (
-                    "skills".to_string(),
-                    JsonValue::Array(vec![
-                        JsonValue::String("Rust".to_string()),
-                        JsonValue::String("Python".to_string()),
-                        JsonValue::String("JavaScript".to_string())
-                    ])
-                ),
-                ("organization".to_string(), JsonValue::Null),
-            ])))
         );
     }
 }

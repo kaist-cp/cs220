@@ -4,7 +4,6 @@
   return the maximum element of the array.
   
   You should stengthen the loop invariant.
-  
 *)
 
 module Max
@@ -20,8 +19,9 @@ module Max
     ensures { exists i. 0 <= i < n -> a[i] = max }
   = let ref max = 0 in
     for i = 0 to n - 1 do
-      (* IMPORTANT: MODIFY ONLY THIS INVARIANT, OR YOU'LL GET ZERO POINTS *)
-      invariant { true (*TODO*) }
+      (* IMPORTANT: DON'T MODIFY THE ABOVE LINES *)
+      invariant { true (* TODO: Replace `true` with your solution *) }
+      (* IMPORTANT: DON'T MODIFY THE BELOW LINES *)
       if max < a[i] then max <- a[i];
     done;
     max
