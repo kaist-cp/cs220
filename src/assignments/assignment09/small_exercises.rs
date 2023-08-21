@@ -1,13 +1,6 @@
-//! Assignment 9: Iterators (1/2).
-//!
-//! The primary goal of this assignment is to get used to iterators.
-//!
-//! You should fill out the `todo!()` placeholders in such a way that `/scripts/grade-09.sh` works fine.
-//! See `assignment09_grade.rs` and `/scripts/grade-09.sh` for the test script.
+//! Small exercises.
 
 use std::collections::HashMap;
-
-use itertools::*;
 
 /// Returns whether the given sequence is a fibonacci sequence starts from the given sequence's first two terms.
 ///
@@ -59,6 +52,27 @@ pub fn interleave3<T>(
     list3: impl Iterator<Item = T>,
 ) -> Vec<T> {
     todo!()
+}
+
+/// Alternate elements from array of n iterators until they have run out.
+///
+/// You can assume that the number of elements of iterators are same.
+///
+/// # Example
+///
+/// ```
+/// use cs220::assignments::assignment09::interleave_n;
+///
+/// assert_eq!(
+///     interleave_n(&mut [[1, 2].into_iter(), [3, 4].into_iter(), [5, 6].into_iter()]),
+///     vec![1, 3, 5, 2, 4, 6]
+/// );
+/// ```
+pub fn interleave_n<T, const N: usize>(
+    mut iters: [impl Iterator<Item = T>; N],
+) -> impl Iterator<Item = T> {
+    todo!();
+    std::iter::empty()
 }
 
 /// Returns mean of k smallest value's mean.
@@ -170,5 +184,28 @@ pub fn find_count_n(inner: Vec<usize>, n: usize) -> Vec<usize> {
 /// assert_eq!(position_median(vec![1, 3, 3, 3]), Some(1));
 /// ```
 pub fn position_median<T: Ord>(inner: Vec<T>) -> Option<usize> {
+    todo!()
+}
+
+/// Returns the sum of all elements in a two-dimensional array.
+///
+/// # Example
+/// ```
+/// assert_eq!(
+///     two_dimensional_sum([[1, 2, 3].into_iter(), [4, 5, 6].into_iter()].into_iter()),
+///     21
+/// );
+/// ```
+pub fn two_dimensional_sum(inner: impl Iterator<Item = impl Iterator<Item = i64>>) -> i64 {
+    todo!()
+}
+
+/// Returns whether the given string is palindrome or not.
+///
+/// A palindrome is a word, number, phrase, or other sequence of characters which reads the same backward as forward.
+/// We consider the empty string is palindrome.
+///
+/// Consult <https://en.wikipedia.org/wiki/Palindrome>.
+pub fn is_palindrome(s: String) -> bool {
     todo!()
 }

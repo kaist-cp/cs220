@@ -1,9 +1,4 @@
-//! Assignment 6: Mastering advanced types (1/2).
-//!
-//! The primary goal of this assignment is to understand generics, traits, and lifetimes.
-//!
-//! You should fill out the `todo!()` placeholders in such a way that `/scripts/grade-06.sh` works fine.
-//! See `assignment06_grade.rs` and `/scripts/grade-06.sh` for the test script.
+//! Semiring
 
 use std::{collections::HashMap, fmt::Debug};
 
@@ -123,12 +118,6 @@ impl<C: Semiring> Semiring for Polynomial<C> {
     }
 }
 
-impl<C: Semiring> From<C> for Polynomial<C> {
-    fn from(value: C) -> Self {
-        todo!()
-    }
-}
-
 impl<C: Semiring> Polynomial<C> {
     /// Constructs polynomial `x`.
     pub fn x() -> Self {
@@ -137,6 +126,43 @@ impl<C: Semiring> Polynomial<C> {
 
     /// Evaluates the polynomial with the given value.
     pub fn eval(&self, value: C) -> C {
+        todo!()
+    }
+
+    /// Constructs polynomial `ax^n`.
+    pub fn term(a: C, n: u64) -> Self {
+        todo!()
+    }
+}
+
+impl<C: Semiring> From<C> for Polynomial<C> {
+    fn from(value: C) -> Self {
+        todo!()
+    }
+}
+
+/// Given a string `s`, parse it into a `Polynomial<C>`.
+/// You may assume that `s` follows the criteria below.
+/// Therefore, you do not have to return `Err`.
+///
+/// Assumptions:
+/// - Each term is separated by ` + `.
+/// - Each term is one of the following form:
+///   `a`, `x`, `ax`, `x^n`, and `ax^n`,
+///   where `a` is a `usize` number and `n` is a `u64` number.
+///   This `a` should then be converted to a `C` type.
+/// - In `a`, it is guaranteed that `a >= 1`.
+/// - In `ax` and `ax^n`, it is guaranteed that `a >= 2`.
+/// - In `x^n` and `ax^n`, it is guaranteed that `n >= 2`.
+/// - All terms have unique degrees.
+///
+/// Consult `assignment06_jaemin_choi_grade.rs` for example valid strings.
+///
+/// Hint: `.split`, `.parse`, and `Polynomial::term`
+impl<C: Semiring> std::str::FromStr for Polynomial<C> {
+    type Err = (); // Ignore this for now...
+
+    fn from_str(s: &str) -> Result<Self, Self::Err> {
         todo!()
     }
 }
