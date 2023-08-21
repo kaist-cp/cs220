@@ -16,5 +16,6 @@
 //! Run `/scripts/prepare-submissions.sh` and submit `/target/assignment04.zip` to <https://gg.kaist.ac.kr>.
 
 pub mod context;
+mod grade;
 pub mod parser;
 pub mod syntax;

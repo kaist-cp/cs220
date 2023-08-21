@@ -6,10 +6,10 @@
 //! See `assignment12_grade.rs` and `/scripts/grade-12.sh` for the test script.
 
 pub mod card;
-pub mod card_grade;
+mod card_grade;
 pub mod demux;
-pub mod demux_grade;
+mod demux_grade;
 pub mod funnel;
-pub mod funnel_grade;
+mod funnel_grade;
 pub mod small_exercises;
-pub mod small_exercises_grade;
+mod small_exercises_grade;
