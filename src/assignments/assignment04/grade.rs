@@ -1,8 +1,7 @@
 #[cfg(test)]
 mod test {
     use crate::assignments::assignment04::syntax::*;
-
-    use super::super::assignment04::*;
+    use crate::assignments::assignment04::*;
 
     #[test]
     fn test_parse() {
