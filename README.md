@@ -146,8 +146,11 @@ Make sure you're capable of using the following development tools:
 
 - Your physical apperance is required. If online participation is **absolutely necessary**, we'll use Zoom.
 
-- You'll bring your own laptop. (You can also borrow one from School of Computing Admin Team.)
-  We will use surveillance tools such as [Safe Exam Browser](https://safeexambrowser.org/) to monitor your laptop.
+- You should bring your own laptop. (You can also borrow one from School of Computing Admin Team.)
+
+- We will use [Safe Exam Browser](https://safeexambrowser.org/) to prevent cheatings.
+  - You should have your laptop configured with Safe Exam Browser before the exam. 
+  - TBA: Details will be announced later. 
 
 ### Attendance (?%)
 
@@ -180,7 +183,7 @@ Make sure you're capable of using the following development tools:
 
 - Ask questions on course materials and assignments in [this repository's issue tracker](https://github.com/kaist-cp/cs220/issues).
     + Don't send emails to the instructor or TAs for course materials and assignments.
-    + Before asking a question, search for it in Google and Stack Overflow.
+    + Before asking a question, ask it to [ChatGPT](https://chat.openai.com/). Or search for it in Google and Stack Overflow.
     + Describe your question in as much detail as possible. It should include the following things:
       * Environment (OS, gcc, g++ version, and any other related program information).
       * Command(s) that you used and the result. Any logs should be formatted in code. Refer to [this](https://guides.github.com/features/mastering-markdown/).
@@ -188,6 +191,7 @@ Make sure you're capable of using the following development tools:
       * Googling result. Search before asking, and share the keyword used for searching and what you've learned from it.
     + Give a proper title to your issue.
     + Read [this](https://github.com/kaist-cp/cs220#communication) for more instructions.
+    + Questions will be answered within 2 days mostly.
 
     + I'm requiring you to ask questions online first for two reasons. First, clearly writing a
       question is the first step to reaching an answer. Second, you can benefit from the questions and answers of other students.
