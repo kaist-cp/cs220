@@ -10,5 +10,3 @@ pub mod small_exercises;
 
 mod church_grade;
 mod small_exercises_grade;
-
-// TODO: add kyeongmin's church encoding asignment
