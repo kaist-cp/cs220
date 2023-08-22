@@ -3,9 +3,7 @@
 //! The primary goal of this assignment is to understand generics, traits, and lifetimes.
 //!
 //! You should fill out the `todo!()` placeholders in such a way that `/scripts/grade-06.sh` works fine.
-//! See `assignment06_grade.rs` and `/scripts/grade-06.sh` for the test script.
-
-use std::{collections::HashMap, fmt::Debug};
+//! See `assignment06/*_grade.rs` and `/scripts/grade-06.sh` for the test script.
 
 pub mod semiring;
 pub mod symbolic_differentiation;

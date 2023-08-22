@@ -3,7 +3,7 @@
 //! The primary goal of this assignment is to understand generics, traits, and lifetimes.
 //!
 //! You should fill out the `todo!()` placeholders in such a way that `/scripts/grade-07.sh` works fine.
-//! See `assignment07_grade.rs` and `/scripts/grade-07.sh` for the test script.
+//! See `assignment07/*_grade.rs` and `/scripts/grade-07.sh` for the test script.
 
 pub mod generator;
 pub mod my_itertools;

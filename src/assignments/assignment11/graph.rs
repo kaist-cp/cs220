@@ -23,6 +23,8 @@ enum VisitStatus {
 /// `NodeHandle` should implement `Clone`, which clones the handle without cloning the underlying
 /// node. That is, there can be multiple handles to the same node.
 /// The user can access the node through a handle if it does not violate Rust's aliasing rules.
+///
+/// TODO: You can freely add fields to this struct.
 #[derive(Debug, Clone)]
 pub struct NodeHandle;
 
@@ -31,6 +33,8 @@ pub struct NodeHandle;
 pub struct GraphError;
 
 /// Subgraph
+///
+/// TODO: You can freely add fields to this struct.
 #[derive(Debug)]
 pub struct SubGraph;
 

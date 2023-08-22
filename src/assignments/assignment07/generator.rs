@@ -9,7 +9,6 @@ enum Yielded<T> {
 }
 
 /// Generator
-/// - kk
 /// - You can call `next()` method to get the next value.
 /// - The generator should stop when it yields `Yielded::Stop`.
 ///

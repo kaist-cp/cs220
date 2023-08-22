@@ -156,7 +156,7 @@ impl<C: Semiring> From<C> for Polynomial<C> {
 /// - In `x^n` and `ax^n`, it is guaranteed that `n >= 2`.
 /// - All terms have unique degrees.
 ///
-/// Consult `assignment06_jaemin_choi_grade.rs` for example valid strings.
+/// Consult `assignment06/grade.rs` for example valid strings.
 ///
 /// Hint: `.split`, `.parse`, and `Polynomial::term`
 impl<C: Semiring> std::str::FromStr for Polynomial<C> {
