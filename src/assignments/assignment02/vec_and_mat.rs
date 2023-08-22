@@ -41,6 +41,7 @@ impl Mat2 {
 impl Mul<Mat2> for Mat2 {
     type Output = Mat2;
 
+    /// Consult <https://www.mathsisfun.com/algebra/matrix-multiplying.html>
     fn mul(self, rhs: Mat2) -> Self::Output {
         todo!()
     }
@@ -50,6 +51,8 @@ impl Mul<Vec2> for Mat2 {
     type Output = Vec2;
 
     /// Multiplies the matrix by the vector.
+    ///
+    /// Consult <https://www.mathsisfun.com/algebra/matrix-multiplying.html>
     fn mul(self, rhs: Vec2) -> Self::Output {
         todo!()
     }
@@ -105,7 +108,7 @@ pub struct FMat2 {
 
 impl FMat2 {
     /// Returns the inverse of the given matrix. (We assume the given matrix is always invertible.)
-    /// HINT: https://www.mathcentre.ac.uk/resources/uploaded/sigma-matrices7-2009-1.pdf
+    /// HINT: <https://www.mathcentre.ac.uk/resources/uploaded/sigma-matrices7-2009-1.pdf>
     ///
     /// # Example
     ///

@@ -79,8 +79,8 @@ pub trait Differentiable: Clone {
     fn diff(&self) -> Self;
 }
 
-/// HINT: Consult <https://en.wikipedia.org/wiki/Differentiation_rules#Constant_term_rule>
 impl Differentiable for Rational {
+    /// HINT: Consult <https://en.wikipedia.org/wiki/Differentiation_rules#Constant_term_rule>
     fn diff(&self) -> Self {
         todo!()
     }
@@ -122,7 +122,7 @@ impl Differentiable for SingletonPolynomial {
     }
 }
 
-/// Expoential function.
+/// Expoential function.(`e^x`)
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
 pub struct Exp;
 

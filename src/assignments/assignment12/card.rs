@@ -1,6 +1,6 @@
 //! Flipping card game.
 //!
-//! For this assignment, you have to see `play` function in `card_grade.rs` file.
+//! HINT: For this assignment, you have to see `play` function in `card_grade.rs` file.
 //! Multiple threads will be created and they will run as enemy bots(`bot_threads`).
 //! Strategy of the enemy bots is implemented in the closure of the `thread::spawn` function.
 //! Your goal is to beat them so that there are more white cards than blue cards in the ground.

@@ -39,11 +39,8 @@ impl BigInt {
     }
 
     /// Creates a new `BigInt` from a `Vec<u32>`.
-    ///
-    /// # Panic
-    ///
-    /// Panics if `carrier` is empty.
     pub fn new_large(carrier: Vec<u32>) -> Self {
+        assert!(!carrier.is_empty());
         todo!()
     }
 }

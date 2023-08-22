@@ -1,4 +1,5 @@
 //! Small exercises.
+
 use itertools::*;
 
 /// Returns the pairs of `(i, j)` where `i < j` and `inner[i] > inner[j]` in increasing order.
@@ -185,9 +186,8 @@ impl Iterator for Pythagorean {
     }
 }
 
-/// Generates sequence of unique [primitive Pythagorean
-/// triples](https://en.wikipedia.org/wiki/Pythagorean_triple), i.e. (a,b,c) such that a² + b² =
-/// c², a and b are coprimes, and a < b. Generate in the increasing order of c.
+/// Generates sequence of unique [primitive Pythagorean triples](https://en.wikipedia.org/wiki/Pythagorean_triple),
+/// i.e. (a,b,c) such that a² + b² = c², a and b are coprimes, and a < b. Generate in the increasing order of c.
 pub fn pythagorean() -> impl Iterator<Item = (u64, u64, u64)> {
     Pythagorean::new()
 }

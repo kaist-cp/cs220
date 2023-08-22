@@ -1,13 +1,11 @@
 //! Labyrinth
 //!
-//! Look at the [test code](labyrinth_grade.rs) below before you start.
-//! HINT: https://en.wikipedia.org/wiki/100_prisoners_problem
+//! Look at the `labyrinth_grade.rs` below before you start.
+//! HINT: <https://en.wikipedia.org/wiki/100_prisoners_problem>
 //!
 //! NOTE: You will have to implement a probabilistic algorithm, which means, the algorithm can fail
 //! even if you have implemented the solution. We recommend running multiple times (at least 5 times) to check your
 //! solution works well.
-
-#![allow(missing_docs)]
 
 use std::cell::RefCell;
 
