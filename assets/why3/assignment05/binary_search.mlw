@@ -19,4 +19,5 @@ module BinarySearch
   =
     (* IMPORTANT: DON'T MODIFY THE ABOVE LINES *)
     0 (* TODO *)
+    
 end
