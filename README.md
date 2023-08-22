@@ -33,12 +33,13 @@
     + Mathematics (MAS101): proposition statement and proof
     + Programming (CS101): basic programming skills
 
-  Without a proper understanding of these topics, you will likely struggle in this course.
+- Without a proper understanding of these topics, you will likely struggle in this course.
+- In the assignment, for the concepts that don't come out in prerequisite courses, we tried to comment on the relevant resources in the assignment code. Please read them carefully.
 
 
 ### Tools
 
-Make sure you're capable of using the following development tools:
+Make sure that you're capable of using the following development tools:
 
 - [Git](https://git-scm.com/): for downloading the homework skeleton and version-controlling your
   development. If you're not familiar with Git, walk through [this
@@ -97,6 +98,8 @@ Make sure you're capable of using the following development tools:
 - [Visual Studio Code](https://code.visualstudio.com/) (optional): for developing your homework. If you prefer other editors, you're good to go.
 
 - [ChatGPT](https://chat.openai.com/) or other LLMs (optional): for your homework.
+  - In the era of LLM, we believe that it is important to learn how to use AI as a programming partner.
+  - We adjusted the difficulty of homework so that you can challenge using ChatGPT as your programming partner. We checked with ChatGPT version 3.5, and verified that it can be a nice tool. Cooperatie with LLM actively to write skeleton code, explain, and debug.
 
 - [Development server](https://cloud.fearless.systems/)
 
@@ -181,6 +184,7 @@ Make sure you're capable of using the following development tools:
 - Ask questions on course materials and assignments in [this repository's issue tracker](https://github.com/kaist-cp/cs220/issues).
     + Don't send emails to the instructor or TAs for course materials and assignments.
     + Before asking a question, search for it in Google and Stack Overflow.
+    + When creating a new issue, you are going to be asked to fill out a template. Make sure that you fill out the template properly.
     + Describe your question in as much detail as possible. It should include the following things:
       * Environment (OS, gcc, g++ version, and any other related program information).
       * Command(s) that you used and the result. Any logs should be formatted in code. Refer to [this](https://guides.github.com/features/mastering-markdown/).
