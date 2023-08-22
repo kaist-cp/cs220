@@ -98,8 +98,8 @@ Make sure that you're capable of using the following development tools:
 - [Visual Studio Code](https://code.visualstudio.com/) (optional): for developing your homework. If you prefer other editors, you're good to go.
 
 - [ChatGPT](https://chat.openai.com/) or other LLMs (optional): for your homework.
-  - In the era of LLM, we believe that it is important to learn how to use AI as a programming partner.
-  - We adjusted the difficulty of homework so that you can challenge using ChatGPT as your programming partner. We checked with ChatGPT version 3.5, and verified that it can be a nice tool. Cooperatie with LLM actively to write skeleton code, explain, and debug.
+  - In the era of AI, we believe that it is crucial to learn how to wisely use AI in programming.
+  - So we adjusted the difficulty of homework assuming that you'll use ChatGPT 3.5 (or equivalent) to solve it.
 
 - [Development server](https://cloud.fearless.systems/)
 
@@ -183,7 +183,7 @@ Make sure that you're capable of using the following development tools:
 
 - Ask questions on course materials and assignments in [this repository's issue tracker](https://github.com/kaist-cp/cs220/issues).
     + Don't send emails to the instructor or TAs for course materials and assignments.
-    + Before asking a question, search for it in Google and Stack Overflow.
+    + Before asking a question, consult with the issue tracker, Google, Stack Overflow, and LLMs.
     + When creating a new issue, you are going to be asked to fill out a template. Make sure that you fill out the template properly.
     + Describe your question in as much detail as possible. It should include the following things:
       * Environment (OS, gcc, g++ version, and any other related program information).
