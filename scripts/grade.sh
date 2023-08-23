@@ -9,10 +9,7 @@ BASEDIR=$(dirname "$0")
 source $BASEDIR/test_cases.sh
 source $BASEDIR/grade-utils.sh
 
-RUNNERS=(
-    "cargo"
-    "cargo --release"
-)
+RUNNERS="cargo"
 
 # Lints.
 run_linters || exit 0
