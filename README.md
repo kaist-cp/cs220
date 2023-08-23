@@ -33,12 +33,13 @@
     + Mathematics (MAS101): proposition statement and proof
     + Programming (CS101): basic programming skills
 
-  Without a proper understanding of these topics, you will likely struggle in this course.
+- Without a proper understanding of these topics, you will likely struggle in this course.
+- In the assignment, for the concepts that don't come out in prerequisite courses, we tried to comment on the relevant resources in the assignment code. Please read them carefully.
 
 
 ### Tools
 
-Make sure you're capable of using the following development tools:
+Make sure that you're capable of using the following development tools:
 
 - [Git](https://git-scm.com/): for downloading the homework skeleton and version-controlling your
   development. If you're not familiar with Git, walk through [this
@@ -97,6 +98,8 @@ Make sure you're capable of using the following development tools:
 - [Visual Studio Code](https://code.visualstudio.com/) (optional): for developing your homework. If you prefer other editors, you're good to go.
 
 - [ChatGPT](https://chat.openai.com/) or other LLMs (optional): for your homework.
+  - In the era of AI, we believe that it is crucial to learn how to wisely use AI in programming.
+  - So we adjusted the difficulty of homework assuming that you'll use ChatGPT 3.5 (or equivalent) to solve it.
 
 - [Development server](https://cloud.fearless.systems/)
 

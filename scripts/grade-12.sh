@@ -24,7 +24,7 @@ run_linters || exit 1
 for RUNNER in "${RUNNERS[@]}"; do
     echo "Running with $RUNNER..."
 
-    TESTS=("--lib assignment12_grade")
+    TESTS=("--lib assignment12")
     if [ $(run_tests) -ne 0 ]; then
         exit 1
     fi

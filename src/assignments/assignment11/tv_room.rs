@@ -15,6 +15,8 @@
 //! Consult the following documentations:
 //! - <https://doc.rust-lang.org/book/ch15-04-rc.html#rct-the-reference-counted-smart-pointer>
 //! - <https://doc.rust-lang.org/book/ch15-05-interior-mutability.html#having-multiple-owners-of-mutable-data-by-combining-rct-and-refcellt>
+//!
+//! Refer `tv_room_grade.rs` for test cases.
 
 use std::{cell::RefCell, rc::Rc};
 
