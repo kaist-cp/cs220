@@ -9,23 +9,21 @@ BASEDIR=$(dirname "$0")
 source $BASEDIR/test_cases.sh
 source $BASEDIR/grade-utils.sh
 
-RUNNERS="cargo"
+RUNNER="cargo"
 
 # Lints.
 run_linters || exit 0
 
 # Executes test for each runner.
-for RUNNER in "${RUNNERS[@]}"; do
-    echo "Running with $RUNNER..."
-    echo "Below lines will show only failed tests."
+echo "Running with $RUNNER..."
+echo "Below lines will show only failed tests."
 
-    ASSIGNMENT=$(printf "assignment%02d" $1)
-    TEST_NAME=$(printf "TEST%02d" $1)
-    TESTS=$(get_test_cases $TEST_NAME)
+ASSIGNMENT=$(printf "assignment%02d" $1)
+TEST_NAME=$(printf "TEST%02d" $1)
+TESTS=$(get_test_cases $TEST_NAME)
 
-    # Runs tests.
-    SCORE=$(run_tests)
-done
+# Runs tests.
+SCORE=$(run_tests)
 
 echo Your score: ${SCORE}
 
