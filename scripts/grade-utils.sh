@@ -76,19 +76,19 @@ _run_tests_with() {
         exit 1
     fi
 
-    local FAILED=0
-    local NUM_TESTS=$(echo $TESTS | wc -w)
+    local PASSED=0
+    # local NUM_TESTS=$(echo $TESTS | wc -w)
     for TEST in ${TESTS[@]}; do
         local TEST_CMD="$CARGO test $* --lib -- $TEST"
         timeout ${TIMEOUT:-20s} bash -c "$TEST_CMD 2> /dev/null" 1>&2
         case $? in
-            0)   ;;
-            124) echo_err "Test timed out: $TEST_CMD"; FAILED=$((FAILED + 1));;
-            *)   echo_err "Test failed:    $TEST_CMD"; FAILED=$((FAILED + 1));;
+            0)   PASSED=$((PASSED + 1));;
+            124) echo_err "Test timed out: $TEST_CMD";;
+            *)   echo_err "Test failed:    $TEST_CMD";;
         esac
     done
 
-    echo $((NUM_TESTS - FAILED))
+    echo $PASSED
 }
 
 # example: run_tests
