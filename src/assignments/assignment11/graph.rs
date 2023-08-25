@@ -90,7 +90,7 @@ impl SubGraph {
     }
 
     /// Returns true iff the subgraph contains a cycle. Nodes that do not belong to this subgraph
-    /// are ignored. See https://en.wikipedia.org/wiki/Cycle_(graph_theory) for an algorithm.
+    /// are ignored. See <https://en.wikipedia.org/wiki/Cycle_(graph_theory)> for an algorithm.
     pub fn detect_cycle(&self) -> bool {
         todo!()
     }
