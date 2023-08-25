@@ -1,6 +1,8 @@
 //! Mock storage.
 //!
-//! Consult <https://doc.rust-lang.org/book/ch15-05-interior-mutability.html#a-use-case-for-interior-mutability-mock-objects>.
+//! Hint: Consult <https://doc.rust-lang.org/book/ch15-05-interior-mutability.html#a-use-case-for-interior-mutability-mock-objects>.
+//!
+//! Refer `mock_storage_grade.rs` for test cases.
 
 use std::cell::RefCell;
 use std::collections::HashMap;

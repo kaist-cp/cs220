@@ -1,0 +1,49 @@
+(* Two Way Sort
+
+   The following program sorts an array of Boolean values, with False<True.
+   
+   E.g.
+     two_way_sorted [True; False; False; True; False]
+     = [False; False; False; True; True]
+
+   - Strengthen the invariant to prove correctness.
+*)
+
+module TwoWaySort
+
+  use int.Int
+  use bool.Bool
+  use ref.Refint
+  use array.Array
+  use array.ArraySwap
+  use array.ArrayPermut
+
+  predicate (<<) (x y: bool) = x = False \/ y = True
+
+  predicate sorted (a: array bool) =
+    forall i1 i2: int. 0 <= i1 <= i2 < a.length -> a[i1] << a[i2]
+
+  let two_way_sort (a: array bool) : unit
+    ensures { sorted a }
+    ensures { permut_all (old a) a }
+  =
+    let ref i = 0 in
+    let ref j = length a - 1 in
+    while i < j do
+      invariant { 0 <= i /\ j < length a }
+      invariant { forall i1: int. 0 <= i1 < i -> a[i1] = False }
+      invariant { forall i2: int. j < i2 < length a -> a[i2] = True }
+      invariant { permut_all (old a) a }
+      variant { j - i }
+      if not a[i] then
+        incr i
+      else if a[j] then
+        decr j
+      else begin
+        swap a i j;
+        incr i;
+        decr j
+      end
+    done
+
+end

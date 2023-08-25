@@ -1,0 +1,49 @@
+(* Two programs to compute the factorial
+
+   Questions:
+
+   1. In module FactRecursive:
+
+      a. Implement the program that satisfies specification.
+
+   2. In module FactLoop:
+
+      a. Strengthen the invariant to prove correctness of the given implementation.
+
+      b. Select a correct variant to prove the termination.
+     
+*)
+
+module FactRecursive
+
+  use int.Int
+  use int.Fact
+
+  let rec fact_rec (n: int) : int
+    requires { n >= 0 }
+    ensures  { result = fact n }
+    variant { n }
+  = (* IMPORTANT: DON'T MODIFY THE ABOVE LINES *) 
+    0 (*TODO*)
+    
+end
+
+module FactLoop
+
+  use int.Int
+  use int.Fact
+
+  let fact_loop (n: int) : int
+    requires { 0 < n }
+    ensures  { result = fact n }
+  = let ref m = 0 in
+    let ref r = 1 in
+    while m < n do
+      invariant { true (* TODO: Replace `true` with your solution  *) }
+      variant { n (* TODO: Replace `n` with your solution  *) }
+      m <- m + 1;
+      r <- r * m
+    done;
+    r
+
+end

@@ -1,0 +1,30 @@
+(* Euclidean division
+
+   1. Prove correctness of euclideian divison:
+     `division a b` returns an integer `q` such that
+      `a = bq+r` and `0 <= r < b` for some `r`.
+   
+     - You have to strengthen the precondition.
+     - You have to strengthen the loop invariant.
+*)
+
+module Division
+
+  use int.Int
+
+  let division (a b: int) : int
+    requires { a >= 0 }
+    requires { b > 0 }
+    ensures  { exists r: int. a = b * result + r /\ 0 <= r < b }
+  =
+    let ref q = 0 in
+    let ref r = a in
+    while r >= b do
+      invariant { a = b * q + r /\ 0 <= r } 
+      variant { r }
+      q <- q + 1;
+      r <- r - b
+    done;
+    q
+
+end
