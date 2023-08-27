@@ -19,9 +19,9 @@ echo "Running with $RUNNER..."
 if [ $# != 1 ]
   then
     echo "==============================="
-    echo "Invalid number. $# arguments given."
-    echo "Usage: ./grade.sh <test_number>"
-    echo "Example: ./grade.sh 1"
+    echo "Invalid argument."
+    echo "Usage: './grade.sh <assignment_number>'"
+    echo "Example: './grade.sh 1' to grade assignment01"
     exit 1
 fi
 TEST_NAME=$(printf "TEST%02d" $1)
@@ -103,7 +103,8 @@ case $TEST_NAME in
         )
         ;;
     *)
-        echo_err "Invalid test name: $TEST_NAME"
+        echo_err "Invalid assignment number: $1"
+	echo_err "Assignment number should be within 1 to 12."
         exit 1
         ;;
 esac
