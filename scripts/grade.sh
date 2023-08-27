@@ -16,6 +16,14 @@ run_linters || exit 1
 # Executes test for each runner.
 echo "Running with $RUNNER..."
 
+if [ $# != 1 ]
+  then
+    echo "==============================="
+    echo "Invalid number. $# arguments given."
+    echo "Usage: ./grade.sh <test_number>"
+    echo "Example: ./grade.sh 1"
+    exit 1
+fi
 TEST_NAME=$(printf "TEST%02d" $1)
 case $TEST_NAME in
     TEST01)
@@ -102,4 +110,5 @@ esac
 
 # Runs tests.
 SCORE=$(run_tests)
-echo Your score: $SCORE
+NUM_TESTS=${#TESTS[@]}
+echo Your score: ${SCORE}/${NUM_TESTS}
