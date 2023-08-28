@@ -139,13 +139,10 @@ Make sure that you're capable of using the following development tools:
 - Submit your solution to <https://gg.kaist.ac.kr/course/17>.
 - **How to submit your assignment:**
   - To submit your solution, you should run `submit.sh` in `scripts` directory. In other words, you should run the following command:
-  ```bash
-  # Run this command at the root directory of this repository.
-  $ ./scripts/submit.sh <assignment_number>
-
-  # E.g. To submit `assignment09`, run the following command:
-  $ ./scripts/submit.sh 9
-  ```
+    ```bash
+    # Run this command at the root directory of this repository.
+    $ ./scripts/submit.sh
+    ```
   - After running the command above, in the `target` directory, you can find a `assignment<NUMBER>.zip` file (`assignment09.zip` for example). Submit this file to <https://gg.kaist.ac.kr/course/17>.
 - Read the documentation at <https://cp.kaist.ac.kr/cs220/cs220/>.
 - You can check your grade of each assignment by running the grading script.

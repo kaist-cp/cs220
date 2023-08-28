@@ -14,6 +14,13 @@
 //! You should fill out the `todo!()` placeholders in such a way that `/scripts/grade.sh 4` works fine.
 //! See `assignment04/grade.rs` and `/scripts/grade.sh 4` for the test script.
 //! Run `/scripts/prepare-submissions.sh` and submit `/target/assignment04.zip` to <https://gg.kaist.ac.kr>.
+//!
+//! To submit, run
+//! ```bash
+//! # At the cs220 home directory,
+//! ./scripts/submit.sh
+//! ```
+//! and submit the generated `assignment04.zip` file in `target` directory.
 
 pub mod context;
 mod grade;

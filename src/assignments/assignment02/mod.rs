@@ -5,6 +5,13 @@
 //!
 //! You should fill out the `todo!()` placeholders in such a way that `/scripts/grade.sh 2` works fine.
 //! See `assigment02/*_grade.rs` and `/scripts/grade.sh 2` for the test script.
+//!
+//! To submit, run
+//! ```bash
+//! # At the cs220 home directory,
+//! ./scripts/submit.sh
+//! ```
+//! and submit the generated `assignment02.zip` file in `target` directory.
 
 pub mod small_exercises;
 mod small_exercises_grade;
