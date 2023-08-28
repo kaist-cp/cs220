@@ -30,7 +30,8 @@ body:
         # 1. Related Issue
   - type: input
     attributes:
-      label: >-
+      label: Related Issue
+      description: >-
         Please search to see if a related issue already exists. If so, give me
         the links. If there are multiple issues, please write them all.
       placeholder: 'https://github.com/kaist-cp/cs220/issues/<issue_number>'
@@ -39,32 +40,33 @@ body:
   - type: markdown
     attributes:
       value: |
-        # 2. Interaction with LLM
-  - type: input
+        # 2. Googling Result
+  - type: textarea
     attributes:
-      label: Shared link that can prove your interaction with a LLM.
+      label: Googling Result
       description: >-
-        For instance, if you used ChatGPT, you can upload link like
-        [this](https://help.openai.com/en/articles/7925741-chatgpt-shared-links-faq).
-      placeholder: 'https://chat.openai.com/share/<conversation-ID>'
+        Share the link that looks relavant to your situation. Multiple links are
+        welcomed.
+      placeholder: >-
+        https://stackoverflow.blog/2020/01/20/what-is-rust-and-why-is-it-so-popular/
     validations:
       required: true
   - type: markdown
     attributes:
       value: |
-        # 3. Googling
+        # 3. ChatGPT Result
   - type: input
     attributes:
-      label: Query
-      description: What did you serach for?
-    validations:
-      required: true
-  - type: input
-    attributes:
-      label: Link
-      description: Share the link that looks the most relavant to your situation.
-      placeholder: >-
-        https://stackoverflow.blog/2020/01/20/what-is-rust-and-why-is-it-so-popular/
+      label: ChatGPT Result
+      description: >-
+        Before writing this issue, you should have asked ChatGPT. We want to see
+        how you used ChatGPT for troubleshooting your problem. You can upload
+        link like
+        [this](https://help.openai.com/en/articles/7925741-chatgpt-shared-links-faq).
+        It should contain the history of, including but not limited to, your
+        problem statement, the answer from ChatGPT, and your follow-up
+        questions. There should be at least 3 turns of conversation.
+      placeholder: 'https://chat.openai.com/share/<conversation-ID>'
     validations:
       required: true
   - type: markdown
