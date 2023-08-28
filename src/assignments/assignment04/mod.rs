@@ -11,8 +11,8 @@
 //!
 //! For calculator, just reading `syntax.rs` would suffice for you to understand what to do.
 //!
-//! You should fill out the `todo!()` placeholders in such a way that `/scripts/grade-04.sh` works fine.
-//! See `assignment04/grade.rs` and `/scripts/grade-04.sh` for the test script.
+//! You should fill out the `todo!()` placeholders in such a way that `/scripts/grade.sh 4` works fine.
+//! See `assignment04/grade.rs` and `/scripts/grade.sh 4` for the test script.
 //! Run `/scripts/prepare-submissions.sh` and submit `/target/assignment04.zip` to <https://gg.kaist.ac.kr>.
 
 pub mod context;

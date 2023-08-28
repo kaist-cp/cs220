@@ -2,8 +2,8 @@
 //!
 //! The primary goal of this assignment is to get used to iterators.
 //!
-//! You should fill out the `todo!()` placeholders in such a way that `/scripts/grade-09.sh` works fine.
-//! See `assignment09/*_grade.rs` and `/scripts/grade-09.sh` for the test script.
+//! You should fill out the `todo!()` placeholders in such a way that `/scripts/grade.sh 9` works fine.
+//! See `assignment09/*_grade.rs` and `/scripts/grade.sh 9` for the test script.
 
 pub mod bigint;
 pub mod matmul;

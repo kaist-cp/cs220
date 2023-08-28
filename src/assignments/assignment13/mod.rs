@@ -3,8 +3,8 @@
 //! The primary goal of this assignment is to get used to data parallelism.
 //!
 //! Refer to your solution for assignment 09. You will implement the parallelized version of assignment 09.
-//! You should fill out the `todo!()` placeholders in such a way that `/scripts/grade-13.sh` works fine.
-//! See `assignment13/small_exercises_grade.rs` and `/scripts/grade-13.sh` for the test script.
+//! You should fill out the `todo!()` placeholders in such a way that `/scripts/grade.sh 13` works fine.
+//! See `assignment13/small_exercises_grade.rs` and `/scripts/grade.sh 13` for the test script.
 
 pub mod small_exercises;
 mod small_exercises_grade;

@@ -138,6 +138,15 @@ Make sure that you're capable of using the following development tools:
 - We'll announce **all** assignments before the semester begins.
 - Submit your solution to <https://gg.kaist.ac.kr/course/17>.
 - Read the documentation at <https://cp.kaist.ac.kr/cs220/cs220/>.
+- You can check your grade of each assignment by running the grading script.
+  - You can run the grading script with the following command:
+  ```bash
+  $ ./scripts/grade.sh <assignment_number>
+  ```
+    - E.g. To grade `assignment09`, run the following command:
+      ```bash
+      $ ./scripts/grade.sh 9
+      ```
 - You're **allowed** to use ChatGPT or other LLMs. Instead, you'll solve more problems than previous semesters.
 
 

@@ -6,7 +6,7 @@ use std::ops::*;
 /// Rational number represented by two isize, numerator and denominator.
 ///
 /// Each Rational number should be normalized so that `demoninator` is nonnegative and `numerator` and `demoninator` are coprime.
-/// See [`normalize`] for examples. As a corner case, 0 is represented by Rational { numerator: 0, demoninator: 0 }.
+/// See `normalize` for examples. As a corner case, 0 is represented by Rational { numerator: 0, demoninator: 0 }.
 ///
 /// For "natural use", Rational also overloads standard arithmetic operations, i.e, `+`, `-`, `*`, `/`.
 ///
