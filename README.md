@@ -137,16 +137,25 @@ Make sure that you're capable of using the following development tools:
 
 - We'll announce **all** assignments before the semester begins.
 - Submit your solution to <https://gg.kaist.ac.kr/course/17>.
+- **How to submit your assignment:**
+  - To submit your solution, you should run `submit.sh` in `scripts` directory. In other words, you should run the following command:
+  ```bash
+  # Run this command at the root directory of this repository.
+  $ ./scripts/submit.sh <assignment_number>
+
+  # E.g. To submit `assignment09`, run the following command:
+  $ ./scripts/submit.sh 9
+  ```
+  - After running the command above, in the `target` directory, you can find a `assignment<NUMBER>.zip` file (`assignment09.zip` for example). Submit this file to <https://gg.kaist.ac.kr/course/17>.
 - Read the documentation at <https://cp.kaist.ac.kr/cs220/cs220/>.
 - You can check your grade of each assignment by running the grading script.
   - You can run the grading script with the following command:
   ```bash
   $ ./scripts/grade.sh <assignment_number>
+  
+  # E.g. To grade `assignment09`, run the following command:
+  $ ./scripts/grade.sh 9
   ```
-    - E.g. To grade `assignment09`, run the following command:
-      ```bash
-      $ ./scripts/grade.sh 9
-      ```
 - You're **allowed** to use ChatGPT or other LLMs. Instead, you'll solve more problems than previous semesters.
 
 
