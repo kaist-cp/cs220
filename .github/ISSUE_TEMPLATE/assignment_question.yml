@@ -1,0 +1,81 @@
+name: Question about Assignment
+description: Ask questions about assignment in this format.
+title: '[Assignment #] (SUMMARIZE YOUR QUESTION AS CLEARLY AS POSSIBLE)'
+labels:
+  - question
+assignees:
+  - woojinnn
+  - jirheee
+  - AnHaechan
+body:
+  - type: markdown
+    attributes:
+      value: |
+        # Please read the followings before asking a question:
+        - When you're asking a question, please make sure,
+          - You clarify your questions as clear as possible.
+          - If possible, please make it a yes/no question.
+          - If possible, please summarize your question in one sentence at the beginning of an issue.
+        - If you're asking a question on concepts,
+            - You read the corresponding sections of the slide.
+            - You searched for the concepts using search engines and Wikipedia.
+        - If you're asking a question on Rust programming,
+            - You searched for error messages or any relevant logs using search engines.
+            - Your problem is reproducible in the provided server.  Please describe how others can reproduce your problem.
+            - You paste code, if any, in text with [syntax hightlight](https://docs.github.com/en/github/writing-on-github/creating-and-highlighting-code-blocks). No images.
+            - You paste code, if any, that is minimized as much as possible. Your code should be immediately relevant to your question.
+  - type: markdown
+    attributes:
+      value: |
+        # 1. Related Issue
+  - type: input
+    attributes:
+      label: >-
+        Please search to see if a related issue already exists. If so, give me
+        the links. If there are multiple issues, please write them all.
+      placeholder: 'https://github.com/kaist-cp/cs220/issues/<issue_number>'
+    validations:
+      required: false
+  - type: markdown
+    attributes:
+      value: |
+        # 2. Interaction with LLM
+  - type: input
+    attributes:
+      label: Shared link that can prove your interaction with a LLM.
+      description: >-
+        For instance, if you used ChatGPT, you can upload link like
+        [this](https://help.openai.com/en/articles/7925741-chatgpt-shared-links-faq).
+      placeholder: 'https://chat.openai.com/share/<conversation-ID>'
+    validations:
+      required: true
+  - type: markdown
+    attributes:
+      value: |
+        # 3. Googling
+  - type: input
+    attributes:
+      label: Query
+      description: What did you serach for?
+    validations:
+      required: true
+  - type: input
+    attributes:
+      label: Link
+      description: Share the link that looks the most relavant to your situation.
+      placeholder: >-
+        https://stackoverflow.blog/2020/01/20/what-is-rust-and-why-is-it-so-popular/
+    validations:
+      required: true
+  - type: markdown
+    attributes:
+      value: |
+        # 4. Your question
+  - type: textarea
+    attributes:
+      label: Your question here
+      description: 'Also tell us, what did you expect to happen?'
+      placeholder: YOUR QUESTION HERE
+      render: markdown
+    validations:
+      required: true
