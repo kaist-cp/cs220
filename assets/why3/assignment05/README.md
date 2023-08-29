@@ -3,6 +3,8 @@
 * The primary goal of this assignment is to grasp basic concepts about proving a program's correctness with deductive reasoning.
 
 * You should fill in `TODO`s in three files: `max.mlw`, `binary_search.mlw`, `pascal.mlw`.
+  * You will get PARTIAL SCOREs for each of those three files.
+  * E.g. If `max.mlw` and `binary_search.mlw` get passed, 2 out of 3 points will be given.
 
 * You may use [Why3 in your browser](https://why3.lri.fr/try/). 
   * Clicking `Verify` button at the top will open a panel on the right side.
