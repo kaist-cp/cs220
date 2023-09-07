@@ -78,6 +78,5 @@ body:
       label: Your question here
       description: 'Also tell us, what did you expect to happen?'
       placeholder: YOUR QUESTION HERE
-      render: markdown
     validations:
       required: true
