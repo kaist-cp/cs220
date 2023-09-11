@@ -66,7 +66,7 @@ impl<T: Debug> SinglyLinkedList<T> {
     }
 
     /// Convert the current list into a vector.
-    pub fn as_vec(&self) -> Vec<T> {
+    pub fn into_vec(self) -> Vec<T> {
         todo!()
     }
 
@@ -80,36 +80,7 @@ impl<T: Debug> SinglyLinkedList<T> {
     /// # Examples
     ///
     /// `self`: `[1, 2]`, `f`: `|x| x + 1` ==> `[2, 3]`
-    pub fn map<F: Fn(T) -> T>(&mut self, f: F) {
-        todo!()
-    }
-
-    /// Insert given list `another` at the specified index `idx`.
-    /// If `idx` is out-of-bound of `self`, append `another` at the end of `self`.
-    ///
-    /// # Examples
-    ///
-    /// `self`: `[1, 2]`, `another`: `[3, 4]`, `idx`: `1` ==> `[1, 3, 4, 2]`
-    /// `self`: `[1, 2]`, `another`: `[3, 4]`, `idx`: `5` ==> `[1, 2, 3, 4]`
-    pub fn insert(&mut self, another: &Self, idx: usize) {
-        todo!()
-    }
-
-    /// Reverse the list in a chunk of size `n`.
-    /// If `n == 0`, do nothing.
-    ///
-    /// # Examples
-    ///
-    /// `self`: `[1, 2, 3, 4, 5, 6, 7, 8, 9]`, `n`: `3`
-    /// // each chunk of size `3`: `[1, 2, 3]`, `[4, 5, 6]`, `[7, 8, 9]`
-    /// // reversed sequence of chunks: `[7, 8, 9]`, `[4, 5, 6]`, `[1, 2, 3]`
-    /// ==> `[7, 8, 9, 4, 5, 6, 1, 2, 3]`,
-    ///
-    /// `self`: `[1, 2, 3, 4, 5, 6, 7, 8, 9]`, `n`: `4`
-    /// // each chunk of size `4`: `[1, 2, 3, 4]`, `[5, 6, 7, 8]`, `[9]`
-    /// // reversed sequence of chunks: `[9]`, `[5, 6, 7, 8]`, `[1, 2, 3, 4]`
-    /// ==> `[9, 5, 6, 7, 8, 1, 2, 3, 4]`
-    pub fn chunk_reverse(&mut self, n: usize) {
+    pub fn map<F: Fn(T) -> T>(self, f: F) -> Self {
         todo!()
     }
 
@@ -122,7 +93,10 @@ impl<T: Debug> SinglyLinkedList<T> {
     /// // each adjacent pair of elements: `(1, 2)`, `(2, 3)`, `(3, 4)`
     /// // apply `f` to each pair: `f(1, 2) == 3`, `f(2, 3) == 5`, `f(3, 4) == 7`
     /// ==> `[3, 5, 7]`
-    pub fn pair_map<F: Fn(T, T) -> T>(&mut self, f: F) {
+    pub fn pair_map<F: Fn(T, T) -> T>(self, f: F) -> Self
+    where
+        T: Clone,
+    {
         todo!()
     }
 }
