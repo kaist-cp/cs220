@@ -11,7 +11,7 @@ use std::{iter::zip, ops::*};
 /// For example, the vector `vec![44,345,3]` represents the integer
 /// `44 * (2^32)^2 + 345 * (2^32) + 3`,
 /// and the vector `vec![u32::MAX - 5, u32::MAX - 7]` represents the integer
-/// `- (5 * 2^32 + 8)
+/// `- (5 * 2^32 + 8)`
 ///
 /// You will implement the `Add` and `Sub` trait for this type.
 ///

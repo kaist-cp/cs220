@@ -4,6 +4,13 @@
 //!
 //! You should fill out the `todo!()` placeholders in such a way that `/scripts/grade.sh 9` works fine.
 //! See `assignment09/*_grade.rs` and `/scripts/grade.sh 9` for the test script.
+//!
+//! To submit, run
+//! ```bash
+//! # At the cs220 home directory,
+//! ./scripts/submit.sh
+//! ```
+//! and submit the generated `assignment09.zip` file in `target` directory.
 
 pub mod bigint;
 pub mod matmul;
