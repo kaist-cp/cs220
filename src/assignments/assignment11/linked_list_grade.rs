@@ -53,7 +53,7 @@ mod test_linked_list {
         let vec1 = list1.into_vec();
         assert_eq!(vec1.clone(), vec![3, 5, 7, 9, 11, 13, 15, 17]);
 
-        let list2 =  SinglyLinkedList::from_vec(vec1).pair_map(add);
+        let list2 = SinglyLinkedList::from_vec(vec1).pair_map(add);
         let vec2 = list2.into_vec();
         assert_eq!(vec2.clone(), vec![8, 12, 16, 20, 24, 28, 32]);
 
