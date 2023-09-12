@@ -138,7 +138,22 @@ Make sure that you're capable of using the following development tools:
 
 - We'll announce **all** assignments before the semester begins.
 - Submit your solution to <https://gg.kaist.ac.kr/course/17>.
+- **How to submit your assignment:**
+  - To submit your solution, you should run `submit.sh` in `scripts` directory. In other words, you should run the following command:
+    ```bash
+    # Run this command at the root directory of this repository.
+    $ ./scripts/submit.sh
+    ```
+  - After running the command above, in the `target` directory, you can find a `assignment<NUMBER>.zip` file (`assignment09.zip` for example). Submit this file to <https://gg.kaist.ac.kr/course/17>.
 - Read the documentation at <https://cp.kaist.ac.kr/cs220/cs220/>.
+- You can check your grade of each assignment by running the grading script.
+  - You can run the grading script with the following command:
+  ```bash
+  $ ./scripts/grade.sh <assignment_number>
+  
+  # E.g. To grade `assignment09`, run the following command:
+  $ ./scripts/grade.sh 9
+  ```
 - You're **allowed** to use ChatGPT or other LLMs. Instead, you'll solve more problems than previous semesters.
 
 
@@ -150,8 +165,11 @@ Make sure that you're capable of using the following development tools:
 
 - Your physical apperance is required. If online participation is **absolutely necessary**, we'll use Zoom.
 
-- You'll bring your own laptop. (You can also borrow one from School of Computing Admin Team.)
-  We will use surveillance tools such as [Safe Exam Browser](https://safeexambrowser.org/) to monitor your laptop.
+- You should bring your own laptop. (You can also borrow one from School of Computing Admin Team.)
+
+- We will use [Safe Exam Browser](https://safeexambrowser.org/) to prevent cheatings.
+  - You should have your laptop configured with Safe Exam Browser before the exam. 
+  - TBA: Details will be announced later. 
 
 ### Attendance (?%)
 
@@ -184,8 +202,7 @@ Make sure that you're capable of using the following development tools:
 
 - Ask questions on course materials and assignments in [this repository's issue tracker](https://github.com/kaist-cp/cs220/issues).
     + Don't send emails to the instructor or TAs for course materials and assignments.
-    + Before asking a question, consult with the issue tracker, Google, Stack Overflow, and LLMs.
-    + When creating a new issue, you are going to be asked to fill out a template. Make sure that you fill out the template properly.
+    + Before asking a question, ask it to [ChatGPT](https://chat.openai.com/). Or search for it in Google and Stack Overflow.
     + Describe your question in as much detail as possible. It should include the following things:
       * Environment (OS, gcc, g++ version, and any other related program information).
       * Command(s) that you used and the result. Any logs should be formatted in code. Refer to [this](https://guides.github.com/features/mastering-markdown/).
@@ -193,6 +210,7 @@ Make sure that you're capable of using the following development tools:
       * Googling result. Search before asking, and share the keyword used for searching and what you've learned from it.
     + Give a proper title to your issue.
     + Read [this](https://github.com/kaist-cp/cs220#communication) for more instructions.
+    + Questions will be answered within 2 days mostly.
 
     + I'm requiring you to ask questions online first for two reasons. First, clearly writing a
       question is the first step to reaching an answer. Second, you can benefit from the questions and answers of other students.

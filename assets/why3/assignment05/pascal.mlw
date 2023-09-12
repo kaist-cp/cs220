@@ -10,13 +10,15 @@ module Pascal
   use ref.Ref
   use array.Array
 
+ (* The mathematical combination, defined recursively. *)
   let rec function comb (n k: int) : int
     requires { 0 <= k <= n }
     variant  { n }
     ensures  { result >= 1 }
   = if k = 0 || k = n then 1 else comb (n-1) k + comb (n-1) (k-1)
 
-  (* Insert appropriate invariants so that Why3 can verify this function. *)
+  (* Computes the Pascal's triangle and returns the `n`th row of it. *)
+  (* Insert an appropriate invariant so that Why3 can verify this function. *)
   (* You SHOULD understand the Pascal's triangle first to find good invariants. *) 
   let chooses (n : int) : array int
     requires { n > 0 }
@@ -30,7 +32,7 @@ module Pascal
       let new_row = Array.make (r+1) 1 in
       for c = 1 to r-1 do
         (* IMPORTANT: DON'T MODIFY THE ABOVE LINES *)
-        invariant { true (* TODO: Replace `true` with your solution *) }
+        invariant { true (* TODO: Replace `true` with your solution. Your solution MUST be a single line, at line number 35. DON'T add another lines. *) }
         (* IMPORTANT: DON'T MODIFY THE BELOW LINES *)
         new_row[c] <- row[c-1] + row[c]
       done;

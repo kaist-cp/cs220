@@ -1,9 +1,14 @@
 (* Max
 
-  Given an array `a` of natural numbers with length `n`, 
-  return the maximum element of the array.
+  Given an array `a` of integers with length `n` greater than `0`,
+  return `max_idx`, the index of the maximum element of that array.
   
-  You should stengthen the loop invariant.
+  E.g. `max_idx [5, 12, 34, 10] 4` will return `2`
+  E.g. `max_idx [4, 3, 2] 3` will return `0`
+  E.g. `max_idx [1, 2, 3, 4] 4` will return `3`
+  
+  Prove the below program indeed follows the given specification,
+  by giving an appropriate invariant.
 *)
 
 module Max
@@ -12,18 +17,21 @@ module Max
   use ref.Ref
   use array.Array
 
-  let max (a: array int) (n: int) : (max: int)
+  let max_idx (a: array int) (n: int) : (max_idx: int)
+    requires { length a > 0 }
     requires { n = length a }
-    requires { forall i. 0 <= i < n -> a[i] >= 0 }
-    ensures  { forall i. 0 <= i < n -> a[i] <= max }
-    ensures { exists i. 0 <= i < n -> a[i] = max }
-  = let ref max = 0 in
-    for i = 0 to n - 1 do
+    ensures { 0 <= max_idx <= n-1 }
+    ensures { forall i. 0 <= i <= n-1 -> a[i] <= a[max_idx] }
+  = 
+    let ref max_idx = 0 in
+    for i = 0 to n-1 do
+      invariant { 0 <= max_idx <= n-1 }
       (* IMPORTANT: DON'T MODIFY THE ABOVE LINES *)
-      invariant { true (* TODO: Replace `true` with your solution *) }
+      invariant { true (* TODO: Replace `true` with your solution. Your solution MUST be a single line, at line number 30. DON'T add another line of codes. *) }
       (* IMPORTANT: DON'T MODIFY THE BELOW LINES *)
-      if max < a[i] then max <- a[i];
+      if a[max_idx] < a[i] then max_idx <- i;
     done;
-    max
+    max_idx
 
 end
+
