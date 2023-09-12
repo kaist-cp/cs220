@@ -24,8 +24,7 @@ mod test {
         }
     }
 
-    #[test]
-    fn can_every_husband_rescue_his_wife() {
+    fn can_every_husband_rescue_his_wife() -> bool {
         // HINT: https://en.wikipedia.org/wiki/100_prisoners_problem
         const WIVES: usize = 100;
 
@@ -37,7 +36,7 @@ mod test {
             rooms
         });
 
-        assert!((0..WIVES).all(|his_wife| {
+        (0..WIVES).all(|his_wife| {
             // A new husband steps into the labyrinth to rescue his wife...!
             let husband = Box::new(Husband::seeking(his_wife /*👩*/));
             let strategy = Box::new(husband.has_devised_a_strategy());
@@ -57,6 +56,18 @@ mod test {
                 })
                 .is_some(/* The husband has successfully rescued his wife! 👫*/)
             // or is_none(/* The unfortunate husband has encountered the Minotaur and... 🪓*/)
-        }));
+        })
+    }
+
+    #[test]
+    fn main() {
+        let mut num_success = 0;
+        for _ in 0..10000 {
+            if can_every_husband_rescue_his_wife() {
+                num_success += 1
+            }
+        }
+
+        assert!(num_success > 3000)
     }
 }
