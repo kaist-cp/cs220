@@ -9,9 +9,9 @@ mod test_card {
     use std::thread;
     use std::time::Duration;
 
-    const NUM_CARDS: usize = 10_000;
-    const DURATION: u64 = 1;
-    const NUM_ENEMIES: usize = 100;
+    const NUM_CARDS: usize = 10000;
+    const DURATION: u64 = 20;
+    const NUM_ENEMIES: usize = 25;
 
     #[derive(Clone, Debug)]
     struct Card {
@@ -104,7 +104,7 @@ mod test_card {
                         let idx = init + (cnt % dist);
                         match ground.get_card_color(idx) {
                             Color::White => ground.flip_card(idx, Color::Blue),
-                            Color::Blue => thread::sleep(Duration::from_micros(1)),
+                            Color::Blue => thread::sleep(Duration::from_micros(10)),
                         };
                         cnt += 1;
                     }
