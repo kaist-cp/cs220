@@ -33,7 +33,7 @@ mod test {
 
         let it = || (1..=5).cycle().my_zip((1..=3).cycle()).map(|(x, y)| x * y);
         let take15 = vec![
-            2,  // 1 * 1,
+            1,  // 1 * 1,
             4,  // 2 * 2,
             9,  // 3 * 3,
             4,  // 4 * 1,
