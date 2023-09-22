@@ -80,7 +80,8 @@ _run_tests_with() {
     # local NUM_TESTS=$(echo $TESTS | wc -w)
     for TEST in ${TESTS[@]}; do
         local TEST_CMD="$CARGO test $* --lib -- $TEST"
-        timeout ${TIMEOUT:-20s} bash -c "$TEST_CMD 2> /dev/null" 1>&2
+	# card_game in Assignment12 takes 20 seconds.
+        timeout ${TIMEOUT:-22s} bash -c "$TEST_CMD 2> /dev/null" 1>&2
         case $? in
             0)   PASSED=$((PASSED + 1));;
             124) echo_err "Test timed out: $TEST_CMD";;
