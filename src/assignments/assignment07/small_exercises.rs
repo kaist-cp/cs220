@@ -1,4 +1,4 @@
-//! Implement functions usint `Iterator` trait
+//! Implement functions using `Iterator` trait
 
 struct FindIter<'s, T: Eq> {
     query: &'s [T],
