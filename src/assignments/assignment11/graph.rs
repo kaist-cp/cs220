@@ -84,7 +84,7 @@ impl SubGraph {
         todo!()
     }
 
-    /// Adds a node to the subgraph. Returns true iff the node is successfully removed.
+    /// Removes a node from the subgraph. Returns true iff the node is successfully removed.
     pub fn remove_node(&mut self, node: &NodeHandle) -> bool {
         todo!()
     }
