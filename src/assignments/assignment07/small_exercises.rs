@@ -52,7 +52,7 @@ pub fn fib<T>(first: T, second: T) -> impl Iterator<Item = T>
 where
     T: std::ops::Add<Output = T> + Copy,
 {
-    todo!("replace `std::iter::empty() with your owm implementation`");
+    todo!("replace `std::iter::empty() with your own implementation`");
     std::iter::empty()
 }
 
@@ -86,7 +86,7 @@ impl Iterator for RangeIter {
 
 /// Returns an iterator over the range [left, right) with the given step.
 pub fn range(left: Endpoint, right: Endpoint, step: isize) -> impl Iterator<Item = isize> {
-    todo!("replace `std::iter::empty() with your owm implementation`");
+    todo!("replace `std::iter::empty() with your own implementation`");
     std::iter::empty()
 }
 
