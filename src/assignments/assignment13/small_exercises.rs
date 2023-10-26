@@ -5,6 +5,9 @@
 
 use rayon::prelude::*;
 
+// Use this function if you want.
+use crate::assignments::assignment09::matmul::dot_product;
+
 /// Returns the sum of `f(v)` for all element `v` the given array.
 ///
 /// # Exmaple
