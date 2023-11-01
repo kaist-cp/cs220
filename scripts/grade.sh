@@ -72,6 +72,7 @@ case $TEST_NAME in
     TEST09)
         TESTS=(
             "assignments::assignment09::bigint_grade::test"
+	    "assignments::assignment09::matmul_grade::test"
             "assignments::assignment09::small_exercises_grade::test"
         )
         ;;
