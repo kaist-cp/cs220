@@ -4,7 +4,7 @@ use itertools::*;
 
 /// elementwise vector addition
 ///
-/// # Exmaple
+/// # Example
 ///
 /// ```
 /// use cs220::assignments::assignment09::vec_add;
