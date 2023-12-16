@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"mod":["church","small_exercises"]};
