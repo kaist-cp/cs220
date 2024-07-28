@@ -181,37 +181,22 @@ mod test {
 
     #[test]
     fn test_natural_join() {
-        let row1: Vec<String> = vec!["20230001", "Jack"]
-            .iter()
-            .map(|s| s.to_string())
-            .collect();
-        let row2: Vec<String> = vec!["20231234", "Mike"]
-            .iter()
-            .map(|s| s.to_string())
-            .collect();
+        let row1: Vec<String> = ["20230001", "Jack"].iter().map(|s| s.to_string()).collect();
+        let row2: Vec<String> = ["20231234", "Mike"].iter().map(|s| s.to_string()).collect();
         let table1 = vec![row1, row2];
-        let row1: Vec<String> = vec!["20230001", "CS"]
-            .iter()
-            .map(|s| s.to_string())
-            .collect();
-        let row2: Vec<String> = vec!["20230001", "EE"]
-            .iter()
-            .map(|s| s.to_string())
-            .collect();
-        let row3: Vec<String> = vec!["20231234", "ME"]
-            .iter()
-            .map(|s| s.to_string())
-            .collect();
+        let row1: Vec<String> = ["20230001", "CS"].iter().map(|s| s.to_string()).collect();
+        let row2: Vec<String> = ["20230001", "EE"].iter().map(|s| s.to_string()).collect();
+        let row3: Vec<String> = ["20231234", "ME"].iter().map(|s| s.to_string()).collect();
         let table2 = vec![row1, row2, row3];
-        let row1: Vec<String> = vec!["20230001", "Jack", "CS"]
+        let row1: Vec<String> = ["20230001", "Jack", "CS"]
             .iter()
             .map(|s| s.to_string())
             .collect();
-        let row2: Vec<String> = vec!["20230001", "Jack", "EE"]
+        let row2: Vec<String> = ["20230001", "Jack", "EE"]
             .iter()
             .map(|s| s.to_string())
             .collect();
-        let row3: Vec<String> = vec!["20231234", "Mike", "ME"]
+        let row3: Vec<String> = ["20231234", "Mike", "ME"]
             .iter()
             .map(|s| s.to_string())
             .collect();
@@ -222,61 +207,58 @@ mod test {
             HashSet::<Vec<String>>::from_iter(table3)
         );
 
-        let row1: Vec<String> = vec!["20230001", "Alice"]
+        let row1: Vec<String> = ["20230001", "Alice"]
             .iter()
             .map(|s| s.to_string())
             .collect();
-        let row2: Vec<String> = vec!["20230002", "Bob"]
+        let row2: Vec<String> = ["20230002", "Bob"].iter().map(|s| s.to_string()).collect();
+        let row3: Vec<String> = ["20230003", "Charlie"]
             .iter()
             .map(|s| s.to_string())
             .collect();
-        let row3: Vec<String> = vec!["20230003", "Charlie"]
-            .iter()
-            .map(|s| s.to_string())
-            .collect();
-        let row4: Vec<String> = vec!["20230004", "David"]
+        let row4: Vec<String> = ["20230004", "David"]
             .iter()
             .map(|s| s.to_string())
             .collect();
         let table1 = vec![row1, row2, row3, row4];
-        let row1: Vec<String> = vec!["20230001", "Apple"]
+        let row1: Vec<String> = ["20230001", "Apple"]
             .iter()
             .map(|s| s.to_string())
             .collect();
-        let row2: Vec<String> = vec!["20230001", "Avocado"]
+        let row2: Vec<String> = ["20230001", "Avocado"]
             .iter()
             .map(|s| s.to_string())
             .collect();
-        let row3: Vec<String> = vec!["20230002", "Banana"]
+        let row3: Vec<String> = ["20230002", "Banana"]
             .iter()
             .map(|s| s.to_string())
             .collect();
-        let row4: Vec<String> = vec!["20230002", "Berries"]
+        let row4: Vec<String> = ["20230002", "Berries"]
             .iter()
             .map(|s| s.to_string())
             .collect();
-        let row5: Vec<String> = vec!["20230004", "Durian"]
+        let row5: Vec<String> = ["20230004", "Durian"]
             .iter()
             .map(|s| s.to_string())
             .collect();
         let table2 = vec![row1, row2, row3, row4, row5];
-        let row1: Vec<String> = vec!["20230001", "Alice", "Apple"]
+        let row1: Vec<String> = ["20230001", "Alice", "Apple"]
             .iter()
             .map(|s| s.to_string())
             .collect();
-        let row2: Vec<String> = vec!["20230001", "Alice", "Avocado"]
+        let row2: Vec<String> = ["20230001", "Alice", "Avocado"]
             .iter()
             .map(|s| s.to_string())
             .collect();
-        let row3: Vec<String> = vec!["20230002", "Bob", "Banana"]
+        let row3: Vec<String> = ["20230002", "Bob", "Banana"]
             .iter()
             .map(|s| s.to_string())
             .collect();
-        let row4: Vec<String> = vec!["20230002", "Bob", "Berries"]
+        let row4: Vec<String> = ["20230002", "Bob", "Berries"]
             .iter()
             .map(|s| s.to_string())
             .collect();
-        let row5: Vec<String> = vec!["20230004", "David", "Durian"]
+        let row5: Vec<String> = ["20230004", "David", "Durian"]
             .iter()
             .map(|s| s.to_string())
             .collect();

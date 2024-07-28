@@ -98,7 +98,7 @@ mod test {
 
     #[test]
     fn test_range_iter() {
-        let one_to_tens = vec![
+        let one_to_tens = [
             vec![1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
             range(Endpoint::Inclusive(1), Endpoint::Inclusive(10), 1).collect(),
             range(Endpoint::Exclusive(0), Endpoint::Inclusive(10), 1).collect(),
@@ -107,7 +107,7 @@ mod test {
         ];
         assert!(one_to_tens.iter().all_equal());
 
-        let ten_to_ones = vec![
+        let ten_to_ones = [
             vec![10, 9, 8, 7, 6, 5, 4, 3, 2, 1],
             range(Endpoint::Inclusive(10), Endpoint::Inclusive(1), -1).collect(),
             range(Endpoint::Exclusive(11), Endpoint::Inclusive(1), -1).collect(),
@@ -129,7 +129,7 @@ mod test {
         ];
         assert!(five_evens.iter().all_equal());
 
-        let emptys = vec![
+        let emptys = [
             vec![],
             range(Endpoint::Inclusive(2), Endpoint::Inclusive(10), -1).collect(),
             range(Endpoint::Inclusive(10), Endpoint::Inclusive(-100), 1).collect(),

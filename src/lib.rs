@@ -10,7 +10,6 @@
 #![deny(macro_use_extern_crate)]
 #![deny(missing_debug_implementations)]
 #![deny(non_ascii_idents)]
-#![deny(pointer_structural_match)]
 #![deny(rust_2018_idioms)]
 #![deny(trivial_numeric_casts)]
 // #![deny(unused_crate_dependencies)] // TODO: uncomment
