@@ -6,18 +6,18 @@ edition = "2021"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-anyhow = "1.0.75"
-clap = { version = "4.3.23", features = ["derive"] }
+anyhow = "1.0.86"
+clap = { version = "4.5.11", features = ["derive"] }
 etrace = "1.1.1"
-itertools = "0.11.0"
-lazy_static = "1.4.0"
-pest = "2.7.2"
-pest_derive = "2.7.2"
-rayon = "1.7.0"
-thiserror = "1.0.47"
-ntest = "0.9.0"
+itertools = "0.13.0"
+lazy_static = "1.5.0"
+pest = "2.7.11"
+pest_derive = "2.7.11"
+rayon = "1.10.0"
+thiserror = "1.0.63"
+ntest = "0.9.3"
 approx = "0.5.1"
-num-traits = "0.2.16"
+num-traits = "0.2.19"
 ndarray = "0.15.6"
 ndarray-rand = "0.14.0"
 rand = "0.8.5"

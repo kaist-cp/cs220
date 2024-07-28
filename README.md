@@ -23,6 +23,17 @@
 
 ## Course description
 
+This course will equip you with the programming concepts needed to effectively communicate your ideas to computers. 
+For a detailed overview, please refer to the introduction in the Google Slides presentation.
+
+### Outline
+
+- Part 1: CS101 Review using the Rust programming language
+- Part 2: Type and Correctness
+- Part 3: Reference and Ownership
+- Part 4: Function and Iterator
+- Part 5: Concurrency and Parallelism
+
 ### Textbook
 
 - [Slides](https://docs.google.com/presentation/d/17G3SwkE_tq0H3lTt9N0ysIbHhqDZBfHkoWD5LwwAKSo/edit#slide=id.p)
@@ -41,7 +52,22 @@
 
 ### Schedule
 
-TBA
+- Weak 01: introduction
+- Weak 02: part 1 (CS101 review)
+- Weak 03: part 1 (CS101 review)
+- Weak 04: part 1 (CS101 review)
+- Weak 05: part 2 (type)
+- Weak 06: part 2 (correctness)
+- Weak 07: part 2 (type as automatic verification)
+- Weak 08: mid-term exam
+- Weak 09: part 3 (reference)
+- Weak 10: part 3 (ownership)
+- Weak 11: part 4 (function as a value)
+- Weak 12: part 4 (combinator)
+- Weak 13: part 5 (mutability)
+- Weak 14: part 5 (concurrency)
+- Weak 15: part 5 (parallelism)
+- Weak 16: final exam
 
 
 ### Tools
