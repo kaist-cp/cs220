@@ -1,0 +1,222 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Constructors for n-dimensional arrays with random elements."><title>RandomExt in ndarray_rand - Rust</title><script>if(window.location.protocol!=="file:")document.head.insertAdjacentHTML("beforeend","SourceSerif4-Regular-46f98efaafac5295.ttf.woff2,FiraSans-Regular-018c141bf0843ffd.woff2,FiraSans-Medium-8f9a781e4970d388.woff2,SourceCodePro-Regular-562dcc5011b6de7d.ttf.woff2,SourceCodePro-Semibold-d899c5a5c4aeb14a.ttf.woff2".split(",").map(f=>`<link rel="preload" as="font" type="font/woff2" crossorigin href="../static.files/${f}">`).join(""))</script><link rel="stylesheet" href="../static.files/normalize-76eba96aa4d2e634.css"><link rel="stylesheet" href="../static.files/rustdoc-dd39b87e5fcfba68.css"><meta name="rustdoc-vars" data-root-path="../" data-static-root-path="../static.files/" data-current-crate="ndarray_rand" data-themes="" data-resource-suffix="" data-rustdoc-version="1.80.0 (051478957 2024-07-21)" data-channel="1.80.0" data-search-js="search-d52510db62a78183.js" data-settings-js="settings-4313503d2e1961c2.js" ><script src="../static.files/storage-118b08c4c78b968e.js"></script><script defer src="sidebar-items.js"></script><script defer src="../static.files/main-20a3ad099b048cf2.js"></script><noscript><link rel="stylesheet" href="../static.files/noscript-df360f571f6edeae.css"></noscript><link rel="alternate icon" type="image/png" href="../static.files/favicon-32x32-422f7d1d52889060.png"><link rel="icon" type="image/svg+xml" href="../static.files/favicon-2c020d218678b618.svg"></head><body class="rustdoc trait"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]--><nav class="mobile-topbar"><button class="sidebar-menu-toggle" title="show sidebar"></button></nav><nav class="sidebar"><div class="sidebar-crate"><h2><a href="../ndarray_rand/index.html">ndarray_rand</a><span class="version">0.14.0</span></h2></div><h2 class="location"><a href="#">RandomExt</a></h2><div class="sidebar-elems"><section><h3><a href="#required-methods">Required Methods</a></h3><ul class="block"><li><a href="#tymethod.random">random</a></li><li><a href="#tymethod.random_using">random_using</a></li><li><a href="#tymethod.sample_axis">sample_axis</a></li><li><a href="#tymethod.sample_axis_using">sample_axis_using</a></li></ul><h3><a href="#foreign-impls">Implementations on Foreign Types</a></h3><ul class="block"><li><a href="#impl-RandomExt%3CS,+A,+D%3E-for-ArrayBase%3CS,+D%3E">ArrayBase&lt;S, D&gt;</a></li></ul><h3><a href="#object-safety">Object Safety</a></h3><h3><a href="#implementors">Implementors</a></h3></section><h2><a href="index.html">In crate ndarray_rand</a></h2></div></nav><div class="sidebar-resizer"></div><main><div class="width-limiter"><rustdoc-search></rustdoc-search><section id="main-content" class="content"><div class="main-heading"><h1>Trait <a href="index.html">ndarray_rand</a>::<wbr><a class="trait" href="#">RandomExt</a><button id="copy-path" title="Copy item path to clipboard">Copy item path</button></h1><span class="out-of-band"><a class="src" href="../src/ndarray_rand/lib.rs.html#64-231">source</a> · <button id="toggle-all-docs" title="collapse all docs">[<span>&#x2212;</span>]</button></span></div><pre class="rust item-decl"><code>pub trait RandomExt&lt;S, A, D&gt;<div class="where">where
+    S: <a class="trait" href="../ndarray/data_traits/trait.RawData.html" title="trait ndarray::data_traits::RawData">RawData</a>&lt;Elem = A&gt;,
+    D: <a class="trait" href="../ndarray/dimension/dimension_trait/trait.Dimension.html" title="trait ndarray::dimension::dimension_trait::Dimension">Dimension</a>,</div>{
+    // Required methods
+    fn <a href="#tymethod.random" class="fn">random</a>&lt;Sh, IdS&gt;(shape: Sh, distribution: IdS) -&gt; <a class="struct" href="../ndarray/struct.ArrayBase.html" title="struct ndarray::ArrayBase">ArrayBase</a>&lt;S, D&gt;
+       <span class="where">where IdS: <a class="trait" href="rand_distr/trait.Distribution.html" title="trait ndarray_rand::rand_distr::Distribution">Distribution</a>&lt;S::<a class="associatedtype" href="../ndarray/data_traits/trait.RawData.html#associatedtype.Elem" title="type ndarray::data_traits::RawData::Elem">Elem</a>&gt;,
+             S: <a class="trait" href="../ndarray/data_traits/trait.DataOwned.html" title="trait ndarray::data_traits::DataOwned">DataOwned</a>&lt;Elem = A&gt;,
+             Sh: <a class="trait" href="../ndarray/shape_builder/trait.ShapeBuilder.html" title="trait ndarray::shape_builder::ShapeBuilder">ShapeBuilder</a>&lt;Dim = D&gt;</span>;
+<span class="item-spacer"></span>    fn <a href="#tymethod.random_using" class="fn">random_using</a>&lt;Sh, IdS, R&gt;(
+        shape: Sh,
+        distribution: IdS,
+        rng: <a class="primitive" href="https://doc.rust-lang.org/1.80.0/std/primitive.reference.html">&amp;mut R</a>,
+    ) -&gt; <a class="struct" href="../ndarray/struct.ArrayBase.html" title="struct ndarray::ArrayBase">ArrayBase</a>&lt;S, D&gt;
+       <span class="where">where IdS: <a class="trait" href="rand_distr/trait.Distribution.html" title="trait ndarray_rand::rand_distr::Distribution">Distribution</a>&lt;S::<a class="associatedtype" href="../ndarray/data_traits/trait.RawData.html#associatedtype.Elem" title="type ndarray::data_traits::RawData::Elem">Elem</a>&gt;,
+             R: <a class="trait" href="rand/trait.Rng.html" title="trait ndarray_rand::rand::Rng">Rng</a> + ?<a class="trait" href="https://doc.rust-lang.org/1.80.0/core/marker/trait.Sized.html" title="trait core::marker::Sized">Sized</a>,
+             S: <a class="trait" href="../ndarray/data_traits/trait.DataOwned.html" title="trait ndarray::data_traits::DataOwned">DataOwned</a>&lt;Elem = A&gt;,
+             Sh: <a class="trait" href="../ndarray/shape_builder/trait.ShapeBuilder.html" title="trait ndarray::shape_builder::ShapeBuilder">ShapeBuilder</a>&lt;Dim = D&gt;</span>;
+<span class="item-spacer"></span>    fn <a href="#tymethod.sample_axis" class="fn">sample_axis</a>(
+        &amp;self,
+        axis: <a class="struct" href="../ndarray/dimension/axis/struct.Axis.html" title="struct ndarray::dimension::axis::Axis">Axis</a>,
+        n_samples: <a class="primitive" href="https://doc.rust-lang.org/1.80.0/std/primitive.usize.html">usize</a>,
+        strategy: <a class="enum" href="enum.SamplingStrategy.html" title="enum ndarray_rand::SamplingStrategy">SamplingStrategy</a>,
+    ) -&gt; <a class="type" href="../ndarray/type.Array.html" title="type ndarray::Array">Array</a>&lt;A, D&gt;
+       <span class="where">where A: <a class="trait" href="https://doc.rust-lang.org/1.80.0/core/marker/trait.Copy.html" title="trait core::marker::Copy">Copy</a>,
+             S: <a class="trait" href="../ndarray/data_traits/trait.Data.html" title="trait ndarray::data_traits::Data">Data</a>&lt;Elem = A&gt;,
+             D: <a class="trait" href="../ndarray/dimension/remove_axis/trait.RemoveAxis.html" title="trait ndarray::dimension::remove_axis::RemoveAxis">RemoveAxis</a></span>;
+<span class="item-spacer"></span>    fn <a href="#tymethod.sample_axis_using" class="fn">sample_axis_using</a>&lt;R&gt;(
+        &amp;self,
+        axis: <a class="struct" href="../ndarray/dimension/axis/struct.Axis.html" title="struct ndarray::dimension::axis::Axis">Axis</a>,
+        n_samples: <a class="primitive" href="https://doc.rust-lang.org/1.80.0/std/primitive.usize.html">usize</a>,
+        strategy: <a class="enum" href="enum.SamplingStrategy.html" title="enum ndarray_rand::SamplingStrategy">SamplingStrategy</a>,
+        rng: <a class="primitive" href="https://doc.rust-lang.org/1.80.0/std/primitive.reference.html">&amp;mut R</a>,
+    ) -&gt; <a class="type" href="../ndarray/type.Array.html" title="type ndarray::Array">Array</a>&lt;A, D&gt;
+       <span class="where">where R: <a class="trait" href="rand/trait.Rng.html" title="trait ndarray_rand::rand::Rng">Rng</a> + ?<a class="trait" href="https://doc.rust-lang.org/1.80.0/core/marker/trait.Sized.html" title="trait core::marker::Sized">Sized</a>,
+             A: <a class="trait" href="https://doc.rust-lang.org/1.80.0/core/marker/trait.Copy.html" title="trait core::marker::Copy">Copy</a>,
+             S: <a class="trait" href="../ndarray/data_traits/trait.Data.html" title="trait ndarray::data_traits::Data">Data</a>&lt;Elem = A&gt;,
+             D: <a class="trait" href="../ndarray/dimension/remove_axis/trait.RemoveAxis.html" title="trait ndarray::dimension::remove_axis::RemoveAxis">RemoveAxis</a></span>;
+}</code></pre><details class="toggle top-doc" open><summary class="hideme"><span>Expand description</span></summary><div class="docblock"><p>Constructors for n-dimensional arrays with random elements.</p>
+<p>This trait extends ndarray’s <code>ArrayBase</code> and can not be implemented
+for other types.</p>
+<p>The default RNG is a fast automatically seeded rng (currently
+<a href="rand/rngs/struct.SmallRng.html" title="struct ndarray_rand::rand::rngs::SmallRng"><code>rand::rngs::SmallRng</code></a>, seeded from <a href="rand/fn.thread_rng.html" title="fn ndarray_rand::rand::thread_rng"><code>rand::thread_rng</code></a>).</p>
+<p>Note that <code>SmallRng</code> is cheap to initialize and fast, but it may generate
+low-quality random numbers, and reproducibility is not guaranteed. See its
+documentation for information. You can select a different RNG with
+<a href="#tymethod.random_using"><code>.random_using()</code></a>.</p>
+</div></details><h2 id="required-methods" class="section-header">Required Methods<a href="#required-methods" class="anchor">§</a></h2><div class="methods"><details class="toggle method-toggle" open><summary><section id="tymethod.random" class="method"><a class="src rightside" href="../src/ndarray_rand/lib.rs.html#87-91">source</a><h4 class="code-header">fn <a href="#tymethod.random" class="fn">random</a>&lt;Sh, IdS&gt;(shape: Sh, distribution: IdS) -&gt; <a class="struct" href="../ndarray/struct.ArrayBase.html" title="struct ndarray::ArrayBase">ArrayBase</a>&lt;S, D&gt;<div class="where">where
+    IdS: <a class="trait" href="rand_distr/trait.Distribution.html" title="trait ndarray_rand::rand_distr::Distribution">Distribution</a>&lt;S::<a class="associatedtype" href="../ndarray/data_traits/trait.RawData.html#associatedtype.Elem" title="type ndarray::data_traits::RawData::Elem">Elem</a>&gt;,
+    S: <a class="trait" href="../ndarray/data_traits/trait.DataOwned.html" title="trait ndarray::data_traits::DataOwned">DataOwned</a>&lt;Elem = A&gt;,
+    Sh: <a class="trait" href="../ndarray/shape_builder/trait.ShapeBuilder.html" title="trait ndarray::shape_builder::ShapeBuilder">ShapeBuilder</a>&lt;Dim = D&gt;,</div></h4></section></summary><div class="docblock"><p>Create an array with shape <code>dim</code> with elements drawn from
+<code>distribution</code> using the default RNG.</p>
+<p><em><strong>Panics</strong></em> if creation of the RNG fails or if the number of elements
+overflows usize.</p>
+
+<div class="example-wrap"><pre class="rust rust-example-rendered"><code><span class="kw">use </span>ndarray::Array;
+<span class="kw">use </span>ndarray_rand::RandomExt;
+<span class="kw">use </span>ndarray_rand::rand_distr::Uniform;
+
+<span class="kw">let </span>a = Array::random((<span class="number">2</span>, <span class="number">5</span>), Uniform::new(<span class="number">0.</span>, <span class="number">10.</span>));
+<span class="macro">println!</span>(<span class="string">"{:8.4}"</span>, a);
+<span class="comment">// Example Output:
+// [[  8.6900,   6.9824,   3.8922,   6.5861,   2.4890],
+//  [  0.0914,   5.5186,   5.8135,   5.2361,   3.1879]]</span></code></pre></div>
+</div></details><details class="toggle method-toggle" open><summary><section id="tymethod.random_using" class="method"><a class="src rightside" href="../src/ndarray_rand/lib.rs.html#117-122">source</a><h4 class="code-header">fn <a href="#tymethod.random_using" class="fn">random_using</a>&lt;Sh, IdS, R&gt;(
+    shape: Sh,
+    distribution: IdS,
+    rng: <a class="primitive" href="https://doc.rust-lang.org/1.80.0/std/primitive.reference.html">&amp;mut R</a>,
+) -&gt; <a class="struct" href="../ndarray/struct.ArrayBase.html" title="struct ndarray::ArrayBase">ArrayBase</a>&lt;S, D&gt;<div class="where">where
+    IdS: <a class="trait" href="rand_distr/trait.Distribution.html" title="trait ndarray_rand::rand_distr::Distribution">Distribution</a>&lt;S::<a class="associatedtype" href="../ndarray/data_traits/trait.RawData.html#associatedtype.Elem" title="type ndarray::data_traits::RawData::Elem">Elem</a>&gt;,
+    R: <a class="trait" href="rand/trait.Rng.html" title="trait ndarray_rand::rand::Rng">Rng</a> + ?<a class="trait" href="https://doc.rust-lang.org/1.80.0/core/marker/trait.Sized.html" title="trait core::marker::Sized">Sized</a>,
+    S: <a class="trait" href="../ndarray/data_traits/trait.DataOwned.html" title="trait ndarray::data_traits::DataOwned">DataOwned</a>&lt;Elem = A&gt;,
+    Sh: <a class="trait" href="../ndarray/shape_builder/trait.ShapeBuilder.html" title="trait ndarray::shape_builder::ShapeBuilder">ShapeBuilder</a>&lt;Dim = D&gt;,</div></h4></section></summary><div class="docblock"><p>Create an array with shape <code>dim</code> with elements drawn from
+<code>distribution</code>, using a specific Rng <code>rng</code>.</p>
+<p><em><strong>Panics</strong></em> if the number of elements overflows usize.</p>
+
+<div class="example-wrap"><pre class="rust rust-example-rendered"><code><span class="kw">use </span>ndarray::Array;
+<span class="kw">use </span>ndarray_rand::RandomExt;
+<span class="kw">use </span>ndarray_rand::rand::SeedableRng;
+<span class="kw">use </span>ndarray_rand::rand_distr::Uniform;
+<span class="kw">use </span>rand_isaac::isaac64::Isaac64Rng;
+
+<span class="comment">// Get a seeded random number generator for reproducibility (Isaac64 algorithm)
+</span><span class="kw">let </span>seed = <span class="number">42</span>;
+<span class="kw">let </span><span class="kw-2">mut </span>rng = Isaac64Rng::seed_from_u64(seed);
+
+<span class="comment">// Generate a random array using `rng`
+</span><span class="kw">let </span>a = Array::random_using((<span class="number">2</span>, <span class="number">5</span>), Uniform::new(<span class="number">0.</span>, <span class="number">10.</span>), <span class="kw-2">&amp;mut </span>rng);
+<span class="macro">println!</span>(<span class="string">"{:8.4}"</span>, a);
+<span class="comment">// Example Output:
+// [[  8.6900,   6.9824,   3.8922,   6.5861,   2.4890],
+//  [  0.0914,   5.5186,   5.8135,   5.2361,   3.1879]]</span></code></pre></div>
+</div></details><details class="toggle method-toggle" open><summary><section id="tymethod.sample_axis" class="method"><a class="src rightside" href="../src/ndarray_rand/lib.rs.html#165-169">source</a><h4 class="code-header">fn <a href="#tymethod.sample_axis" class="fn">sample_axis</a>(
+    &amp;self,
+    axis: <a class="struct" href="../ndarray/dimension/axis/struct.Axis.html" title="struct ndarray::dimension::axis::Axis">Axis</a>,
+    n_samples: <a class="primitive" href="https://doc.rust-lang.org/1.80.0/std/primitive.usize.html">usize</a>,
+    strategy: <a class="enum" href="enum.SamplingStrategy.html" title="enum ndarray_rand::SamplingStrategy">SamplingStrategy</a>,
+) -&gt; <a class="type" href="../ndarray/type.Array.html" title="type ndarray::Array">Array</a>&lt;A, D&gt;<div class="where">where
+    A: <a class="trait" href="https://doc.rust-lang.org/1.80.0/core/marker/trait.Copy.html" title="trait core::marker::Copy">Copy</a>,
+    S: <a class="trait" href="../ndarray/data_traits/trait.Data.html" title="trait ndarray::data_traits::Data">Data</a>&lt;Elem = A&gt;,
+    D: <a class="trait" href="../ndarray/dimension/remove_axis/trait.RemoveAxis.html" title="trait ndarray::dimension::remove_axis::RemoveAxis">RemoveAxis</a>,</div></h4></section></summary><div class="docblock"><p>Sample <code>n_samples</code> lanes slicing along <code>axis</code> using the default RNG.</p>
+<p>If <code>strategy==SamplingStrategy::WithoutReplacement</code>, each lane can only be sampled once.
+If <code>strategy==SamplingStrategy::WithReplacement</code>, each lane can be sampled multiple times.</p>
+<p><em><strong>Panics</strong></em> when:</p>
+<ul>
+<li>creation of the RNG fails;</li>
+<li><code>n_samples</code> is greater than the length of <code>axis</code> (if sampling without replacement);</li>
+<li>length of <code>axis</code> is 0.</li>
+</ul>
+
+<div class="example-wrap"><pre class="rust rust-example-rendered"><code><span class="kw">use </span>ndarray::{array, Axis};
+<span class="kw">use </span>ndarray_rand::{RandomExt, SamplingStrategy};
+
+<span class="kw">let </span>a = <span class="macro">array!</span>[
+    [<span class="number">1.</span>, <span class="number">2.</span>, <span class="number">3.</span>],
+    [<span class="number">4.</span>, <span class="number">5.</span>, <span class="number">6.</span>],
+    [<span class="number">7.</span>, <span class="number">8.</span>, <span class="number">9.</span>],
+    [<span class="number">10.</span>, <span class="number">11.</span>, <span class="number">12.</span>],
+];
+<span class="comment">// Sample 2 rows, without replacement
+</span><span class="kw">let </span>sample_rows = a.sample_axis(Axis(<span class="number">0</span>), <span class="number">2</span>, SamplingStrategy::WithoutReplacement);
+<span class="macro">println!</span>(<span class="string">"{:?}"</span>, sample_rows);
+<span class="comment">// Example Output: (1st and 3rd rows)
+// [
+//  [1., 2., 3.],
+//  [7., 8., 9.]
+// ]
+// Sample 2 columns, with replacement
+</span><span class="kw">let </span>sample_columns = a.sample_axis(Axis(<span class="number">1</span>), <span class="number">1</span>, SamplingStrategy::WithReplacement);
+<span class="macro">println!</span>(<span class="string">"{:?}"</span>, sample_columns);
+<span class="comment">// Example Output: (2nd column, sampled twice)
+// [
+//  [2., 2.],
+//  [5., 5.],
+//  [8., 8.],
+//  [11., 11.]
+// ]</span></code></pre></div>
+</div></details><details class="toggle method-toggle" open><summary><section id="tymethod.sample_axis_using" class="method"><a class="src rightside" href="../src/ndarray_rand/lib.rs.html#219-230">source</a><h4 class="code-header">fn <a href="#tymethod.sample_axis_using" class="fn">sample_axis_using</a>&lt;R&gt;(
+    &amp;self,
+    axis: <a class="struct" href="../ndarray/dimension/axis/struct.Axis.html" title="struct ndarray::dimension::axis::Axis">Axis</a>,
+    n_samples: <a class="primitive" href="https://doc.rust-lang.org/1.80.0/std/primitive.usize.html">usize</a>,
+    strategy: <a class="enum" href="enum.SamplingStrategy.html" title="enum ndarray_rand::SamplingStrategy">SamplingStrategy</a>,
+    rng: <a class="primitive" href="https://doc.rust-lang.org/1.80.0/std/primitive.reference.html">&amp;mut R</a>,
+) -&gt; <a class="type" href="../ndarray/type.Array.html" title="type ndarray::Array">Array</a>&lt;A, D&gt;<div class="where">where
+    R: <a class="trait" href="rand/trait.Rng.html" title="trait ndarray_rand::rand::Rng">Rng</a> + ?<a class="trait" href="https://doc.rust-lang.org/1.80.0/core/marker/trait.Sized.html" title="trait core::marker::Sized">Sized</a>,
+    A: <a class="trait" href="https://doc.rust-lang.org/1.80.0/core/marker/trait.Copy.html" title="trait core::marker::Copy">Copy</a>,
+    S: <a class="trait" href="../ndarray/data_traits/trait.Data.html" title="trait ndarray::data_traits::Data">Data</a>&lt;Elem = A&gt;,
+    D: <a class="trait" href="../ndarray/dimension/remove_axis/trait.RemoveAxis.html" title="trait ndarray::dimension::remove_axis::RemoveAxis">RemoveAxis</a>,</div></h4></section></summary><div class="docblock"><p>Sample <code>n_samples</code> lanes slicing along <code>axis</code> using the specified RNG <code>rng</code>.</p>
+<p>If <code>strategy==SamplingStrategy::WithoutReplacement</code>, each lane can only be sampled once.
+If <code>strategy==SamplingStrategy::WithReplacement</code>, each lane can be sampled multiple times.</p>
+<p><em><strong>Panics</strong></em> when:</p>
+<ul>
+<li>creation of the RNG fails;</li>
+<li><code>n_samples</code> is greater than the length of <code>axis</code> (if sampling without replacement);</li>
+<li>length of <code>axis</code> is 0.</li>
+</ul>
+
+<div class="example-wrap"><pre class="rust rust-example-rendered"><code><span class="kw">use </span>ndarray::{array, Axis};
+<span class="kw">use </span>ndarray_rand::{RandomExt, SamplingStrategy};
+<span class="kw">use </span>ndarray_rand::rand::SeedableRng;
+<span class="kw">use </span>rand_isaac::isaac64::Isaac64Rng;
+
+<span class="comment">// Get a seeded random number generator for reproducibility (Isaac64 algorithm)
+</span><span class="kw">let </span>seed = <span class="number">42</span>;
+<span class="kw">let </span><span class="kw-2">mut </span>rng = Isaac64Rng::seed_from_u64(seed);
+
+<span class="kw">let </span>a = <span class="macro">array!</span>[
+    [<span class="number">1.</span>, <span class="number">2.</span>, <span class="number">3.</span>],
+    [<span class="number">4.</span>, <span class="number">5.</span>, <span class="number">6.</span>],
+    [<span class="number">7.</span>, <span class="number">8.</span>, <span class="number">9.</span>],
+    [<span class="number">10.</span>, <span class="number">11.</span>, <span class="number">12.</span>],
+];
+<span class="comment">// Sample 2 rows, without replacement
+</span><span class="kw">let </span>sample_rows = a.sample_axis_using(Axis(<span class="number">0</span>), <span class="number">2</span>, SamplingStrategy::WithoutReplacement, <span class="kw-2">&amp;mut </span>rng);
+<span class="macro">println!</span>(<span class="string">"{:?}"</span>, sample_rows);
+<span class="comment">// Example Output: (1st and 3rd rows)
+// [
+//  [1., 2., 3.],
+//  [7., 8., 9.]
+// ]
+
+// Sample 2 columns, with replacement
+</span><span class="kw">let </span>sample_columns = a.sample_axis_using(Axis(<span class="number">1</span>), <span class="number">1</span>, SamplingStrategy::WithReplacement, <span class="kw-2">&amp;mut </span>rng);
+<span class="macro">println!</span>(<span class="string">"{:?}"</span>, sample_columns);
+<span class="comment">// Example Output: (2nd column, sampled twice)
+// [
+//  [2., 2.],
+//  [5., 5.],
+//  [8., 8.],
+//  [11., 11.]
+// ]</span></code></pre></div>
+</div></details></div><h2 id="object-safety" class="section-header">Object Safety<a href="#object-safety" class="anchor">§</a></h2><div class="object-safety-info">This trait is <b>not</b> <a href="https://doc.rust-lang.org/1.80.0/reference/items/traits.html#object-safety">object safe</a>.</div><h2 id="foreign-impls" class="section-header">Implementations on Foreign Types<a href="#foreign-impls" class="anchor">§</a></h2><details class="toggle implementors-toggle"><summary><section id="impl-RandomExt%3CS,+A,+D%3E-for-ArrayBase%3CS,+D%3E" class="impl"><a class="src rightside" href="../src/ndarray_rand/lib.rs.html#233-290">source</a><a href="#impl-RandomExt%3CS,+A,+D%3E-for-ArrayBase%3CS,+D%3E" class="anchor">§</a><h3 class="code-header">impl&lt;S, A, D&gt; <a class="trait" href="trait.RandomExt.html" title="trait ndarray_rand::RandomExt">RandomExt</a>&lt;S, A, D&gt; for <a class="struct" href="../ndarray/struct.ArrayBase.html" title="struct ndarray::ArrayBase">ArrayBase</a>&lt;S, D&gt;<div class="where">where
+    S: <a class="trait" href="../ndarray/data_traits/trait.RawData.html" title="trait ndarray::data_traits::RawData">RawData</a>&lt;Elem = A&gt;,
+    D: <a class="trait" href="../ndarray/dimension/dimension_trait/trait.Dimension.html" title="trait ndarray::dimension::dimension_trait::Dimension">Dimension</a>,</div></h3></section></summary><div class="impl-items"><section id="method.random" class="method trait-impl"><a class="src rightside" href="../src/ndarray_rand/lib.rs.html#238-245">source</a><a href="#method.random" class="anchor">§</a><h4 class="code-header">fn <a href="#tymethod.random" class="fn">random</a>&lt;Sh, IdS&gt;(shape: Sh, dist: IdS) -&gt; <a class="struct" href="../ndarray/struct.ArrayBase.html" title="struct ndarray::ArrayBase">ArrayBase</a>&lt;S, D&gt;<div class="where">where
+    IdS: <a class="trait" href="rand_distr/trait.Distribution.html" title="trait ndarray_rand::rand_distr::Distribution">Distribution</a>&lt;S::<a class="associatedtype" href="../ndarray/data_traits/trait.RawData.html#associatedtype.Elem" title="type ndarray::data_traits::RawData::Elem">Elem</a>&gt;,
+    S: <a class="trait" href="../ndarray/data_traits/trait.DataOwned.html" title="trait ndarray::data_traits::DataOwned">DataOwned</a>&lt;Elem = A&gt;,
+    Sh: <a class="trait" href="../ndarray/shape_builder/trait.ShapeBuilder.html" title="trait ndarray::shape_builder::ShapeBuilder">ShapeBuilder</a>&lt;Dim = D&gt;,</div></h4></section><section id="method.random_using" class="method trait-impl"><a class="src rightside" href="../src/ndarray_rand/lib.rs.html#247-255">source</a><a href="#method.random_using" class="anchor">§</a><h4 class="code-header">fn <a href="#tymethod.random_using" class="fn">random_using</a>&lt;Sh, IdS, R&gt;(
+    shape: Sh,
+    dist: IdS,
+    rng: <a class="primitive" href="https://doc.rust-lang.org/1.80.0/std/primitive.reference.html">&amp;mut R</a>,
+) -&gt; <a class="struct" href="../ndarray/struct.ArrayBase.html" title="struct ndarray::ArrayBase">ArrayBase</a>&lt;S, D&gt;<div class="where">where
+    IdS: <a class="trait" href="rand_distr/trait.Distribution.html" title="trait ndarray_rand::rand_distr::Distribution">Distribution</a>&lt;S::<a class="associatedtype" href="../ndarray/data_traits/trait.RawData.html#associatedtype.Elem" title="type ndarray::data_traits::RawData::Elem">Elem</a>&gt;,
+    R: <a class="trait" href="rand/trait.Rng.html" title="trait ndarray_rand::rand::Rng">Rng</a> + ?<a class="trait" href="https://doc.rust-lang.org/1.80.0/core/marker/trait.Sized.html" title="trait core::marker::Sized">Sized</a>,
+    S: <a class="trait" href="../ndarray/data_traits/trait.DataOwned.html" title="trait ndarray::data_traits::DataOwned">DataOwned</a>&lt;Elem = A&gt;,
+    Sh: <a class="trait" href="../ndarray/shape_builder/trait.ShapeBuilder.html" title="trait ndarray::shape_builder::ShapeBuilder">ShapeBuilder</a>&lt;Dim = D&gt;,</div></h4></section><section id="method.sample_axis" class="method trait-impl"><a class="src rightside" href="../src/ndarray_rand/lib.rs.html#257-264">source</a><a href="#method.sample_axis" class="anchor">§</a><h4 class="code-header">fn <a href="#tymethod.sample_axis" class="fn">sample_axis</a>(
+    &amp;self,
+    axis: <a class="struct" href="../ndarray/dimension/axis/struct.Axis.html" title="struct ndarray::dimension::axis::Axis">Axis</a>,
+    n_samples: <a class="primitive" href="https://doc.rust-lang.org/1.80.0/std/primitive.usize.html">usize</a>,
+    strategy: <a class="enum" href="enum.SamplingStrategy.html" title="enum ndarray_rand::SamplingStrategy">SamplingStrategy</a>,
+) -&gt; <a class="type" href="../ndarray/type.Array.html" title="type ndarray::Array">Array</a>&lt;A, D&gt;<div class="where">where
+    A: <a class="trait" href="https://doc.rust-lang.org/1.80.0/core/marker/trait.Copy.html" title="trait core::marker::Copy">Copy</a>,
+    S: <a class="trait" href="../ndarray/data_traits/trait.Data.html" title="trait ndarray::data_traits::Data">Data</a>&lt;Elem = A&gt;,
+    D: <a class="trait" href="../ndarray/dimension/remove_axis/trait.RemoveAxis.html" title="trait ndarray::dimension::remove_axis::RemoveAxis">RemoveAxis</a>,</div></h4></section><section id="method.sample_axis_using" class="method trait-impl"><a class="src rightside" href="../src/ndarray_rand/lib.rs.html#266-289">source</a><a href="#method.sample_axis_using" class="anchor">§</a><h4 class="code-header">fn <a href="#tymethod.sample_axis_using" class="fn">sample_axis_using</a>&lt;R&gt;(
+    &amp;self,
+    axis: <a class="struct" href="../ndarray/dimension/axis/struct.Axis.html" title="struct ndarray::dimension::axis::Axis">Axis</a>,
+    n_samples: <a class="primitive" href="https://doc.rust-lang.org/1.80.0/std/primitive.usize.html">usize</a>,
+    strategy: <a class="enum" href="enum.SamplingStrategy.html" title="enum ndarray_rand::SamplingStrategy">SamplingStrategy</a>,
+    rng: <a class="primitive" href="https://doc.rust-lang.org/1.80.0/std/primitive.reference.html">&amp;mut R</a>,
+) -&gt; <a class="type" href="../ndarray/type.Array.html" title="type ndarray::Array">Array</a>&lt;A, D&gt;<div class="where">where
+    R: <a class="trait" href="rand/trait.Rng.html" title="trait ndarray_rand::rand::Rng">Rng</a> + ?<a class="trait" href="https://doc.rust-lang.org/1.80.0/core/marker/trait.Sized.html" title="trait core::marker::Sized">Sized</a>,
+    A: <a class="trait" href="https://doc.rust-lang.org/1.80.0/core/marker/trait.Copy.html" title="trait core::marker::Copy">Copy</a>,
+    S: <a class="trait" href="../ndarray/data_traits/trait.Data.html" title="trait ndarray::data_traits::Data">Data</a>&lt;Elem = A&gt;,
+    D: <a class="trait" href="../ndarray/dimension/remove_axis/trait.RemoveAxis.html" title="trait ndarray::dimension::remove_axis::RemoveAxis">RemoveAxis</a>,</div></h4></section></div></details><h2 id="implementors" class="section-header">Implementors<a href="#implementors" class="anchor">§</a></h2><div id="implementors-list"></div><script src="../trait.impl/ndarray_rand/trait.RandomExt.js" data-ignore-extern-crates="ndarray" async></script></section></div></main></body></html>

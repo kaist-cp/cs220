@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"enum":["Either2"],"fn":["count_repeat","funny_map","repeat"]};

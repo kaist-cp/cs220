@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"attr":["test_case","timeout"],"macro":["assert_about_eq","assert_false","assert_panics","assert_true"],"trait":["MaxDifference"]};

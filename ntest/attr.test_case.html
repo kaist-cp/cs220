@@ -1,0 +1,79 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Test cases can be used to have multiple inputs for a given function. With the `#[test_case]` attribute multiple tests will be generated using the Procedural Macros capabilities of rust."><title>test_case in ntest - Rust</title><script>if(window.location.protocol!=="file:")document.head.insertAdjacentHTML("beforeend","SourceSerif4-Regular-46f98efaafac5295.ttf.woff2,FiraSans-Regular-018c141bf0843ffd.woff2,FiraSans-Medium-8f9a781e4970d388.woff2,SourceCodePro-Regular-562dcc5011b6de7d.ttf.woff2,SourceCodePro-Semibold-d899c5a5c4aeb14a.ttf.woff2".split(",").map(f=>`<link rel="preload" as="font" type="font/woff2" crossorigin href="../static.files/${f}">`).join(""))</script><link rel="stylesheet" href="../static.files/normalize-76eba96aa4d2e634.css"><link rel="stylesheet" href="../static.files/rustdoc-dd39b87e5fcfba68.css"><meta name="rustdoc-vars" data-root-path="../" data-static-root-path="../static.files/" data-current-crate="ntest" data-themes="" data-resource-suffix="" data-rustdoc-version="1.80.0 (051478957 2024-07-21)" data-channel="1.80.0" data-search-js="search-d52510db62a78183.js" data-settings-js="settings-4313503d2e1961c2.js" ><script src="../static.files/storage-118b08c4c78b968e.js"></script><script defer src="sidebar-items.js"></script><script defer src="../static.files/main-20a3ad099b048cf2.js"></script><noscript><link rel="stylesheet" href="../static.files/noscript-df360f571f6edeae.css"></noscript><link rel="alternate icon" type="image/png" href="../static.files/favicon-32x32-422f7d1d52889060.png"><link rel="icon" type="image/svg+xml" href="../static.files/favicon-2c020d218678b618.svg"></head><body class="rustdoc attr"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]--><nav class="mobile-topbar"><button class="sidebar-menu-toggle" title="show sidebar"></button></nav><nav class="sidebar"><div class="sidebar-crate"><h2><a href="../ntest/index.html">ntest</a><span class="version">0.9.3</span></h2></div><div class="sidebar-elems"></div></nav><div class="sidebar-resizer"></div><main><div class="width-limiter"><rustdoc-search></rustdoc-search><section id="main-content" class="content"><div class="main-heading"><h1>Attribute Macro <a href="index.html">ntest</a>::<wbr><a class="attr" href="#">test_case</a><button id="copy-path" title="Copy item path to clipboard">Copy item path</button></h1><span class="out-of-band"><a class="src" href="../src/ntest_test_cases/lib.rs.html#112">source</a> · <button id="toggle-all-docs" title="collapse all docs">[<span>&#x2212;</span>]</button></span></div><pre class="rust item-decl"><code>#[test_case]</code></pre><details class="toggle top-doc" open><summary class="hideme"><span>Expand description</span></summary><div class="docblock"><p>Test cases can be used to have multiple inputs for a given function.
+With the <code>#[test_case]</code> attribute multiple tests will be generated using the
+<a href="https://blog.rust-lang.org/2018/12/21/Procedural-Macros-in-Rust-2018.html">Procedural Macros</a>
+capabilities of rust.</p>
+<p>The function input can be of type <code>int</code>, <code>bool</code>, or <code>str</code>, or a path to an
+enum or constant of those types.</p>
+<p>Please note that rust functions can only contain alphanumeric characters and ‘<em>’ signs.
+Special characters will be escaped using a meaning full replacement (for example <code>#</code> will be replaced with <code>_hash</code>),
+or as a default the ‘</em>’ sign.</p>
+<p>A function annotated with a <code>#[test_case]</code> attribute will be split into multiple rust functions annotated with the <code>#[test]</code> attribute.</p>
+<h2 id="examples"><a class="doc-anchor" href="#examples">§</a>Examples</h2>
+<p>Example with a single argument</p>
+
+<div class="example-wrap ignore"><a href="#" class="tooltip" title="This example is not tested">ⓘ</a><pre class="rust rust-example-rendered"><code><span class="attr">#[test_case(<span class="number">13</span>)]
+#[test_case(<span class="number">42</span>)]
+</span><span class="kw">fn </span>one_arg(x: u32) {
+    <span class="macro">assert!</span>(x == <span class="number">13 </span>|| x == <span class="number">42</span>)
+}</code></pre></div>
+<p>The test cases above will be parsed at compile time and two rust test functions will be generated instead:</p>
+
+<div class="example-wrap ignore"><a href="#" class="tooltip" title="This example is not tested">ⓘ</a><pre class="rust rust-example-rendered"><code><span class="attr">#[test]
+</span><span class="kw">fn </span>one_arg_13() {
+    x = <span class="number">13</span>;
+    <span class="macro">assert!</span>(x == <span class="number">13 </span>|| x == <span class="number">42</span>)
+}
+
+<span class="attr">#[test]
+</span><span class="kw">fn </span>one_arg_42() {
+    x = <span class="number">42</span>;
+    <span class="macro">assert!</span>(x == <span class="number">13 </span>|| x == <span class="number">42</span>)
+}</code></pre></div>
+<p>Example with multiple arguments:</p>
+
+<div class="example-wrap ignore"><a href="#" class="tooltip" title="This example is not tested">ⓘ</a><pre class="rust rust-example-rendered"><code><span class="attr">#[test_case(<span class="bool-val">true</span>, <span class="string">"true"</span>, <span class="number">1</span>)]
+</span><span class="kw">fn </span>test_mix(x: bool, y: <span class="kw-2">&amp;</span>str, z: u16) {
+    <span class="macro">assert!</span>(x);
+    <span class="macro">assert_eq!</span>(y, <span class="string">"true"</span>);
+    <span class="macro">assert_eq!</span>(z, <span class="number">1</span>);
+}</code></pre></div>
+<p>Example with name attribute:</p>
+
+<div class="example-wrap ignore"><a href="#" class="tooltip" title="This example is not tested">ⓘ</a><pre class="rust rust-example-rendered"><code><span class="attr">#[test_case(<span class="number">42</span>, name=<span class="string">"my_fancy_test"</span>)]
+</span><span class="kw">fn </span>with_name(x: u32) {
+    <span class="macro">assert_eq!</span>(x, <span class="number">42</span>)
+}</code></pre></div>
+<p>Example with rust test attributes.
+All attributes after a test case will be appended after the generated <code>#[test]</code> attribute.
+For example the following test cases…</p>
+
+<div class="example-wrap ignore"><a href="#" class="tooltip" title="This example is not tested">ⓘ</a><pre class="rust rust-example-rendered"><code><span class="attr">#[test_case(<span class="number">18</span>)]
+#[ignore]
+#[test_case(<span class="number">15</span>)]
+#[should_panic(expected = <span class="string">"I am panicing"</span>)]
+</span><span class="kw">fn </span>attributes_test_case(x: u32) {
+    <span class="macro">panic!</span>(<span class="string">"I am panicing"</span>);
+}</code></pre></div>
+<p>… will be compiled to these two tests. One gets ignored and the other succeeds:</p>
+
+<div class="example-wrap ignore"><a href="#" class="tooltip" title="This example is not tested">ⓘ</a><pre class="rust rust-example-rendered"><code><span class="attr">#[test]
+#[ignore]
+</span><span class="kw">fn </span>attributes_test_case_18 {
+   <span class="kw">let </span>x = <span class="number">18</span>;
+   <span class="macro">panic!</span>(<span class="string">"I am panicing"</span>);
+}
+
+<span class="attr">#[test]
+#[should_panic(expected = <span class="string">"I am panicing"</span>)]
+</span><span class="kw">fn </span>attributes_test_case_15() {
+   <span class="kw">let </span>x = <span class="number">15</span>;
+   <span class="macro">panic!</span>(<span class="string">"I am panicing"</span>);
+}</code></pre></div>
+<p>Test functions with a <code>Result</code> return are also supported:</p>
+
+<div class="example-wrap ignore"><a href="#" class="tooltip" title="This example is not tested">ⓘ</a><pre class="rust rust-example-rendered"><code><span class="attr">#[test_case(<span class="number">27</span>)]
+#[test_case(<span class="number">33</span>)]
+</span><span class="kw">fn </span>returns_result(x: u32) -&gt; <span class="prelude-ty">Result</span>&lt;(), ()&gt; {
+    <span class="prelude-val">Ok</span>(())
+}</code></pre></div>
+</div></details></section></div></main></body></html>
