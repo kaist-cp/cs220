@@ -1,10 +1,11 @@
 //! Assignment 2: Mastering common programming concepts (1/2).
 //!
-//! The primary goal of this assignment is to re-learn the common programming concepts in Rust, especially those in the Rust Book chapters 3 and 5.
-//! Please make sure you're comfortable with the concepts to proceed on to the next assignments.
+//! The primary goal of this assignment is to re-learn the common programming concepts in Rust,
+//! especially those in the Rust Book chapters 3 and 5. Please make sure you're comfortable with the
+//! concepts to proceed on to the next assignments.
 //!
-//! You should fill out the `todo!()` placeholders in such a way that `/scripts/grade.sh 2` works fine.
-//! See `assigment02/*_grade.rs` and `/scripts/grade.sh 2` for the test script.
+//! You should fill out the `todo!()` placeholders in such a way that `/scripts/grade.sh 2` works
+//! fine. See `assigment02/*_grade.rs` and `/scripts/grade.sh 2` for the test script.
 //!
 //! To submit, run
 //! ```bash

@@ -15,7 +15,8 @@ pub fn repeat<T, F: FnMut(T) -> T>(n: usize, mut f: F) -> impl FnMut(T) -> T {
 ///
 /// Applies the given function `f` for `i` times for the `i`-th element of the given vector.
 ///
-/// For instance, `funny_map(f, [v0, v1, v2, v3])` roughly translates to `[v0, f(v1), f(f(v2)), f(f(f(v3)))]`.
+/// For instance, `funny_map(f, [v0, v1, v2, v3])` roughly translates to `[v0, f(v1), f(f(v2)),
+/// f(f(f(v3)))]`.
 ///
 /// Refer `test_funny_map` in `assignment08_grade.rs` for detailed examples.
 pub fn funny_map<T, F: Fn(T) -> T>(f: F, vs: Vec<T>) -> Vec<T> {
@@ -24,9 +25,8 @@ pub fn funny_map<T, F: Fn(T) -> T>(f: F, vs: Vec<T>) -> Vec<T> {
 
 /// Count Repeat
 ///
-/// Returns the number of the elements of the set
-/// {x, f(x), f(f(x)), f(f(f(x))), ...}.
-/// You may assume that the answer is finite and small enough.
+/// Returns the number of the elements in the set {`x`, `f(x)`, `f(f(x))`, `f(f(f(x)))`, ...}. You
+/// may assume that the answer is finite and small enough.
 ///
 /// Refer `test_count_repeat` in `assignment08_grade.rs` for detailed examples.
 pub fn count_repeat<T, F: Fn(T) -> T>(f: F, x: T) -> usize

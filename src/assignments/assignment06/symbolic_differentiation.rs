@@ -5,10 +5,12 @@ use std::ops::*;
 
 /// Rational number represented by two isize, numerator and denominator.
 ///
-/// Each Rational number should be normalized so that `demoninator` is nonnegative and `numerator` and `demoninator` are coprime.
-/// See `normalize` for examples. As a corner case, 0 is represented by Rational { numerator: 0, demoninator: 0 }.
+/// Each Rational number should be normalized so that `demoninator` is nonnegative and `numerator`
+/// and `demoninator` are coprime. See `normalize` for examples. As a corner case, 0 is represented
+/// by `Rational { numerator: 0, demoninator: 0 }`.
 ///
-/// For "natural use", Rational also overloads standard arithmetic operations, i.e, `+`, `-`, `*`, `/`.
+/// For "natural use", it also overloads standard arithmetic operations, i.e, `+`, `-`, `*`, and
+/// `/`.
 ///
 /// See [here](https://doc.rust-lang.org/core/ops/index.html) for details.
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
@@ -96,9 +98,9 @@ pub enum SingletonPolynomial {
     Const(Rational),
     /// Non-const polynomial.
     Polynomial {
-        /// coefficent of polynomial. Must be non-zero.
+        /// Coefficent of polynomial. Must be non-zero.
         coeff: Rational,
-        /// power of polynomial. Must be non-zero.
+        /// Power of polynomial. Must be non-zero.
         power: Rational,
     },
 }
@@ -156,7 +158,7 @@ pub enum Trignometric {
         /// Coefficent
         coeff: Rational,
     },
-    /// Sine function.
+    /// Cosine function.
     Cosine {
         /// Coefficent
         coeff: Rational,

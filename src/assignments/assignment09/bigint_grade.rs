@@ -43,7 +43,7 @@ mod test {
     #[test]
     #[should_panic]
     fn test_inf_prec_panic() {
-        let _ = BigInt::new_large(vec![]);
+        let _unused = BigInt::new_large(vec![]);
     }
 
     #[test]

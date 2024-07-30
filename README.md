@@ -12,7 +12,7 @@
 - Announcements: in [issue tracker](https://github.com/kaist-cp/cs220/issues?q=is%3Aissue+is%3Aopen+label%3Aannouncement)
   + We assume you read each announcement within 24 hours.
   + We strongly recommend you to watch the repository.
-- TA: TBA
+- TA: [Janggun Lee](https://cp.kaist.ac.kr/janggun.lee)
   + Office Hours: Fri 9:00-10:00, Rm. 4441, Bldg. E3-1.
     If you want to come, do so by 9:15.
     See [below](https://github.com/kaist-cp/cs220#rules) for the office hour policy.
@@ -23,7 +23,7 @@
 
 ## Course description
 
-This course will equip you with the programming concepts needed to effectively communicate your ideas to computers. 
+This course will equip you with the programming concepts needed to effectively communicate your ideas to computers.
 For a detailed overview, please refer to the introduction in the Google Slides presentation.
 
 ### Outline
@@ -162,7 +162,7 @@ Ensure you are proficient with the following development tools:
   - You can run the grading script with the following command:
   ```bash
   $ ./scripts/grade.sh <assignment_number>
-  
+
   # E.g. To grade `assignment09`, run the following command:
   $ ./scripts/grade.sh 9
   ```
@@ -181,8 +181,8 @@ Ensure you are proficient with the following development tools:
   Laptops can also be borrowed from the School of Computing Administration Team.
 
 - We will use [Safe Exam Browser](https://safeexambrowser.org/) to prevent cheatings.
-  - You should have your laptop configured with Safe Exam Browser before the exam. 
-  - TBA: Details will be announced later. 
+  - You should have your laptop configured with Safe Exam Browser before the exam.
+  - TBA: Details will be announced later.
 
 ### Attendance (?%)
 

@@ -9,6 +9,7 @@
 //! - <https://en.wikipedia.org/wiki/Church_encoding>
 //! - <https://opendsa-server.cs.vt.edu/OpenDSA/Books/PL/html/ChurchNumerals.html>
 
+use std::cell::RefCell;
 use std::rc::Rc;
 
 /// Church numerals are represented as higher-order functions that take a function `f`
@@ -51,8 +52,9 @@ pub fn mult<T: 'static>(n: Church<T>, m: Church<T>) -> Church<T> {
 /// This is the Church numeral equivalent of the natural number operation of exponentiation.
 /// Given two natural numbers `n` and `m`, the function should return a Church numeral
 /// that represents `n` to the power of `m`. The key is to convert `n` and `m` to Church numerals,
-/// and then apply the Church numeral for `m` (the exponent) to the Church numeral for `n` (the base).
-/// Note: This function should be implemented *WITHOUT* using the `to_usize` or any `pow`-like method.
+/// and then apply the Church numeral for `m` (the exponent) to the Church numeral for `n` (the
+/// base). Note: This function should be implemented *WITHOUT* using the `to_usize` or any
+/// `pow`-like method.
 pub fn exp<T: 'static>(n: usize, m: usize) -> Church<T> {
     // ACTION ITEM: Uncomment the following lines and replace `todo!()` with your code.
     // let n = from_usize(n);

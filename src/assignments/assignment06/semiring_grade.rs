@@ -1,7 +1,8 @@
 #[cfg(test)]
 mod test {
-    use crate::assignments::assignment06::semiring::*;
     use ntest::assert_about_eq;
+
+    use crate::assignments::assignment06::semiring::*;
 
     fn test_from_str(s: &str, f: impl Fn(i64) -> i64) {
         let poly = s.parse::<Polynomial<i64>>().unwrap();

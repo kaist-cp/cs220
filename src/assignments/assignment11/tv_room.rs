@@ -1,6 +1,7 @@
 //! TV Room Simulator.
 //!
-//! People can come to the TV room and watch TV. There are two types of TV watchers, manager and guest.
+//! People can come to the TV room and watch TV. There are two types of TV watchers, manager and
+//! guest.
 //!
 //! The rule of the TV room is as follows:
 //!
@@ -9,8 +10,9 @@
 //! - Manager can leave the TV room earlier than guests.
 //! - The TV room closes when the last person left the TV room.
 //!
-//! Both `Manager` and `Guest` have `Rc<Watcher>` as a field, and its reference count indicates the number of people in
-//! the TV room. When the 'Manager' and 'Guest' object is dropped, it means that the person leaves the TV room.
+//! Both `Manager` and `Guest` have `Rc<Watcher>` as a field, and its reference count indicates the
+//! number of people in the TV room. When the 'Manager' and 'Guest' object is dropped, it means that
+//! the person leaves the TV room.
 //!
 //! Consult the following documentations:
 //! - <https://doc.rust-lang.org/book/ch15-04-rc.html#rct-the-reference-counted-smart-pointer>
@@ -18,7 +20,8 @@
 //!
 //! Refer `tv_room_grade.rs` for test cases.
 
-use std::{cell::RefCell, rc::Rc};
+use std::cell::RefCell;
+use std::rc::Rc;
 
 #[derive(Debug, Clone, Copy)]
 enum TVRoomState {

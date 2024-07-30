@@ -1,10 +1,13 @@
 //! Small exercises.
 
+use std::collections::HashSet;
+
 use itertools::*;
 
 /// Returns the pairs of `(i, j)` where `i < j` and `inner[i] > inner[j]` in increasing order.
 ///
-/// For example, the inversions of `[3, 5, 1, 2, 4]` is `[(0, 2), (0, 3), (1, 2), (1, 3), (1, 4)]` because as follows:
+/// For example, the inversions of `[3, 5, 1, 2, 4]` is `[(0, 2), (0, 3), (1, 2), (1, 3), (1, 4)]`
+/// because as follows:
 ///
 /// - `0 < 2`, `inner[0] = 3 > 1 = inner[2]`
 /// - `0 < 3`, `inner[0] = 3 > 2 = inner[3]`
@@ -108,7 +111,8 @@ pub enum File {
 /// |__c (Data, size: 8)
 /// ```
 ///
-/// Output: `[("a1", 1), ("a2", 3), ("b1", 3), ("a", 4), ("c", 8), ("b2", 15), ("b", 18), ("root", 30)]`
+/// Output: `[("a1", 1), ("a2", 3), ("b1", 3), ("a", 4), ("c", 8), ("b2", 15), ("b", 18), ("root",
+/// 30)]`
 pub fn du_sort(root: &File) -> Vec<(&str, usize)> {
     todo!()
 }
@@ -118,12 +122,11 @@ pub fn du_sort(root: &File) -> Vec<(&str, usize)> {
 /// of returning a new vector.
 ///
 /// # Example
-/// ```
+/// ```ignore
 /// let mut vec = vec![1, 2, 3, 4, 5];
 /// remove_even(&mut vec);
 /// assert_eq!(*vec, vec![1, 3, 5]);
 /// ```
-#[allow(clippy::ptr_arg)]
 pub fn remove_even(inner: &mut Vec<i64>) {
     todo!()
 }
@@ -135,12 +138,11 @@ pub fn remove_even(inner: &mut Vec<i64>) {
 /// Also, note that the order does not matter.
 ///
 /// # Example
-/// ```
+/// ```ignore
 /// let mut vec = vec![1, 2, 1, 1, 3, 7, 5, 7];
 /// remove_duplicate(&mut vec);
 /// assert_eq!(*vec, vec![1, 2, 3, 7, 5]);
 /// ```
-#[allow(clippy::ptr_arg)]
 pub fn remove_duplicate(inner: &mut Vec<i64>) {
     todo!()
 }
@@ -153,6 +155,7 @@ pub fn remove_duplicate(inner: &mut Vec<i64>) {
 ///
 /// # Example
 ///
+/// ```text
 ///        table1                     table2
 /// ----------------------     ----------------------
 ///  20230001 |    Jack         20230001 |    CS
@@ -165,11 +168,12 @@ pub fn remove_duplicate(inner: &mut Vec<i64>) {
 ///  20230001 |    Jack   |     CS
 ///  20230001 |    Jack   |     EE
 ///  20231234 |    Mike   |     ME
-///
+/// ```
 pub fn natural_join(table1: Vec<Vec<String>>, table2: Vec<Vec<String>>) -> Vec<Vec<String>> {
     todo!()
 }
 
+/// You can freely add more fields.
 struct Pythagorean;
 
 impl Pythagorean {
@@ -187,7 +191,8 @@ impl Iterator for Pythagorean {
 }
 
 /// Generates sequence of unique [primitive Pythagorean triples](https://en.wikipedia.org/wiki/Pythagorean_triple),
-/// i.e. (a,b,c) such that a² + b² = c², a and b are coprimes, and a < b. Generate in the increasing order of c.
+/// i.e. (a,b,c) such that a² + b² = c², a and b are coprimes, and a < b. Generate in the increasing
+/// order of c.
 pub fn pythagorean() -> impl Iterator<Item = (u64, u64, u64)> {
     Pythagorean::new()
 }

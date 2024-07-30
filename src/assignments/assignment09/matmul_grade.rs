@@ -1,11 +1,12 @@
 #[cfg(test)]
 mod test {
-    use crate::assignments::assignment09::matmul::*;
-
     use approx::*;
     use itertools::Itertools;
     use ndarray::prelude::*;
-    use ndarray_rand::{rand_distr::Uniform, RandomExt};
+    use ndarray_rand::rand_distr::Uniform;
+    use ndarray_rand::RandomExt;
+
+    use crate::assignments::assignment09::matmul::*;
 
     #[test]
     fn vec_add_test() {

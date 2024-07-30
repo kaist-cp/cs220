@@ -1,5 +1,6 @@
 #[cfg(test)]
 mod test {
+
     use rand::seq::SliceRandom;
     use rand::thread_rng;
 
@@ -38,12 +39,13 @@ mod test {
 
         (0..WIVES).all(|his_wife| {
             // A new husband steps into the labyrinth to rescue his wife...!
-            let husband = Box::new(Husband::seeking(his_wife /*👩*/));
+            let husband = Box::new(Husband::seeking(his_wife /* 👩 */));
             let strategy = Box::new(husband.has_devised_a_strategy());
 
-            #[allow(clippy::all)]
-            /* The Minotaur🐂 will arrive in */
-            (0..50) /* steps... */
+            // (Allow for better storytelling.)
+            #[allow(clippy::search_is_some)]
+            // The Minotaur🐂 will arrive in
+            (0..50) // steps...
                 .zip(strategy)
                 .find(|(_, room)| {
                     // The husband contemplates his next move... 🤔

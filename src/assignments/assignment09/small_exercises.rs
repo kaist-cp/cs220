@@ -2,14 +2,17 @@
 
 use std::collections::HashMap;
 
-/// Returns whether the given sequence is a fibonacci sequence starts from the given sequence's first two terms.
+use itertools::Itertools;
+
+/// Returns whether the given sequence is a fibonacci sequence starts from the given sequence's
+/// first two terms.
 ///
 /// Returns `true` if the length of sequence is less or equal than 2.
 ///
 /// # Exmample
 ///
 /// ```
-/// use cs220::assignments::assignment09::is_fibonacci;
+/// use cs220::assignments::assignment09::small_exercises::*;
 ///
 /// assert_eq!(is_fibonacci([1, 1, 2, 3, 5, 8, 13].into_iter()), true);
 /// assert_eq!(is_fibonacci([1, 1, 2, 3, 5, 8, 14].into_iter()), false);
@@ -20,10 +23,10 @@ pub fn is_fibonacci(inner: impl Iterator<Item = i64>) -> bool {
 
 /// Returns the sum of `f(v)` for all element `v` the given array.
 ///
-/// # Exmaple
+/// # Example
 ///
 /// ```
-/// use cs220::assignments::assignment09::sigma;
+/// use cs220::assignments::assignment09::small_exercises::*;
 ///
 /// assert_eq!(sigma([1, 2].into_iter(), |x| x + 2), 7);
 /// assert_eq!(sigma([1, 2].into_iter(), |x| x * 4), 12);
@@ -39,7 +42,7 @@ pub fn sigma<T, F: Fn(T) -> i64>(inner: impl Iterator<Item = T>, f: F) -> i64 {
 /// # Example
 ///
 /// ```
-/// use cs220::assignments::assignment09::interleave3;
+/// use cs220::assignments::assignment09::small_exercises::*;
 ///
 /// assert_eq!(
 ///     interleave3([1, 2].into_iter(), [3, 4].into_iter(), [5, 6].into_iter()),
@@ -61,7 +64,7 @@ pub fn interleave3<T>(
 /// # Example
 ///
 /// ```
-/// use cs220::assignments::assignment09::interleave_n;
+/// use cs220::assignments::assignment09::small_exercises::*;
 ///
 /// assert_eq!(
 ///     interleave_n(&mut [[1, 2].into_iter(), [3, 4].into_iter(), [5, 6].into_iter()]),
@@ -80,7 +83,7 @@ pub fn interleave_n<T, const N: usize>(
 /// # Example
 ///
 /// ```
-/// use cs220::assignments::assignment09::k_smallest_mean;
+/// use cs220::assignments::assignment09::small_exercises::*;
 ///
 /// assert_eq!(
 ///     k_smallest_mean(vec![1, 3, 2].into_iter(), 2),
@@ -97,10 +100,10 @@ pub fn k_smallest_mean(inner: impl Iterator<Item = i64>, k: usize) -> f64 {
 
 /// Returns mean for each class.
 ///
-/// # Exmaple
+/// # Example
 ///
 /// ```
-/// use cs220::assignments::assignment09::calculate_mean;
+/// use cs220::assignments::assignment09::small_exercises::*;
 ///
 /// assert_eq!(
 ///     calculate_mean(
@@ -135,7 +138,7 @@ pub fn calculate_mean(inner: impl Iterator<Item = (String, i64)>) -> HashMap<Str
 /// Among these sets, the number of sets whose sum is 4 is 2, which is [1, 3] and [2, 2].
 ///
 /// ```
-/// use cs220::assignments::assignment09::sum_is_n;
+/// use cs220::assignments::assignment09::small_exercises::*;
 ///
 /// assert_eq!(sum_is_n(vec![vec![1, 2, 3], vec![2, 3]], 3), 1);
 /// assert_eq!(sum_is_n(vec![vec![1, 2, 3], vec![2, 3]], 4), 2);
@@ -147,12 +150,13 @@ pub fn sum_is_n(inner: Vec<Vec<i64>>, n: i64) -> usize {
     todo!()
 }
 
-/// Returns a new vector that contains the item that appears `n` times in the input vector in increasing order.
+/// Returns a new vector that contains the item that appears `n` times in the input vector in
+/// increasing order.
 ///
 /// # Example
 ///
 /// ```
-/// use cs220::assignments::assignment09::find_count_n;
+/// use cs220::assignments::assignment09::small_exercises::*;
 ///
 /// assert_eq!(find_count_n(vec![1, 2], 1), vec![1, 2]);
 /// assert_eq!(find_count_n(vec![1, 3, 3], 1), vec![1]);
@@ -175,10 +179,10 @@ pub fn find_count_n(inner: Vec<usize>, n: usize) -> Vec<usize> {
 /// - If the list is empty, returns `None`.
 /// - If several elements are equally median, the position of the first of them is returned.
 ///
-/// # Exmaple
+/// # Example
 ///
 /// ```
-/// use cs220::assignments::assignment09::position_median;
+/// use cs220::assignments::assignment09::small_exercises::*;
 ///
 /// assert_eq!(position_median(vec![1, 3, 3, 6, 7, 8, 9]), Some(3));
 /// assert_eq!(position_median(vec![1, 3, 3, 3]), Some(1));
@@ -191,6 +195,8 @@ pub fn position_median<T: Ord>(inner: Vec<T>) -> Option<usize> {
 ///
 /// # Example
 /// ```
+/// use cs220::assignments::assignment09::small_exercises::*;
+///
 /// assert_eq!(
 ///     two_dimensional_sum([[1, 2, 3].into_iter(), [4, 5, 6].into_iter()].into_iter()),
 ///     21
@@ -202,8 +208,10 @@ pub fn two_dimensional_sum(inner: impl Iterator<Item = impl Iterator<Item = i64>
 
 /// Returns whether the given string is palindrome or not.
 ///
-/// A palindrome is a word, number, phrase, or other sequence of characters which reads the same backward as forward.
-/// We consider the empty string is palindrome.
+/// A palindrome is a word, number, phrase, or other sequence of characters which reads the same
+/// backward as forward.
+///
+/// We consider the empty string as a palindrome.
 ///
 /// Consult <https://en.wikipedia.org/wiki/Palindrome>.
 pub fn is_palindrome(s: String) -> bool {

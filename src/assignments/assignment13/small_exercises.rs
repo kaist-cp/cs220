@@ -1,19 +1,15 @@
 //! Assignment 13: Parallelism.
 //!
-//! If you did well on assignment 09, you will do well on this assignment.
-//! Take it easy!
+//! If you did well on assignment 09, you will do well on this assignment. Take it easy!
 
 use rayon::prelude::*;
 
-// Use this function if you want.
-use crate::assignments::assignment09::matmul::dot_product;
-
 /// Returns the sum of `f(v)` for all element `v` the given array.
 ///
-/// # Exmaple
+/// # Example
 ///
 /// ```
-/// use cs220::assignments::assignment13::sigma;
+/// use cs220::assignments::assignment13::small_exercises::*;
 /// use rayon::iter::IntoParallelIterator;
 ///
 /// assert_eq!(sigma_par([1, 2].into_par_iter(), |x| x + 2), 7);
@@ -31,7 +27,7 @@ pub fn sigma_par<T, F: Fn(T) -> i64 + Sync + Send>(
 /// # Example
 ///
 /// ```
-/// use cs220::assignments::assignment13::interleave3;
+/// use cs220::assignments::assignment13::small_exercises::*;
 /// use rayon::iter::IntoParallelIterator;
 ///
 /// assert_eq!(
@@ -49,10 +45,10 @@ pub fn interleave3_par<T: Send>(
 
 /// Parallel vector addition
 ///
-/// # Exmaple
+/// # Example
 ///
 /// ```
-/// use cs220::assignments::assignment13::vec_add_par;
+/// use cs220::assignments::assignment13::small_exercises::*;
 ///
 /// let vec1 = vec![1.0, 2.0, 3.0, 4.0, 5.0];
 /// let vec2 = vec![1.0, 2.0, 3.0, 4.0, 5.0];
@@ -68,10 +64,10 @@ pub fn vec_add_par(lhs: &[f64], rhs: &[f64]) -> Vec<f64> {
 /// You don't know how to calculate dot product?
 /// See <https://mathinsight.org/dot_product_examples>
 ///
-/// # Exmaple
+/// # Example
 ///
 /// ```
-/// use cs220::assignments::assignment13::dot_product_par;
+/// use cs220::assignments::assignment13::small_exercises::*;
 ///
 /// let vec1 = vec![1.0, 2.0, 3.0, 4.0, 5.0];
 /// let vec2 = vec![1.0, 2.0, 3.0, 4.0, 5.0];
@@ -93,10 +89,10 @@ pub fn dot_product_par(lhs: &[f64], rhs: &[f64]) -> f64 {
 /// - rhs: (p, n)
 /// - output: (m, p)
 ///
-/// # Exmaple
+/// # Example
 ///
 /// ```
-/// use cs220::assignments::assignment13::matmul_par;
+/// use cs220::assignments::assignment13::small_exercises::*;
 ///
 /// let mat1 = vec![vec![1.0, 2.0, 3.0], vec![4.0, 5.0, 6.0]];
 /// let mat2 = vec![

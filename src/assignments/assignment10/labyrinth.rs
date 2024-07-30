@@ -1,11 +1,11 @@
 //! Labyrinth
 //!
-//! Look at the `labyrinth_grade.rs` below before you start.
+//! Look at `labyrinth_grade.rs` below before you start.
 //! HINT: <https://en.wikipedia.org/wiki/100_prisoners_problem>
 //!
 //! NOTE: You will have to implement a probabilistic algorithm, which means, the algorithm can fail
-//! even if you have implemented the solution. We recommend running multiple times (at least 5 times) to check your
-//! solution works well.
+//! even if you have implemented the solution. We recommend running multiple times (at least 5
+//! times) to check your solution works well.
 
 use std::cell::RefCell;
 
@@ -26,8 +26,8 @@ impl Husband {
         Strategy { husband: self }
     }
 
-    /// Based on the information about currently visited room number and someone's wife ID trapped inside,
-    /// what the husband should do next?
+    /// Based on the information about currently visited room number and someone's wife ID trapped
+    /// inside, what the husband should do next?
     pub fn carefully_checks_whos_inside(&self, room: usize, wife: usize) {
         todo!()
     }

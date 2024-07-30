@@ -1,7 +1,8 @@
 //! Big integer with infinite precision.
 
 use std::fmt;
-use std::{iter::zip, ops::*};
+use std::iter::zip;
+use std::ops::*;
 
 /// An signed integer with infinite precision implemented with an "carrier" vector of `u32`s.
 ///
@@ -15,15 +16,17 @@ use std::{iter::zip, ops::*};
 ///
 /// You will implement the `Add` and `Sub` trait for this type.
 ///
-/// Unlike standard fix-sized intergers in Rust where overflow will panic, the carrier is extended to save the overflowed bit.
-/// On the contrary, if the precision is too much (e.g, vec![0,0] is used to represent 0, where `vec![0]` is sufficent), the carrier is truncated.
+/// Unlike standard fix-sized intergers in Rust where overflow will panic, the carrier is extended
+/// to save the overflowed bit. On the contrary, if the precision is too much (e.g, vec![0,0] is
+/// used to represent 0, where `vec![0]` is sufficent), the carrier is truncated.
 ///
 /// See [this section](https://en.wikipedia.org/wiki/Two%27s_complement#Arithmetic_operations) for a rouge guide on implementation,
 /// while keeping in mind that the carrier should be extended to deal with overflow.
 ///
 /// The `sign_extension()`, `two_complement()`, and `truncate()` are non-mandatory helper methods.
 ///
-/// For testing and debugging pruposes, the `Display` trait is implemented for you, which shows the integer in hexadecimal form.
+/// For testing and debugging pruposes, the `Display` trait is implemented for you, which shows the
+/// integer in hexadecimal form.
 #[derive(Debug, Clone)]
 pub struct BigInt {
     /// The carrier for `BigInt`.
@@ -39,6 +42,10 @@ impl BigInt {
     }
 
     /// Creates a new `BigInt` from a `Vec<u32>`.
+    ///
+    /// # Panic
+    ///
+    /// Panics if `carrier` is empty.
     pub fn new_large(carrier: Vec<u32>) -> Self {
         assert!(!carrier.is_empty());
         todo!()

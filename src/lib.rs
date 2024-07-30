@@ -1,31 +1,57 @@
 //! KAIST CS220: Programming Principles
 
-// # Tries to deny all lints (`rustc -W help`).
-#![deny(absolute_paths_not_starting_with_crate)]
-#![deny(anonymous_parameters)]
-// #![deny(box_pointers)]
-#![deny(deprecated_in_future)]
-#![deny(explicit_outlives_requirements)]
-#![deny(keyword_idents)]
-#![deny(macro_use_extern_crate)]
-#![deny(missing_debug_implementations)]
-#![deny(non_ascii_idents)]
-#![deny(rust_2018_idioms)]
-#![deny(trivial_numeric_casts)]
-// #![deny(unused_crate_dependencies)] // TODO: uncomment
-#![deny(unused_extern_crates)]
-#![deny(unused_import_braces)]
-#![deny(unused_qualifications)]
-#![deny(unused_results)]
-#![deny(variant_size_differences)]
 #![deny(warnings)]
-#![deny(rustdoc::invalid_html_tags)]
-// #![deny(rustdoc::missing_doc_code_examples)]
-#![deny(missing_docs)]
 #![deny(rustdoc::all)]
-#![deny(unreachable_pub)]
-#![deny(single_use_lifetimes)]
-#![deny(unused_lifetimes)]
-#![deny(unstable_features)]
+// # Tries to deny all lints (`rustc -W help`).
+#![deny(
+    absolute_paths_not_starting_with_crate,
+    // box_pointers,
+    deprecated_safe,
+    elided_lifetimes_in_paths,
+    explicit_outlives_requirements,
+    ffi_unwind_calls,
+    // fuzzy_provenance_casts,
+    // impl_trait_overcaptures,
+    keyword_idents,
+    keyword_idents_2018,
+    keyword_idents_2024,
+    let_underscore_drop,
+    // lossy_provenance_casts,
+    macro_use_extern_crate,
+    meta_variable_misuse,
+    missing_abi,
+    // missing_copy_implementations,
+    missing_debug_implementations,
+    missing_docs,
+    missing_unsafe_on_extern,
+    // multiple_supertrait_upcastable,
+    // must_not_suspend,
+    non_ascii_idents,
+    // non_exhaustive_omitted_patterns,
+    non_local_definitions,
+    redundant_lifetimes,
+    rust_2021_incompatible_closure_captures,
+    rust_2021_incompatible_or_patterns,
+    rust_2021_prefixes_incompatible_syntax,
+    rust_2021_prelude_collisions,
+    // rust_2024_incompatible_pat,
+    single_use_lifetimes,
+    trivial_casts,
+    trivial_numeric_casts,
+    unit_bindings,
+    unnameable_types,
+    unreachable_pub,
+    unsafe_code,
+    unsafe_op_in_unsafe_fn,
+    unstable_features,
+    // unused_crate_dependencies,
+    unused_extern_crates,
+    unused_import_braces,
+    unused_lifetimes,
+    unused_macro_rules,
+    unused_qualifications,
+    unused_results,
+    variant_size_differences
+)]
 
 pub mod assignments;

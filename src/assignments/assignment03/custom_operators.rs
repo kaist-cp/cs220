@@ -16,7 +16,7 @@ pub enum MyOption<T> {
 /// Converts an `MyOption<String>` into an `MyOption<usize>`, consuming the original:
 ///
 /// ```
-/// use cs220::assignments::assignment03::{my_map, MyOption};
+/// use cs220::assignments::assignment03::custom_operators::*;
 ///
 /// fn len(s: String) -> usize {
 ///     s.len()
@@ -29,14 +29,15 @@ pub fn my_map<T, U, F: FnOnce(T) -> U>(v: MyOption<T>, f: F) -> MyOption<U> {
     todo!()
 }
 
-/// Returns `MyNone` if the option is `MyNone`, otherwise calls `f` with the wrapped value and returns the result.
+/// Returns `MyNone` if the option is `MyNone`, otherwise calls `f` with the wrapped value and
+/// returns the result.
 ///
 /// Some languages call this operation flatmap.
 ///
 /// # Examples
 ///
 /// ```
-/// use cs220::assignments::assignment03::{MyOption, my_and_then};
+/// use cs220::assignments::assignment03::custom_operators::*;
 ///
 /// fn pos_then_to_string(x: isize) -> MyOption<String> {
 ///     if x > 0 {
@@ -54,21 +55,21 @@ pub fn my_and_then<T, U, F: FnOnce(T) -> MyOption<U>>(v: MyOption<T>, f: F) -> M
     todo!()
 }
 
-/// Custom operator: `option_op_or(v1, v2, f)`
-/// If neither `v1` nor `v2` is `Some`, returns `None`.
-/// If exactly one is `Some`, returns the same `Some` value.
-/// If both are `Some`, apply the values inside `Some` to `f` and wrap the resulting value inside `Some`.
+/// Custom operator: `option_op_or(v1, v2, f)`. If neither `v1` nor `v2` is `Some`, returns `None`.
+/// If exactly one is `Some`, returns the same `Some` value. If both are `Some`, apply the values
+/// inside `Some` to `f` and wrap the resulting value inside `Some`.
 ///
 /// # Examples
 ///
 /// ```
+/// use cs220::assignments::assignment03::custom_operators::*;
 /// fn product(a: i32, b: i32) -> i32 {
 ///     a * b
 /// }
 ///
-/// assert_eq!(option_op_or(None, None, product), None);
-/// assert_eq!(option_op_or(Some(3), None, product), Some(3));
-/// assert_eq!(option_op_or(Some(3), Some(5), product), Some(15));
+/// assert_eq!(my_option_op_or(MyOption::MyNone, MyOption::MyNone, product), MyOption::MyNone);
+/// assert_eq!(my_option_op_or(MyOption::MySome(3), MyOption::MyNone, product), MyOption::MySome(3));
+/// assert_eq!(my_option_op_or(MyOption::MySome(3), MyOption::MySome(5), product), MyOption::MySome(15));
 /// ```
 pub fn my_option_op_or<T, F: FnOnce(T, T) -> T>(
     v1: MyOption<T>,

@@ -2,11 +2,12 @@
 
 #[cfg(test)]
 mod test_pingpong {
-    use crate::assignments::assignment12::small_exercises::*;
-    use ntest::timeout;
-
     use std::sync::mpsc::channel;
     use std::thread;
+
+    use ntest::timeout;
+
+    use crate::assignments::assignment12::small_exercises::*;
 
     #[test]
     fn test_ping_pong() {

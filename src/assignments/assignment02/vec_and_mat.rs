@@ -2,6 +2,7 @@
 //!
 //! You will implement simple operations on vectors and matrices.
 
+use std::cmp::PartialEq;
 use std::ops::Mul;
 
 /// 2x2 matrix of the following configuration:
@@ -112,13 +113,20 @@ impl FMat2 {
     ///
     /// # Example
     ///
-    /// ```
+    /// ```ignore
     /// assert_eq!(
-    ///     Mat2 { a: 1.0, b: 1.0, c: 2.0, d: 3.0 }.inverse(),
-    ///     Mat2 { a: 3.0, b: -1.0, c: -2.0, d: 1.0}
+    ///     FMat2 { a: 1.0, b: 1.0, c: 2.0, d: 3.0 }.inverse(),
+    ///     FMat2 { a: 3.0, b: -1.0, c: -2.0, d: 1.0 }
     /// );
     /// ```
     pub fn inverse(self) -> Self {
         todo!()
+    }
+}
+
+// Equivalence between two floating-point matrices, as element-wise equivalence
+impl PartialEq for FMat2 {
+    fn eq(&self, other: &FMat2) -> bool {
+        self.a == other.a && self.b == other.b && self.c == other.c && self.d == other.d
     }
 }

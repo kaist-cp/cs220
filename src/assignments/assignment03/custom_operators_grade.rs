@@ -1,6 +1,7 @@
 #[cfg(test)]
 mod test {
-    use crate::assignments::assignment03::custom_operators::{MyOption::*, *};
+    use crate::assignments::assignment03::custom_operators::MyOption::*;
+    use crate::assignments::assignment03::custom_operators::*;
 
     #[test]
     fn test_my_map() {

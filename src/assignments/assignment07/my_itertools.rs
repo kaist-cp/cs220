@@ -1,9 +1,10 @@
 //! Implement your own minimal `itertools` crate.
 
+use std::collections::HashSet;
 use std::hash::Hash;
 
 /// Iterator that iterates over the given iterator and returns only unique elements.
-#[allow(missing_debug_implementations)]
+#[derive(Debug)]
 pub struct Unique<I: Iterator> {
     // TODO: remove `_marker` and add necessary fields as you want
     _marker: std::marker::PhantomData<I>,
@@ -21,7 +22,7 @@ where
 }
 
 /// Iterator that chains two iterators together.
-#[allow(missing_debug_implementations)]
+#[derive(Debug)]
 pub struct Chain<I1: Iterator, I2: Iterator> {
     // TODO: remove `_marker` and add necessary fields as you want
     _marker: std::marker::PhantomData<(I1, I2)>,
@@ -38,7 +39,7 @@ impl<T: Eq + Hash + Clone, I1: Iterator<Item = T>, I2: Iterator<Item = T>> Itera
 }
 
 /// Iterator that iterates over given iterator and enumerates each element.
-#[allow(missing_debug_implementations)]
+#[derive(Debug)]
 pub struct Enumerate<I: Iterator> {
     // TODO: remove `_marker` and add necessary fields as you want
     _marker: std::marker::PhantomData<I>,
@@ -56,7 +57,7 @@ impl<I: Iterator> Iterator for Enumerate<I> {
 ///
 /// If one iterator is longer than the other one, the remaining elements for the longer element
 /// should be ignored.
-#[allow(missing_debug_implementations)]
+#[derive(Debug)]
 pub struct Zip<I1: Iterator, I2: Iterator> {
     // TODO: remove `_marker` and add necessary fields as you want
     _marker: std::marker::PhantomData<(I1, I2)>,

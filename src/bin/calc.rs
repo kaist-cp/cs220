@@ -3,7 +3,6 @@ use std::io::{self, BufRead, Read};
 
 use anyhow::Result;
 use clap::Parser;
-
 use cs220::assignments::assignment04::*;
 
 struct Input<'a> {

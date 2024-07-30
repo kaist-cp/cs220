@@ -322,17 +322,11 @@ mod test {
             (68, 285, 293),
         ];
 
-        let mut pythagorean_iter = pythagorean();
-        for i in 0..1000 {
-            let t = pythagorean_iter.next();
-            assert!(t.is_some());
-
-            let (a, b, c) = t.unwrap();
-            assert_eq!(a * a + b * b, c * c);
-
+        for (i, (a, b, c)) in pythagorean().enumerate().take(1000) {
             if i < pythagoreans.len() {
                 assert_eq!(pythagoreans[i], (a, b, c))
             }
+            assert_eq!(a * a + b * b, c * c);
         }
     }
 }

@@ -17,9 +17,9 @@ module Pascal
     ensures  { result >= 1 }
   = if k = 0 || k = n then 1 else comb (n-1) k + comb (n-1) (k-1)
 
-  (* Computes the Pascal's triangle and returns the `n`th row of it. *)
+  (* Computes Pascal's triangle and returns the `n`th row of it. *)
   (* Insert an appropriate invariant so that Why3 can verify this function. *)
-  (* You SHOULD understand the Pascal's triangle first to find good invariants. *) 
+  (* You should understand Pascal's triangle first to find good invariants. *)
   let chooses (n : int) : array int
     requires { n > 0 }
     ensures  { forall i: int.
@@ -28,16 +28,17 @@ module Pascal
     let ref row = Array.make 1 1 in
     for r = 1 to n do
       invariant { length row = r }
-      invariant { forall c: int. 0 <= c < r -> row[c] = comb (r-1) c } 
+      invariant { forall c: int. 0 <= c < r -> row[c] = comb (r-1) c }
       let new_row = Array.make (r+1) 1 in
       for c = 1 to r-1 do
         (* IMPORTANT: DON'T MODIFY THE ABOVE LINES *)
-        invariant { true (* TODO: Replace `true` with your solution. Your solution MUST be a single line, at line number 35. DON'T add another lines. *) }
+        (* TODO: Replace `true` with your solution. Your solution MUST be a single line, at line 36. DON'T add more code above or below. *)
+        invariant { true  }
         (* IMPORTANT: DON'T MODIFY THE BELOW LINES *)
         new_row[c] <- row[c-1] + row[c]
       done;
       row <- new_row
     done;
     row
-    
+
 end

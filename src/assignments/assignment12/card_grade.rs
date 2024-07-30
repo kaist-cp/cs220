@@ -2,12 +2,12 @@
 
 #[cfg(test)]
 mod test_card {
-    use crate::assignments::assignment12::card::*;
-
     use std::sync::atomic::{AtomicBool, Ordering};
     use std::sync::{Arc, Barrier, Mutex};
     use std::thread;
     use std::time::Duration;
+
+    use crate::assignments::assignment12::card::*;
 
     const NUM_CARDS: usize = 10000;
     const DURATION: u64 = 20;
@@ -60,7 +60,7 @@ mod test_card {
     fn play() {
         let ground = Ground::new();
         let barrier = Arc::new(Barrier::new(
-            NUM_ENEMIES + 1 /*Player*/ + 1, /*Referee*/
+            NUM_ENEMIES + 1 /*Player*/ + 1, /* Referee */
         ));
         let playing = Arc::new(AtomicBool::new(true));
 

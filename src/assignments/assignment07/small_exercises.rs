@@ -47,7 +47,8 @@ where
 }
 
 /// Returns and iterator over the generic fibonacci sequence starting from `first` and `second`.
-/// This is a generic version of `fibonacci` function, which works for any types that implements `std::ops::Add` trait.
+/// This is a generic version of `fibonacci` function, which works for any types that implements
+/// `std::ops::Add` trait.
 pub fn fib<T>(first: T, second: T) -> impl Iterator<Item = T>
 where
     T: std::ops::Add<Output = T> + Copy,

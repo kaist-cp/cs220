@@ -8,10 +8,8 @@
 //!
 //! Have fun!
 
-use std::{
-    collections::HashMap,
-    sync::{Arc, Mutex},
-};
+use std::collections::HashMap;
+use std::sync::{Arc, Mutex};
 
 /// Color represents the color of the card.
 /// The color of a card can be either Blue or White.

@@ -16,14 +16,6 @@ mod test {
         assert_eq!(fibonacci(92), 12200160415121876738);
     }
 
-    // Equivalence between two floating-point matrices, as element-wise equivalence
-    use std::cmp::PartialEq;
-    impl PartialEq for FMat2 {
-        fn eq(&self, other: &FMat2) -> bool {
-            self.a == other.a && self.b == other.b && self.c == other.c && self.d == other.d
-        }
-    }
-
     #[test]
     fn test_inverse() {
         assert_eq!(

@@ -1,13 +1,17 @@
 #[cfg(test)]
 mod test {
-    use crate::assignments::assignment09::matmul::*;
-    use crate::assignments::assignment13::small_exercises::*;
+    use std::hint;
+    use std::time::Instant;
+
     use approx::*;
     use itertools::Itertools;
     use ndarray::prelude::*;
-    use ndarray_rand::{rand_distr::Uniform, RandomExt};
+    use ndarray_rand::rand_distr::Uniform;
+    use ndarray_rand::RandomExt;
     use rayon::prelude::IntoParallelIterator;
-    use std::time::Instant;
+
+    use crate::assignments::assignment09::matmul::*;
+    use crate::assignments::assignment13::small_exercises::*;
 
     #[test]
     fn test_sigma_par() {
@@ -72,72 +76,66 @@ mod test {
     }
 
     #[test]
-    fn vec_add_correctness() {
-        // small test
+    fn vec_add_test() {
         let vec1 = vec![1.0, 2.0, 3.0, 4.0, 5.0];
         let vec2 = vec![1.0, 2.0, 3.0, 4.0, 5.0];
-        let res = vec_add_par(&vec1, &vec2);
+        let res = vec_add(&vec1, &vec2);
         assert_eq!(res, vec![2.0, 4.0, 6.0, 8.0, 10.0]);
 
-        // random test
-        let vec1 = Array::random(1000, Uniform::new(0., 10.));
-        let vec2 = Array::random(1000, Uniform::new(0., 10.));
-
-        let res_par = vec_add_par(vec1.as_slice().unwrap(), vec2.as_slice().unwrap());
-
-        let ans = vec1 + vec2;
-        assert_eq!(Array::from_vec(res_par), ans);
-    }
-
-    #[test]
-    fn vec_add_test_performance() {
-        for _ in 0..2 {
-            let vec1 = Array::random(500000, Uniform::new(0., 10.));
-            let vec2 = Array::random(500000, Uniform::new(0., 10.));
+        for _ in 0..5 {
+            let vec1 = hint::black_box(Array::random(5_000_000, Uniform::new(0., 10.)));
+            let vec2 = hint::black_box(Array::random(5_000_000, Uniform::new(0., 10.)));
 
             let now_seq = Instant::now();
-            let res_seq = vec_add(vec1.as_slice().unwrap(), vec2.as_slice().unwrap());
+            let res_seq = hint::black_box(vec_add(
+                hint::black_box(vec1.as_slice().unwrap()),
+                hint::black_box(vec2.as_slice().unwrap()),
+            ));
             let elapsed_seq = now_seq.elapsed();
 
             let now_par = Instant::now();
-            let res_par = vec_add_par(vec1.as_slice().unwrap(), vec2.as_slice().unwrap());
+            let res_par = hint::black_box(vec_add_par(
+                hint::black_box(vec1.as_slice().unwrap()),
+                hint::black_box(vec2.as_slice().unwrap()),
+            ));
             let elapsed_par = now_par.elapsed();
 
+            let ans = vec1 + vec2;
+            assert_eq!(Array::from_vec(res_seq), ans);
+            assert_eq!(Array::from_vec(res_par), ans);
             assert!(elapsed_par < elapsed_seq);
         }
     }
 
     #[test]
-    fn dot_product_correctness() {
-        // small test
+    fn dot_product_test() {
         let vec1 = vec![1.0, 2.0, 3.0, 4.0, 5.0];
         let vec2 = vec![1.0, 2.0, 3.0, 4.0, 5.0];
+        let res_seq = dot_product(&vec1, &vec2);
         let res_par = dot_product_par(&vec1, &vec2);
+        assert_eq!(res_seq, 55.0);
         assert_eq!(res_par, 55.0);
 
-        // random test
-        let vec1 = Array::random(1000, Uniform::new(0., 10.));
-        let vec2 = Array::random(1000, Uniform::new(0., 10.));
-
-        let res_par = dot_product_par(vec1.as_slice().unwrap(), vec2.as_slice().unwrap());
-
-        let _res = relative_eq!(res_par, vec1.dot(&vec2), epsilon = f64::EPSILON);
-    }
-
-    #[test]
-    fn dot_product_performance() {
-        for _ in 0..2 {
-            let vec1 = Array::random(1000000, Uniform::new(0., 10.));
-            let vec2 = Array::random(1000000, Uniform::new(0., 10.));
+        for _ in 0..5 {
+            let vec1 = Array::random(500_000, Uniform::new(0., 10.));
+            let vec2 = Array::random(500_000, Uniform::new(0., 10.));
 
             let now_seq = Instant::now();
-            let res_seq = dot_product(vec1.as_slice().unwrap(), vec2.as_slice().unwrap());
+            let res_seq = hint::black_box(dot_product(
+                hint::black_box(vec1.as_slice().unwrap()),
+                hint::black_box(vec2.as_slice().unwrap()),
+            ));
             let elapsed_seq = now_seq.elapsed();
 
             let now_par = Instant::now();
-            let res_par = dot_product_par(vec1.as_slice().unwrap(), vec2.as_slice().unwrap());
+            let res_par = hint::black_box(dot_product_par(
+                hint::black_box(vec1.as_slice().unwrap()),
+                hint::black_box(vec2.as_slice().unwrap()),
+            ));
             let elapsed_par = now_par.elapsed();
 
+            let _res = relative_eq!(res_seq, vec1.dot(&vec2), epsilon = f64::EPSILON);
+            let _res = relative_eq!(res_par, vec1.dot(&vec2), epsilon = f64::EPSILON);
             assert!(elapsed_par < elapsed_seq);
         }
     }
@@ -163,8 +161,7 @@ mod test {
     }
 
     #[test]
-    fn matmul_correctness() {
-        // small case
+    fn matmul_test() {
         let mat1 = vec![vec![1.0, 2.0, 3.0], vec![4.0, 5.0, 6.0]];
         let mat2 = vec![
             vec![7.0, 8.0, 9.0],
@@ -176,72 +173,68 @@ mod test {
             vec![50.0, 68.0, 86.0, 104.0],
             vec![122.0, 167.0, 212.0, 257.0],
         ];
+        let res_seq = matmul(&mat1, &mat2);
         let res_par = matmul_par(&mat1, &mat2);
+        assert_eq!(ans, res_seq);
         assert_eq!(ans, res_par);
 
-        let mat1 = Array::random((10, 10), Uniform::new(0., 10.));
-        let mat2 = Array::random((10, 10), Uniform::new(0., 10.));
-        let ans = mat1.dot(&mat2);
-        let mat2_transposed = mat2.t();
-
-        // Run parallel matrix multiplication
-        let now_par = Instant::now();
-        let res_par = matmul_par(
-            mat1.axis_iter(Axis(0))
-                .map(|row| row.to_vec())
-                .collect::<Vec<_>>()
-                .as_slice(),
-            mat2_transposed
-                .axis_iter(Axis(0))
-                .map(|row| row.to_vec())
-                .collect::<Vec<_>>()
-                .as_slice(),
-        );
-        let elapsed_par = now_par.elapsed();
-
-        for it in ans.iter().zip(vec_to_array(res_par).iter()) {
-            let (ans, par) = it;
-            let _res = relative_eq!(ans, par);
-        }
-    }
-
-    #[test]
-    fn matmul_performance() {
-        for _ in 0..2 {
+        for _ in 0..5 {
             let mat1 = Array::random((500, 500), Uniform::new(0., 10.));
             let mat2 = Array::random((500, 500), Uniform::new(0., 10.));
+            let ans = mat1.dot(&mat2);
             let mat2_transposed = mat2.t();
 
             // Run sequential matrix multiplication
             let now_seq = Instant::now();
-            let res_seq = matmul(
-                mat1.axis_iter(Axis(0))
-                    .map(|row| row.to_vec())
-                    .collect::<Vec<_>>()
-                    .as_slice(),
-                mat2_transposed
-                    .axis_iter(Axis(0))
-                    .map(|row| row.to_vec())
-                    .collect::<Vec<_>>()
-                    .as_slice(),
-            );
+            let res_seq = hint::black_box(matmul(
+                hint::black_box(
+                    mat1.axis_iter(Axis(0))
+                        .map(|row| row.to_vec())
+                        .collect::<Vec<_>>()
+                        .as_slice(),
+                ),
+                hint::black_box(
+                    mat2_transposed
+                        .axis_iter(Axis(0))
+                        .map(|row| row.to_vec())
+                        .collect::<Vec<_>>()
+                        .as_slice(),
+                ),
+            ));
             let elapsed_seq = now_seq.elapsed();
 
             // Run parallel matrix multiplication
             let now_par = Instant::now();
-            let res_par = matmul_par(
-                mat1.axis_iter(Axis(0))
-                    .map(|row| row.to_vec())
-                    .collect::<Vec<_>>()
-                    .as_slice(),
-                mat2_transposed
-                    .axis_iter(Axis(0))
-                    .map(|row| row.to_vec())
-                    .collect::<Vec<_>>()
-                    .as_slice(),
-            );
+            let res_par = hint::black_box(matmul_par(
+                hint::black_box(
+                    mat1.axis_iter(Axis(0))
+                        .map(|row| row.to_vec())
+                        .collect::<Vec<_>>()
+                        .as_slice(),
+                ),
+                hint::black_box(
+                    mat2_transposed
+                        .axis_iter(Axis(0))
+                        .map(|row| row.to_vec())
+                        .collect::<Vec<_>>()
+                        .as_slice(),
+                ),
+            ));
             let elapsed_par = now_par.elapsed();
 
+            // Check answer
+            for it in ans.iter().zip(vec_to_array(res_seq).iter()) {
+                let (ans, seq) = it;
+                let _res = relative_eq!(ans, seq);
+            }
+            for it in ans.iter().zip(vec_to_array(res_par).iter()) {
+                let (ans, par) = it;
+                let _res = relative_eq!(ans, par);
+            }
+
+            // Check time
+            // println!("Sequential: {:?}", elapsed_seq);
+            // println!("Parallel: {:?}", elapsed_par);
             assert!(elapsed_par < elapsed_seq);
         }
     }

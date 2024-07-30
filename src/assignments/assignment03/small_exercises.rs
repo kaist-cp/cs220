@@ -55,16 +55,19 @@ pub fn median(values: Vec<isize>) -> Option<isize> {
     todo!()
 }
 
-/// Given a list of integers, returns its smallest mode (the value that occurs most often; a hash map will be helpful here).
+/// Given a list of integers, returns its smallest mode (the value that occurs most often; a hash
+/// map will be helpful here).
 ///
 /// Returns `None` if the list is empty.
 pub fn mode(values: Vec<isize>) -> Option<isize> {
     todo!()
 }
 
-/// Converts the given string to Pig Latin. Use the rules below to translate normal English into Pig Latin.
+/// Converts the given string to Pig Latin. Use the rules below to translate normal English into Pig
+/// Latin.
 ///
-/// 1. If a word starts with a consonant and a vowel, move the first letter of the word at the end of the word and add "ay".
+/// 1. If a word starts with a consonant and a vowel, move the first letter of the word at the end
+///    of the word and add "ay".
 ///
 /// Example: "happy" -> "appyh" + "ay" -> "appyhay"
 ///
@@ -99,7 +102,8 @@ pub fn piglatin(input: String) -> String {
 ///
 /// - The result is a map from department to the list of its employees.
 /// - An empty department should not appear in the result.
-/// - There are three commands: "Add {person} to {department}", "Remove {person} from {department}", and "Move {person} from {department} to {department}".
+/// - There are three commands: "Add {person} to {department}", "Remove {person} from {department}",
+///   and "Move {person} from {department} to {department}".
 /// - If a command is not executable, then it's ignored.
 /// - There is no space in the name of the person and department.
 ///

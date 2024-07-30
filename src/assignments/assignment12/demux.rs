@@ -1,6 +1,7 @@
 //! Demultiplexing sender
 //!
-//! Implement demultiplexing sender
+//! Implement a demultiplexing sender.
+//!
 //! Demultiplexer, `Demux` in short, is a device that has one input and many outputs.
 //! It distributes the input to the outputs according to the control signal.
 //! It is used when a circuit wishes to send a signal to one of many devices.

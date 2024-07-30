@@ -2,8 +2,8 @@
 //!
 //! The primary goal of this assignment is to get used to concurrency.
 //!
-//! You should fill out the `todo!()` placeholders in such a way that `/scripts/grade.sh 12` works fine.
-//! See `assignment12/*_grade.rs` and `/scripts/grade.sh 12` for the test script.
+//! You should fill out the `todo!()` placeholders in such a way that `/scripts/grade.sh 12` works
+//! fine. See `assignment12/*_grade.rs` and `/scripts/grade.sh 12` for the test script.
 //!
 //! To submit, run
 //! ```bash

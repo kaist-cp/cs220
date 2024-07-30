@@ -1,6 +1,9 @@
 //! Semiring
 
-use std::{collections::HashMap, fmt::Debug};
+use std::collections::HashMap;
+use std::fmt::Debug;
+
+use itertools::Itertools;
 
 /// Semiring.
 ///
@@ -147,10 +150,8 @@ impl<C: Semiring> From<C> for Polynomial<C> {
 ///
 /// Assumptions:
 /// - Each term is separated by ` + `.
-/// - Each term is one of the following form:
-///   `a`, `x`, `ax`, `x^n`, and `ax^n`,
-///   where `a` is a `usize` number and `n` is a `u64` number.
-///   This `a` should then be converted to a `C` type.
+/// - Each term is one of the following form: `a`, `x`, `ax`, `x^n`, and `ax^n`, where `a` is a
+///   `usize` number and `n` is a `u64` number. This `a` should then be converted to a `C` type.
 /// - In `a`, it is guaranteed that `a >= 1`.
 /// - In `ax` and `ax^n`, it is guaranteed that `a >= 2`.
 /// - In `x^n` and `ax^n`, it is guaranteed that `n >= 2`.

@@ -7,7 +7,7 @@ use itertools::*;
 /// # Example
 ///
 /// ```
-/// use cs220::assignments::assignment09::vec_add;
+/// use cs220::assignments::assignment09::matmul::*;
 ///
 /// let vec1 = vec![1.0, 2.0, 3.0, 4.0, 5.0];
 /// let vec2 = vec![1.0, 2.0, 3.0, 4.0, 5.0];
@@ -23,10 +23,10 @@ pub fn vec_add(lhs: &[f64], rhs: &[f64]) -> Vec<f64> {
 /// You don't know how to calculate dot product?
 /// See <https://mathinsight.org/dot_product_examples>
 ///
-/// # Exmaple
+/// # Example
 ///
 /// ```
-/// use cs220::assignments::assignment09::dot_product;
+/// use cs220::assignments::assignment09::matmul::*;
 ///
 /// let vec1 = vec![1.0, 2.0, 3.0, 4.0, 5.0];
 /// let vec2 = vec![1.0, 2.0, 3.0, 4.0, 5.0];
@@ -48,10 +48,10 @@ pub fn dot_product(lhs: &[f64], rhs: &[f64]) -> f64 {
 /// - rhs: (p, n)
 /// - output: (m, p)
 ///
-/// # Exmaple
+/// # Example
 ///
 /// ```
-/// use cs220::assignments::assignment09::matmul;
+/// use cs220::assignments::assignment09::matmul::*;
 ///
 /// let mat1 = vec![vec![1.0, 2.0, 3.0], vec![4.0, 5.0, 6.0]];
 /// let mat2 = vec![

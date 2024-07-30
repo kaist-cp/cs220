@@ -7,7 +7,7 @@
 # * RUNNERS: array of "cargo[_asan | _tsan] [--release]"
 # * TIMEOUT: default 10s
 
-rustup toolchain update stable nightly
+rustup toolchain update stable
 
 echo_err() {
     echo "$@" 1>&2
@@ -37,27 +37,6 @@ run_linters() {
 }
 export -f run_linters
 
-# usage: cargo_asan [SUBCOMMAND] [OPTIONS] [-- <args>...]
-# example: cargo_asan test --release TEST_NAME -- --skip SKIPPED
-# NOTE: sanitizer documentation at https://doc.rust-lang.org/beta/unstable-book/compiler-flags/sanitizer.html
-cargo_asan() {
-    local SUBCOMMAND=$1; shift
-    RUSTFLAGS="-Z sanitizer=address" \
-        RUSTDOCFLAGS="-Z sanitizer=address" \
-        cargo +nightly $SUBCOMMAND -Z build-std --target x86_64-unknown-linux-gnu "$@"
-}
-export -f cargo_asan
-
-cargo_tsan() {
-    local SUBCOMMAND=$1; shift
-    RUSTFLAGS="-Z sanitizer=thread" \
-        TSAN_OPTIONS="suppressions=suppress_tsan.txt" \
-        RUSTDOCFLAGS="-Z sanitizer=thread" \
-        RUST_TEST_THREADS=1 \
-        cargo +nightly $SUBCOMMAND -Z build-std --target x86_64-unknown-linux-gnu "$@"
-}
-export -f cargo_tsan
-
 # usage: _run_tests_with CARGO [OPTIONS]
 # example: _run_tests_with cargo_tsan --release
 # Echos number of failed tests to stdout.
@@ -80,7 +59,7 @@ _run_tests_with() {
     # local NUM_TESTS=$(echo $TESTS | wc -w)
     for TEST in ${TESTS[@]}; do
         local TEST_CMD="$CARGO test $* --lib -- $TEST"
-	# card_game in Assignment12 takes 20 seconds.
+        # card_game in Assignment12 takes 20 seconds.
         timeout ${TIMEOUT:-22s} bash -c "$TEST_CMD 2> /dev/null" 1>&2
         case $? in
             0)   PASSED=$((PASSED + 1));;

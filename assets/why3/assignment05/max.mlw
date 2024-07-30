@@ -2,11 +2,11 @@
 
   Given an array `a` of integers with length `n` greater than `0`,
   return `max_idx`, the index of the maximum element of that array.
-  
+
   E.g. `max_idx [5, 12, 34, 10] 4` will return `2`
   E.g. `max_idx [4, 3, 2] 3` will return `0`
   E.g. `max_idx [1, 2, 3, 4] 4` will return `3`
-  
+
   Prove the below program indeed follows the given specification,
   by giving an appropriate invariant.
 *)
@@ -22,12 +22,13 @@ module Max
     requires { n = length a }
     ensures { 0 <= max_idx <= n-1 }
     ensures { forall i. 0 <= i <= n-1 -> a[i] <= a[max_idx] }
-  = 
+  =
     let ref max_idx = 0 in
     for i = 0 to n-1 do
       invariant { 0 <= max_idx <= n-1 }
       (* IMPORTANT: DON'T MODIFY THE ABOVE LINES *)
-      invariant { true (* TODO: Replace `true` with your solution. Your solution MUST be a single line, at line number 30. DON'T add another line of codes. *) }
+      (* TODO: Replace `true` with your solution. Your solution MUST be a single line, at line 31. DON'T add more code above or below. *)
+      invariant { true }
       (* IMPORTANT: DON'T MODIFY THE BELOW LINES *)
       if a[max_idx] < a[i] then max_idx <- i;
     done;

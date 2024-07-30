@@ -3,8 +3,9 @@
 use std::collections::HashMap;
 
 use anyhow::*;
+use etrace::*;
 
-use super::syntax::{Command, Expression};
+use super::syntax::{BinOp, Command, Expression};
 
 /// Calculator's context.
 #[derive(Debug, Default, Clone)]
@@ -31,7 +32,8 @@ impl Context {
 
     /// Calculates the given command. (We assume the absence of overflow.)
     ///
-    /// If there is no variable lhs in the command (i.e. `command.variable = None`), its value should be stored at `$0`, `$1`, `$2`, ... respectively.
+    /// If there is no variable lhs in the command (i.e. `command.variable = None`), its value
+    /// should be stored at `$0`, `$1`, `$2`, ... respectively.
     ///
     /// # Example
     ///

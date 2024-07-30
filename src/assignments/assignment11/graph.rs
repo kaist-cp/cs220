@@ -12,6 +12,10 @@
 //!
 //! Refer `graph_grade.rs` for test cases.
 
+use std::cell::RefCell;
+use std::collections::HashSet;
+use std::rc::Rc;
+
 #[derive(PartialEq, Eq, Debug)]
 enum VisitStatus {
     Unvisited,
@@ -20,11 +24,12 @@ enum VisitStatus {
 }
 
 /// Handle to a graph node.
+///
 /// `NodeHandle` should implement `Clone`, which clones the handle without cloning the underlying
 /// node. That is, there can be multiple handles to the same node.
 /// The user can access the node through a handle if it does not violate Rust's aliasing rules.
 ///
-/// TODO: You can freely add fields to this struct.
+/// You can freely add fields to this struct.
 #[derive(Debug, Clone)]
 pub struct NodeHandle;
 
@@ -34,7 +39,7 @@ pub struct GraphError;
 
 /// Subgraph
 ///
-/// TODO: You can freely add fields to this struct.
+/// You can freely add fields to this struct.
 #[derive(Debug)]
 pub struct SubGraph;
 
@@ -45,23 +50,24 @@ impl NodeHandle {
     }
 
     /// Adds an edge to `to`.
-    /// If the modification cannot be done, e.g. because of aliasing issues, returns `Err(GraphError)`.
-    /// Returns `Ok(true)` if the edge is successfully added.
+    /// If the modification cannot be done, e.g. because of aliasing issues, returns
+    /// `Err(GraphError)`. Returns `Ok(true)` if the edge is successfully added.
     /// Returns `Ok(false)` if an edge to `to` already exits.
     pub fn add_edge(&self, to: NodeHandle) -> Result<bool, GraphError> {
         todo!()
     }
 
     /// Removes the edge to `to`.
-    /// If the modification cannot be done, e.g. because of aliasing issues, returns `Err(GraphError)`.
-    /// Returns `Ok(true)` if the edge is successfully removed.
+    /// If the modification cannot be done, e.g. because of aliasing issues, returns
+    /// `Err(GraphError)`. Returns `Ok(true)` if the edge is successfully removed.
     /// Returns `Ok(false)` if an edge to `to` does not exist.
     pub fn remove_edge(&self, to: &NodeHandle) -> Result<bool, GraphError> {
         todo!()
     }
 
     /// Removes all edges.
-    /// If the modification cannot be done, e.g. because of aliasing issues, returns `Err(GraphError)`.
+    /// If the modification cannot be done, e.g. because of aliasing issues, returns
+    /// `Err(GraphError)`.
     pub fn clear_edges(&self) -> Result<(), GraphError> {
         todo!()
     }
@@ -84,7 +90,7 @@ impl SubGraph {
         todo!()
     }
 
-    /// Removes a node from the subgraph. Returns true iff the node is successfully removed.
+    /// Adds a node to the subgraph. Returns true iff the node is successfully removed.
     pub fn remove_node(&mut self, node: &NodeHandle) -> bool {
         todo!()
     }

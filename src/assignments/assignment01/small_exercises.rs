@@ -1,8 +1,8 @@
 //! Assignment 1: Preparing Rust Development Environment.
-//! Welcome to the CS220 course!
+//! Welcome to CS220!
 //!
-//! You should fill out `add()` and `sub()` function bodies in such a way that `/scripts/grade.sh 1` works fine.
-//! See `small_problems_grade.rs` and `/scripts/grade.sh 1` for the test script.
+//! You should fill out `add()` and `sub()` function bodies in such a way that `/scripts/grade.sh 1`
+//! works fine. See `small_problems_grade.rs` and `/scripts/grade.sh 1` for the test script.
 //!
 //! Hint: <https://doc.rust-lang.org/std/primitive.usize.html>
 

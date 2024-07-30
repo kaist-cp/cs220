@@ -1,7 +1,8 @@
 #[cfg(test)]
 mod test {
-    use crate::assignments::assignment06::symbolic_differentiation::*;
     use ntest::assert_about_eq;
+
+    use crate::assignments::assignment06::symbolic_differentiation::*;
 
     // Constant rationals to use
     const TWO: Rational = Rational::new(2, 1);
@@ -172,7 +173,7 @@ mod test {
         // Mult
         //
         // d/dx (2x^4 * cos(x) * exp(x)) =
-        // 8x^3 * cos(x) * exp(x) - 2x^4 * sin(x) * exp(x) + 2x^4 * cos(x) * exp(x)
+        // 8x^2 * cos(x) * exp(x) - 2x^4 * sin(x) * exp(x) + 2x^4 * cos(x) * exp(x)
         let f1 = SingletonPolynomial::new_poly(TWO, FOUR);
         let f2 = Trignometric::new_cosine(ONE);
         let f3 = Exp::new();
