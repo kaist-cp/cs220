@@ -1,8 +1,8 @@
 ---
 name: Homework
 about: Create a homework
-title: "[Assignment TODO] TODO (due: TODO)"
-labels: assignment
+title: "[Assignment TODO] TODO (due: TODO, 23:59:59 (KST))"
+labels: assignment, announcement
 assignees: ''
 
 ---
