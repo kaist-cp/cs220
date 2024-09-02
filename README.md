@@ -191,8 +191,6 @@ Ensure you are proficient with the following development tools:
 
 - Failing to attend a significant number of sessions will result in an automatic grade of F.
 
-- If you miss a significant number of sessions, you'll automatically get an F.
-
 
 ## Communication
 
