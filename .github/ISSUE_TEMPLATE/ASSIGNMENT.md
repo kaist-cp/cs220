@@ -9,9 +9,9 @@ assignees: ''
 
 DESCRIPTION.
 
-- Read the description [here](https://github.com/kaist-cp/cs220/blob/main/src/assignments/assignmentX.rs). You're going to fill out the `todo!()`s.
+- Read the description [here](https://github.com/kaist-cp/cs220/blob/main/src/assignments/assignmentX/mod.rs). You're going to fill out the `todo!()`s.
 
-- You can grade your solution yourself by running `./scripts/grade-X.sh`.
+- You can grade your solution yourself by running `./scripts/grade.sh X`.
 
 - Submit your code [here](https://gg.kaist.ac.kr/assignment/GGX/).
 
