@@ -52,22 +52,22 @@ For a detailed overview, please refer to the introduction in the Google Slides p
 
 ### Schedule
 
-- Weak 01: introduction
-- Weak 02: part 1 (CS101 review)
-- Weak 03: part 1 (CS101 review)
-- Weak 04: part 1 (CS101 review)
-- Weak 05: part 2 (type)
-- Weak 06: part 2 (correctness)
-- Weak 07: part 2 (type as automatic verification)
-- Weak 08: mid-term exam
-- Weak 09: part 3 (reference)
-- Weak 10: part 3 (ownership)
-- Weak 11: part 4 (function as a value)
-- Weak 12: part 4 (combinator)
-- Weak 13: part 5 (mutability)
-- Weak 14: part 5 (concurrency)
-- Weak 15: part 5 (parallelism)
-- Weak 16: final exam
+- Week 01: introduction
+- Week 02: part 1 (CS101 review)
+- Week 03: part 1 (CS101 review)
+- Week 04: part 1 (CS101 review)
+- Week 05: part 2 (type)
+- Week 06: part 2 (correctness)
+- Week 07: part 2 (type as automatic verification)
+- Week 08: mid-term exam
+- Week 09: part 3 (reference)
+- Week 10: part 3 (ownership)
+- Week 11: part 4 (function as a value)
+- Week 12: part 4 (combinator)
+- Week 13: part 5 (mutability)
+- Week 14: part 5 (concurrency)
+- Week 15: part 5 (parallelism)
+- Week 16: final exam
 
 
 ### Tools
