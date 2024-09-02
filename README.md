@@ -157,7 +157,7 @@ Ensure you are proficient with the following development tools:
     $ ./scripts/submit.sh
     ```
   - After running the command above, in the `target` directory, you can find a `assignment<NUMBER>.zip` file (`assignment09.zip` for example). Submit this file to <https://gg.kaist.ac.kr/course/20>.
-- Read the documentation at <https://cp.kaist.ac.kr/cs220/cs220/>.
+- Read the documentation at <https://cp.kaist.ac.kr/cs220/>.
 - You can check your grade of each assignment by running the grading script.
   - You can run the grading script with the following command:
   ```bash
