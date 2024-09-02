@@ -230,7 +230,7 @@ Ensure you are proficient with the following development tools:
   If your question is not listed, post it as a new issue for discussion.
   Office hour discussions will focus on unresolved issues.
 
-- Emails to the instructor or head TA should start with "CS492(uarch):" in the subject line, followed by a brief description.
+- Emails to the instructor or head TA should start with "CS220:" in the subject line, followed by a brief description.
   Include your name and student number in the email.
   Emails lacking this information (e.g., those without a student number) will not receive a response.
 
