@@ -12,7 +12,7 @@
 - Announcements: in [issue tracker](https://github.com/kaist-cp/cs220/issues?q=is%3Aissue+is%3Aopen+label%3Aannouncement)
   + We assume you read each announcement within 24 hours.
   + We strongly recommend you to watch the repository.
-- TA: [Janggun Lee](https://cp.kaist.ac.kr/janggun.lee)
+- TA: [Janggun Lee](https://cp.kaist.ac.kr/janggun.lee) (head), [Sunho Park](https://cp.kaist.ac.kr/sunho.park), [Jaewoo Kim](https://cp.kaist.ac.kr/jaewoo.kim).
   + Office Hours: Fri 9:00-10:00, Rm. 4441, Bldg. E3-1.
     If you want to come, do so by 9:15.
     See [below](https://github.com/kaist-cp/cs220#rules) for the office hour policy.
