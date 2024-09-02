@@ -14,7 +14,7 @@ enum Yielded<T> {
 ///
 /// Reference:
 /// - [Python generator](https://python-reference.readthedocs.io/en/latest/docs/generator/)
-#[allow(missing_debug_implementations)]
+#[derive(Debug)]
 pub struct Generator<T, S> {
     state: S,
     f: fn(&mut S) -> Yielded<T>,
