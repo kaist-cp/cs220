@@ -190,7 +190,6 @@ Ensure you are proficient with the following development tools:
   **Quizzes should be completed by the end of the day.**
 
 - Failing to attend a significant number of sessions will result in an automatic grade of F.
-ach session. **You should answer the quiz by the end of the day.**
 
 - If you miss a significant number of sessions, you'll automatically get an F.
 
