@@ -127,6 +127,7 @@ pub fn du_sort(root: &File) -> Vec<(&str, usize)> {
 /// remove_even(&mut vec);
 /// assert_eq!(*vec, vec![1, 3, 5]);
 /// ```
+#[allow(clippy::ptr_arg)]
 pub fn remove_even(inner: &mut Vec<i64>) {
     todo!()
 }
@@ -143,6 +144,7 @@ pub fn remove_even(inner: &mut Vec<i64>) {
 /// remove_duplicate(&mut vec);
 /// assert_eq!(*vec, vec![1, 2, 3, 7, 5]);
 /// ```
+#[allow(clippy::ptr_arg)]
 pub fn remove_duplicate(inner: &mut Vec<i64>) {
     todo!()
 }
