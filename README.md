@@ -157,7 +157,7 @@ Ensure you are proficient with the following development tools:
     $ ./scripts/submit.sh
     ```
   - After running the command above, in the `target` directory, you can find a `assignment<NUMBER>.zip` file (`assignment09.zip` for example). Submit this file to <https://gg.kaist.ac.kr/course/20>.
-- Read the documentation at <https://cp.kaist.ac.kr/cs220/>.
+- Read the documentation at <https://cp-git.kaist.ac.kr/cs220/cs220>.
 - You can check your grade of each assignment by running the grading script.
   - You can run the grading script with the following command:
   ```bash
@@ -230,7 +230,7 @@ Ensure you are proficient with the following development tools:
   If your question is not listed, post it as a new issue for discussion.
   Office hour discussions will focus on unresolved issues.
 
-- Emails to the instructor or head TA should start with "CS220:" in the subject line, followed by a brief description.
+- Emails to the instructor or head TA should start with "CS220" in the subject line, followed by a brief description.
   Include your name and student number in the email.
   Emails lacking this information (e.g., those without a student number) will not receive a response.
 
