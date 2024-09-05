@@ -117,8 +117,8 @@ mod test {
         assert_eq!(res_par, 55.0);
 
         for _ in 0..5 {
-            let vec1 = Array::random(500_000, Uniform::new(0., 10.));
-            let vec2 = Array::random(500_000, Uniform::new(0., 10.));
+            let vec1 = Array::random(1_000_000, Uniform::new(0., 10.));
+            let vec2 = Array::random(1_000_000, Uniform::new(0., 10.));
 
             let now_seq = Instant::now();
             let res_seq = hint::black_box(dot_product(
@@ -134,8 +134,10 @@ mod test {
             ));
             let elapsed_par = now_par.elapsed();
 
-            let _res = relative_eq!(res_seq, vec1.dot(&vec2), epsilon = f64::EPSILON);
-            let _res = relative_eq!(res_par, vec1.dot(&vec2), epsilon = f64::EPSILON);
+            let _ress = relative_eq!(res_seq, vec1.dot(&vec2), epsilon = f64::EPSILON);
+            let _resp = relative_eq!(res_par, vec1.dot(&vec2), epsilon = f64::EPSILON);
+            println!("Sequential: {_ress} {elapsed_seq:?}, Parallel: {_resp} {elapsed_par:?}");
+
             assert!(elapsed_par < elapsed_seq);
         }
     }
