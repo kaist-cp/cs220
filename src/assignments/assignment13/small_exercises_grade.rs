@@ -8,6 +8,7 @@ mod test {
     use ndarray::prelude::*;
     use ndarray_rand::rand_distr::Uniform;
     use ndarray_rand::RandomExt;
+    use ntest::assert_about_eq;
     use rayon::prelude::IntoParallelIterator;
 
     use crate::assignments::assignment09::matmul::*;
@@ -135,12 +136,12 @@ mod test {
             let elapsed_par = now_par.elapsed();
 
             let correct = vec1.dot(&vec2);
-            let _ress = relative_eq!(res_seq, correct, epsilon = f64::EPSILON);
-            let _resp = relative_eq!(res_par, correct, epsilon = f64::EPSILON);
+            assert_about_eq!(res_seq, correct, 1.0e-4);
+            assert_about_eq!(res_par, correct, 1.0e-4);
 
             assert!(
                 elapsed_par < elapsed_seq,
-                "Sequential: {_ress} {elapsed_seq:?}, Parallel: {_resp} {elapsed_par:?}, {res_seq}, {res_par}, {correct}"
+                "Sequential: {elapsed_seq:?}, Parallel: {elapsed_par:?}"
             );
         }
     }
