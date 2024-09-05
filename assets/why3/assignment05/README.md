@@ -6,12 +6,12 @@
   * You will get PARTIAL SCOREs for each of those three files.
   * E.g. If `max.mlw` and `binary_search.mlw` get passed, 2 out of 3 points will be given.
 
-* You may use [Why3 in your browser](https://why3.lri.fr/try/). 
+* You may use [Why3 in your browser](https://www.why3.org/try/).
   * Clicking `Verify` button at the top will open a panel on the right side.
   * For each task in the panel (e.g. `loop invariant preservation`), you can right-click it and run the prover.
   * Fill in `TODO`s until the prover can verify all tasks, notified with green check-marks.
 
 * To submit your solution, run `./scripts/submit.sh` and submit `assignment05.zip` in the `target` directory to gg.
 
-* More on Why3: <https://why3.lri.fr/doc/index.html>
-* Why3 standard library: <https://why3.lri.fr/stdlib/index.html>
+* [More on Why3](https://www.why3.org/doc/).
+* [Why3 standard library](https://www.why3.org/stdlib/).
