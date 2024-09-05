@@ -134,11 +134,14 @@ mod test {
             ));
             let elapsed_par = now_par.elapsed();
 
-            let _ress = relative_eq!(res_seq, vec1.dot(&vec2), epsilon = f64::EPSILON);
-            let _resp = relative_eq!(res_par, vec1.dot(&vec2), epsilon = f64::EPSILON);
-            println!("Sequential: {_ress} {elapsed_seq:?}, Parallel: {_resp} {elapsed_par:?}");
+            let correct = vec1.dot(&vec2);
+            let _ress = relative_eq!(res_seq, correct, epsilon = f64::EPSILON);
+            let _resp = relative_eq!(res_par, correct, epsilon = f64::EPSILON);
 
-            assert!(elapsed_par < elapsed_seq);
+            assert!(
+                elapsed_par < elapsed_seq,
+                "Sequential: {_ress} {elapsed_seq:?}, Parallel: {_resp} {elapsed_par:?}, {res_seq}, {res_par}, {correct}"
+            );
         }
     }
 
