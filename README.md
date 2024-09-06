@@ -95,20 +95,25 @@ Ensure you are proficient with the following development tools:
     + For managing your development on a Git server, create a private repository:
         * Upgrade to a "PRO" GitHub account, available at no cost.
           See the [documentation](https://education.github.com/students).
+        * Go to https://github.com and create a new private repository named `cs220`.
+        The repository should be initialized as empty.
         * Configure your repository as a remote:
           ```bash
           $ git remote add origin git@github.com:<github-id>/cs220.git
           $ git remote -v
           origin	 git@github.com:<github-id>/cs220.git (fetch)
           origin	 git@github.com:<github-id>/cs220.git (push)
-          upstream git@github.com:kaist-cp/cs220.git (fetch)
-          upstream git@github.com:kaist-cp/cs220.git (push)
+          upstream https://github.com/kaist-cp/cs220.git (fetch)
+          upstream https://github.com/kaist-cp/cs220.git (push)
           ```
         * Push your work to your repository:
           ```bash
           $ git push -u origin main
           ```
-
+        * If you're accessing your repository for the first time, git may display an error due to insufficient permissions.
+          * On a development server, copy the SSH public key mentioned in the error message and add it to your GitHub account.
+          * In your own environment, you may need to generate an SSH key using `ssh-keygen` and retrieve the public key from `~/.ssh/id_rsa.pub`. You should never share the private key located in `~/.ssh/id_rsa`.
+          * You can add SSH keys to your GitHub account [here](https://github.com/settings/keys).
 - [Rust](https://www.rust-lang.org/): You will use Rust for homework.
   We chose Rust because its ownership type system greatly simplifies the development of large-scale system software.
   + `cargo doc --open` on your local will show you the documentation for each homework.
