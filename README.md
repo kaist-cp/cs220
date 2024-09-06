@@ -80,11 +80,11 @@ Ensure you are proficient with the following development tools:
     + Follow these steps to set up your repository:
         * Clone the upstream repository directly without forking it:
           ```bash
-          $ git clone --origin upstream git@github.com:kaist-cp/cs220.git
+          $ git clone --origin upstream https://github.com/kaist-cp/cs220.git
           $ cd cs220
           $ git remote -v
-          upstream	git@github.com:kaist-cp/cs220.git (fetch)
-          upstream	git@github.com:kaist-cp/cs220.git (push)
+          upstream        https://github.com/kaist-cp/cs220.git (fetch)
+          upstream        https://github.com/kaist-cp/cs220.git (push)
           ```
         * To receive updates from the upstream, fetch and merge `upstream/main`:
           ```bash
