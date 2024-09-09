@@ -14,7 +14,7 @@
   + We strongly recommend you to watch the repository.
 - TA: [Janggun Lee](https://cp.kaist.ac.kr/janggun.lee) (head), [Sunho Park](https://cp.kaist.ac.kr/sunho.park), [Jaewoo Kim](https://cp.kaist.ac.kr/jaewoo.kim).
   + Office Hours: Fri 9:00-10:00, Rm. 4441, Bldg. E3-1.
-    If you want to come, do so by 9:15.
+    If you want to attend, please email the TAs by the day before and arrive by 9:15.
     See [below](https://github.com/kaist-cp/cs220#rules) for the office hour policy.
     <!-- Fri 9:00am-12:00pm, [Zoom room](https://zoom.us/j/4842624821)(The passcode is same as the class). It is not required, but if you want to come, do so by 9:30am. See [below](#communication) for office hour policy. -->
 - **IMPORTANT**: you should not expose your work to others. In particular, you should not fork
