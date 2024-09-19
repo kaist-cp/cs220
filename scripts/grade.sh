@@ -73,6 +73,7 @@ case $TEST_NAME in
         TESTS=(
             "assignments::assignment09::bigint_grade::test"
             "assignments::assignment09::small_exercises_grade::test"
+            "assignments::assignment09::matmul_grade::test"
         )
         ;;
     TEST10)
@@ -103,10 +104,10 @@ case $TEST_NAME in
         )
         ;;
     *)
-        echo_err "Invalid assignment number: $1"
-	echo_err "Assignment number should be within 1 to 12."
-        exit 1
-        ;;
+    echo_err "Invalid assignment number: $1"
+    echo_err "The assignment number should be between 1 and 12, excluding 5."
+    exit 1
+    ;;
 esac
 
 # Runs tests.
