@@ -118,8 +118,8 @@ mod test {
         assert_eq!(res_par, 55.0);
 
         for _ in 0..5 {
-            let vec1 = Array::random(1_000_000, Uniform::new(0., 10.));
-            let vec2 = Array::random(1_000_000, Uniform::new(0., 10.));
+            let vec1 = Array::random(10_000_000, Uniform::new(0., 10.));
+            let vec2 = Array::random(10_000_000, Uniform::new(0., 10.));
 
             let now_seq = Instant::now();
             let res_seq = hint::black_box(dot_product(
