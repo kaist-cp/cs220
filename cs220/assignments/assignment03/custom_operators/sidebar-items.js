@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"enum":["MyOption"],"fn":["my_and_then","my_map","my_option_op_or"]};

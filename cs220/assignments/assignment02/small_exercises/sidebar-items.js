@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"fn":["capitalize","chooses","fahrenheit_to_celsius","gcd","sum_array","up3","zip"]};

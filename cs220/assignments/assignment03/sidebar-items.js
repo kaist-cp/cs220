@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"mod":["custom_operators","parse_shell","small_exercises"]};
