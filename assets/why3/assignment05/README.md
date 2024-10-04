@@ -9,6 +9,7 @@
 * You may use [Why3 in your browser](https://www.why3.org/try/).
   * Clicking `Verify` button at the top will open a panel on the right side.
   * For each task in the panel (e.g. `loop invariant preservation`), you can right-click it and run the prover.
+    * Important: The prover might not be able to verify the correct solution if the number of steps is too small. Make sure to test with 1000~5000 steps.
   * Fill in `TODO`s until the prover can verify all tasks, notified with green check-marks.
 
 * To submit your solution, run `./scripts/submit.sh` and submit `assignment05.zip` in the `target` directory to gg.
