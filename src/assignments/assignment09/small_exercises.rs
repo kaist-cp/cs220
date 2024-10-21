@@ -9,7 +9,7 @@ use itertools::Itertools;
 ///
 /// Returns `true` if the length of sequence is less or equal than 2.
 ///
-/// # Exmample
+/// # Example
 ///
 /// ```
 /// use cs220::assignments::assignment09::small_exercises::*;

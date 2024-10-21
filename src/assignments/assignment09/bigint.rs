@@ -25,7 +25,7 @@ use std::ops::*;
 ///
 /// The `sign_extension()`, `two_complement()`, and `truncate()` are non-mandatory helper methods.
 ///
-/// For testing and debugging pruposes, the `Display` trait is implemented for you, which shows the
+/// For testing and debugging purposes, the `Display` trait is implemented for you, which shows the
 /// integer in hexadecimal form.
 #[derive(Debug, Clone)]
 pub struct BigInt {
