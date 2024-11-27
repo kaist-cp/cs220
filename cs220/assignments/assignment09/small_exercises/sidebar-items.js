@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"fn":["calculate_mean","find_count_n","interleave3","interleave_n","is_fibonacci","is_palindrome","k_smallest_mean","position_median","sigma","sum_is_n","two_dimensional_sum"]};

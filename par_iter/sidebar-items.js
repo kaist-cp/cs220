@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"constant":["SIZE"],"fn":["bench","main","parallel","sequential"]};

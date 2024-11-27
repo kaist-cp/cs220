@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"fn":["collatz_conjecture","fib_generator"],"struct":["Generator"]};

@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"mod":["small_exercises","vec_and_mat"]};

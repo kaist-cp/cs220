@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"constant":["MINUS_ONE","ONE","ZERO"],"enum":["BaseFuncs","ComplexFuncs","SingletonPolynomial","Trignometric"],"struct":["Exp","Rational"],"trait":["Differentiable","Evaluate"]};

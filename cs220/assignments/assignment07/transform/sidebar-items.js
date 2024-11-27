@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"struct":["Custom","Identity","Repeat","RepeatUntilConverge"],"trait":["Transform"]};

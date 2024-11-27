@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"enum":["DayOfWeek","TypeEvent"],"fn":["median","mode","next_weekday","organize","piglatin","use_editor"]};

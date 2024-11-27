@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"macro":["new_err","new_err_from","new_err_with","ok_or","rethrow_err","some_or","throw_err","try_err","try_err_from"],"struct":["Error","WrappedError"]};

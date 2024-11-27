@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"mod":["generator","my_itertools","small_exercises","transform"]};

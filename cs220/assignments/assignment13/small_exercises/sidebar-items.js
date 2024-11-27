@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"fn":["dot_product_par","interleave3_par","matmul_par","sigma_par","vec_add_par"]};

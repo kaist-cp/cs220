@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"fn":["add","exp","from_usize","mult","one","succ","to_usize","two","zero"],"type":["Church"]};

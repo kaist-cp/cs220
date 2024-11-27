@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"mod":["card","demux","funnel","small_exercises"]};
